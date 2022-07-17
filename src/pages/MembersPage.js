@@ -9,11 +9,11 @@ function MembersPage() {
     return (
         <div>
             <header>
-                <h1>View all JojaMart Members Here</h1>
+                <h1>All JojaMart Members</h1>
             </header>
             <Navigation />
             <div>
-                <p>hello</p>
+                <p>hello these are our members</p>
             </div>
             <Footer />
         </div>
