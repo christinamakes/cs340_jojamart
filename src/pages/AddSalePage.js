@@ -56,7 +56,7 @@ export const AddSalePage = () => {
                 value={total}
                 onChange={e => setTotal(e.target.value)} />
             <button
-                onClick={addProduct}
+                onClick={addSale}
             >Add</button>
         </div>
         <Footer />
