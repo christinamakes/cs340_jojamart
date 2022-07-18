@@ -6,9 +6,15 @@ export const Navigation = () => {
         <nav className='links'>
             <Link to="/"><button className='nav'>Home</button></Link>
             <Link to="/members"><button className='nav'>View all members</button></Link>
-            <Link to="/add-member"><button className='nav'>Add Member</button></Link>
+            <Link to="/employees"><button className='nav'>View all employees</button></Link>
+            <Link to="/products"><button className='nav'>View all products</button></Link>
+            <Link to="/sales"><button className='nav'>View all sales</button></Link>
             <Link to="/achievements"><button className='nav'>View all achievements</button></Link>
-            <Link to="/add-achievement"><button className='nav'>Add achievement</button></Link>
+            <Link to="/add-member"><button className='add'>Add Member</button></Link>
+            <Link to="/add-employee"><button className='add'>Add employee</button></Link>
+            <Link to="/add-product"><button className='add'>Add product</button></Link>
+            <Link to="/add-sale"><button className='add'>Add sale</button></Link>
+            <Link to="/add-achievement"><button className='add'>Add achievement</button></Link>
         </nav>
     );
 };

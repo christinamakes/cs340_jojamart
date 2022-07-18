@@ -6,6 +6,12 @@ import AddMemberPage from './pages/AddMemberPage';
 import MembersPage from './pages/MembersPage';
 import AchievementsPage from './pages/AchievementsPage';
 import AddAchievementPage from './pages/AddAchievementPage';
+import EmployeesPage from './pages/EmployeesPage';
+import AddEmployeePage from './pages/AddEmployeePage';
+import productsPage from './pages/ProductsPage';
+import AddProductPage from './pages/AddProductPage';
+import SalesPage from './pages/SalesPage';
+import AddSalePage from './pages/AddSalePage';
 import {useState} from 'react';
 
 function App() {
