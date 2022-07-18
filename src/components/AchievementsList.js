@@ -7,9 +7,9 @@ function AchievementList({ achievements, onDelete, onEdit }) {
         <table id="achievements">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Title</th>
                     <th>Citeria</th>
-                    <th>Id</th>
                 </tr>
             </thead>
             <tbody>
