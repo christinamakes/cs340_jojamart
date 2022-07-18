@@ -7,9 +7,9 @@ function AchievementList({ achievements, onDelete, onEdit }) {
         <table id="achievements">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Citeria</th>
+                    <th>achievement_id</th>
+                    <th>achievement_title</th>
+                    <th>achievement_criteria</th>
                 </tr>
             </thead>
             <tbody>

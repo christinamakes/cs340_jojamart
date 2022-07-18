@@ -7,8 +7,8 @@ import Navigation from '../components/NavBar';
 import AchievementsList from '../components/AchievementsList';
 
 function AchievementsPage() {
-    const achList = [{'title':'my first','criteria':'this is the criteria','id':1},
-    {'title':'my second','criteria':'this is the criteria','id':2}, {'title':'my third','criteria':'this is the criteria','id':3}]
+    const achList = [{'title':'loyal_customer','criteria':'Complete 10 purchases from JojaMart','id':1},
+    {'title':'first_dollar','criteria':'Complete first purchase from JojaMart','id':2}, {'title':'early_riser','criteria':'Wait outside JojaMart at opening time','id':3}]
     return (
         <div>
             <header>
