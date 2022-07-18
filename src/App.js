@@ -12,6 +12,8 @@ import ProductsPage from './pages/ProductsPage';
 import AddProductPage from './pages/AddProductPage';
 import SalesPage from './pages/SalesPage';
 import AddSalePage from './pages/AddSalePage';
+import SeasonsPage from './pages/SeasonsPage';
+import AddSeasonPage from './pages/AddSeasonPage';
 
 import {useState} from 'react';
 
@@ -33,6 +35,8 @@ function App() {
             <Route path='/add-product' element={<AddProductPage />}/>
             <Route path='/sales' element={<SalesPage />}/>
             <Route path='/add-sale' element={<AddSalePage />}/>
+            <Route path='/seasons' element={<SeasonsPage />}/>
+            <Route path='/add-season' element={<AddSeasonPage />}/>
         </Routes>
       </div>
     </Router>
