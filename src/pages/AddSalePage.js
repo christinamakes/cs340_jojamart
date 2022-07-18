@@ -37,22 +37,22 @@ export const AddSalePage = () => {
         <div>
             <input
                 type="text"
-                placeholder="Enter name here"
+                placeholder="Enter member here"
                 value={member}
                 onChange={e => setMember(e.target.value)} />
             <input
                 type="text"
-                placeholder="Enter price here"
+                placeholder="Enter employee here"
                 value={employee}
                 onChange={e => setEmployee(e.target.value)} />
             <input
                 type="text"
-                placeholder="Enter season here"
+                placeholder="Enter date here"
                 value={date}
                 onChange={e => setDate(e.target.value)} />
             <input
                 type="text"
-                placeholder="Enter wage here"
+                placeholder="Enter total here"
                 value={total}
                 onChange={e => setTotal(e.target.value)} />
             <button
