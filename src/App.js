@@ -8,10 +8,11 @@ import AchievementsPage from './pages/AchievementsPage';
 import AddAchievementPage from './pages/AddAchievementPage';
 import EmployeesPage from './pages/EmployeesPage';
 import AddEmployeePage from './pages/AddEmployeePage';
-import productsPage from './pages/ProductsPage';
+import ProductsPage from './pages/ProductsPage';
 import AddProductPage from './pages/AddProductPage';
 import SalesPage from './pages/SalesPage';
 import AddSalePage from './pages/AddSalePage';
+
 import {useState} from 'react';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
             <Route path='/add-achievement' element={<AddAchievementPage />}/>
             <Route path='/employees' element={<EmployeesPage />}/>
             <Route path='/add-employee' element={<AddEmployeePage />}/>
-            <Route path='/products' element={<productsPage />}/>
+            <Route path='/products' element={<ProductsPage />}/>
             <Route path='/add-product' element={<AddProductPage />}/>
             <Route path='/sales' element={<SalesPage />}/>
             <Route path='/add-sale' element={<AddSalePage />}/>
