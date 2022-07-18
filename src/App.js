@@ -20,6 +20,12 @@ function App() {
             <Route path='/members' element={<MembersPage />}/>
             <Route path='/achievements' element={<AchievementsPage />}/>
             <Route path='/add-achievement' element={<AddAchievementPage />}/>
+            <Route path='/employees' element={<EmployeesPage />}/>
+            <Route path='/add-employee' element={<AddEmployeePage />}/>
+            <Route path='/products' element={<productsPage />}/>
+            <Route path='/add-product' element={<AddProductPage />}/>
+            <Route path='/sales' element={<SalesPage />}/>
+            <Route path='/add-sale' element={<AddSalePage />}/>
         </Routes>
       </div>
     </Router>
