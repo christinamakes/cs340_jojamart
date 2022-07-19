@@ -4,13 +4,13 @@ import { Link} from 'react-router-dom';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
-export const AddProductPage = () => {
+export const UpdateMemberPage = () => {
     const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
-    const [season, setSeason] = useState('');
-    const [stockNum, setStockNum] = useState('');
+    const [address, setAddress] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
-    const addProduct = async () => {
+    const updateMember = async () => {
         // const response = await fetch('/exercises', {
         //     method: 'POST',
         //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
@@ -19,7 +19,7 @@ export const AddProductPage = () => {
         //     },
         // });
         // if (response.status === 200){
-        //     alert('Added exercise!');
+        //     alert('updateed exercise!');
         // } else {
         //     alert(`Oops, exercise creation failed!`);
         // }
@@ -30,8 +30,8 @@ export const AddProductPage = () => {
         <div>
 
         <header>
-            <h1>Add a product</h1>
-            <p>Add a product on this page.</p>
+            <h1>update a member</h1>
+            <p>update a member on this page.</p>
         </header>
         <Navigation />
         <div>
@@ -42,27 +42,26 @@ export const AddProductPage = () => {
                 onChange={e => setName(e.target.value)} />
             <input
                 type="text"
-                placeholder="Enter price here"
-                value={price}
-                onChange={e => setPrice(e.target.value)} />
-            <select id='season' name='season' onChange={e => setSeason(e.target.value)}>
-                <option value='YEAR'>YEAR</option>
-                <option value='SPRING'>SPRING</option>
-                <option value='SUMMER'>SUMMER</option>
-                <option value='FALL'>FALL</option>
-            </select>
+                placeholder="Enter address here"
+                value={address}
+                onChange={e => setAddress(e.target.value)} />
             <input
                 type="text"
-                placeholder="Enter wage here"
-                value={stockNum}
-                onChange={e => setStockNum(e.target.value)} />
+                placeholder="Enter email here"
+                value={email}
+                onChange={e => setEmail(e.target.value)} />
+            <input
+                type="text"
+                placeholder="Enter phone number here"
+                value={phone}
+                onChange={e => setPhone(e.target.value)} />
             <button
-                onClick={addProduct}
-            >Add</button>
+                onClick={updateMember}
+            >update</button>
         </div>
         <Footer />
         </div>
     );
 }
 
-export default AddProductPage;
+export default UpdateMemberPage;

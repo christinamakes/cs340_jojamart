@@ -12,8 +12,65 @@ code {
     monospace;
 }
 
-#achievements {
-  text-align: left;
+table {
   margin: auto;
+  border: 1px solid black;
+  top: .1em;
 }
 
+th {
+  margin: 1em;
+  padding: .5em;
+  border-bottom: 2px dotted black;
+  text-align: center;
+}
+
+th, td {
+  border-right: 2px dotted black;
+  padding: .4em;
+}
+
+tbody {
+  border: 5px solid black;
+}
+
+.click {
+  border: none;
+}
+
+.links {
+  margin: 1em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+}
+
+.all, .add, .update {
+  padding: .5em;
+  width: 95%;
+}
+
+.home {
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  width: fit-content;
+  top: 1em;
+  padding: 1em;
+}
+
+.back {
+  padding: 1em
+}
+
+input, select {
+  padding: 1em;
+  margin: .2em;
+}

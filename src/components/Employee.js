@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { Link} from 'react-router-dom'
 
 function Employee({ employee, onDelete, onEdit }) {
     return (
@@ -9,8 +10,8 @@ function Employee({ employee, onDelete, onEdit }) {
             <td>{employee.email}</td>
             <td>{employee.phone}</td>
             <td>{employee.wage}</td>
-            <td className='click'>< AiOutlineEdit onClick={null} /></td>
-            <td className='click'>< AiOutlineDelete onClick={null} /></td>
+            <td className='click'><Link to="/update-employee"><AiOutlineEdit onClick={null} /></Link></td>
+            <td className='click'><Link to="/delete-employee"><AiOutlineDelete onClick={null} /></Link></td>
         </tr>
     );
 }
