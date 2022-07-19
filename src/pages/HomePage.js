@@ -13,7 +13,7 @@ function HomePage() {
             </header>
             <Navigation />
             <div>
-                <p>hello</p>
+                <p>This is the front end implementation of our database app. The tables are filled with sample data, and the forms are placeholders. Nothing except for navigation is fully functional, it is simply there to demonstrate how the app will look.</p>
             </div>
         <Footer />
         </div>
