@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link} from 'react-router-dom';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
@@ -7,7 +6,7 @@ import Navigation from '../components/NavBar';
 export const UpdateProductPage = () => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
-    const [season, setSeason] = useState('');
+    const [setSeason] = useState('');
     const [stockNum, setStockNum] = useState('');
 
     const updateProduct = async () => {

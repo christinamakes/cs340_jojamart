@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+// import { useState, useEffect } from 'react';
+// import { useHistory, Link } from 'react-router-dom';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
