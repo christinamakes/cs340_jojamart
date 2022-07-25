@@ -8,8 +8,9 @@ function DeleteMemberPage() {
     return (
         <div>
             <header>
+                <h1>Delete a Member</h1>
+                <Navigation />
             </header>
-            <Navigation />
             <div>
                 <p>Item will be deleted</p>
                 <Link to="/members"><button className='back'>go back</button></Link>

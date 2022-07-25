@@ -8,8 +8,9 @@ function DeleteEmployeePage() {
     return (
         <div>
             <header>
+                <h1>Delete an Employee</h1>
+                <Navigation />
             </header>
-            <Navigation />
             <div>
                 <p>Item will be deleted</p>
                 <Link to="/employees"><button className='back'>go back</button></Link>

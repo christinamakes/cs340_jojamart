@@ -3,8 +3,10 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import SeasonsList from '../components/SeasonsList';
+import { Link } from 'react-router-dom';
 
 function SeasonsPage() {
+    // Data hardcoded for now, dynamic later
     const seaList = [{'code':'YEAR','description':'Product sold year-round'},
     {'code':'SPRING','description':'Product sold Mar-May'},
     {'code':'SUMMER','description':'Product sold Jun-Aug'},
@@ -13,12 +15,19 @@ function SeasonsPage() {
         <div>
             <header>
                 <h1>All JojaMart Seasons</h1>
+                <Navigation />
             </header>
-            <Navigation />
             <div>
                 <p>hello these are our seasons</p>
             </div>
             <SeasonsList seasons={seaList}/>
+            <div className='add'>
+                <ul>
+                    <li>
+                        <Link to="/add-season"><button className='add'>Add season</button></Link>
+                    </li>
+                </ul>
+            </div>
             <Footer />
         </div>
     );

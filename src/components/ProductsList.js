@@ -7,11 +7,11 @@ function ProductsList({ products, onDelete, onEdit }) {
         <table id="products">
             <thead>
                 <tr>
-                    <th>product_id</th>
-                    <th>product_name</th>
-                    <th>product_price</th>
-                    <th>season_code</th>
-                    <th>number_in_stock</th>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Season Code</th>
+                    <th># in Stock</th>
                 </tr>
             </thead>
             <tbody>

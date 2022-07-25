@@ -7,11 +7,11 @@ function MembersList({ members, onDelete, onEdit }) {
         <table id="members">
             <thead>
                 <tr>
-                    <th>member_id</th>
-                    <th>member_name</th>
-                    <th>member_address</th>
-                    <th>member_email</th>
-                    <th>member_phone</th>
+                    <th>Member ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                 </tr>
             </thead>
             <tbody>

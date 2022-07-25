@@ -7,11 +7,11 @@ function EmployeesList({ employees, onDelete, onEdit }) {
         <table id="employees">
             <thead>
                 <tr>
-                    <th>employee_id</th>
-                    <th>employee_name</th>
-                    <th>employee_email</th>
-                    <th>employee_phone_number</th>
-                    <th>employee_hourly_wage</th>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Hourly Wage</th>
                 </tr>
             </thead>
             <tbody>

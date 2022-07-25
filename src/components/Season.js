@@ -7,8 +7,6 @@ function Season({ season, onDelete, onEdit }) {
         <tr>
             <td>{season.code}</td>
             <td>{season.description}</td>
-            <td className='click'><Link to="/update-season"><AiOutlineEdit onClick={null} /></Link></td>
-            <td className='click'><Link to="/delete-season"><AiOutlineDelete onClick={null} /></Link></td>
         </tr>
     );
 }

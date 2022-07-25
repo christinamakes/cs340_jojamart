@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
+import SalesList from '../components/SalesList';
 
 export const UpdateSalePage = () => {
     const [member, setMember] = useState('');
@@ -25,33 +26,44 @@ export const UpdateSalePage = () => {
         // history.push("/");
     };
 
+    const saleList = [{'id': 1,'member':'2', 'employee': '3', 'date':'2022-03-07', 'total': '225'}]
+
     return (
         <div>
-
         <header>
             <h1>update a sale</h1>
             <p>update a sale on this page.</p>
+            <Navigation />
         </header>
-        <Navigation />
         <div>
+            <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
+            <SalesList sales={saleList}></SalesList>
+        </div>
+        <div>
+        <label for='uSaleMember'>Member ID: </label>
+            <select id='uSaleMember' name='member' onChange={e => setMember(e.target.value)}>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+            </select>
+            <label for='uSaleEmployee'>Employee ID: </label>
+            <select id='uSaleEmployee' name='employee' onChange={e => setEmployee(e.target.value)}>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+            </select>
+            <label for='uSaleDate'>Date: </label>
             <input
+                id='uSaleDate'
                 type="text"
-                placeholder="Enter member here"
-                value={member}
-                onChange={e => setMember(e.target.value)} />
-            <input
-                type="text"
-                placeholder="Enter employee here"
-                value={employee}
-                onChange={e => setEmployee(e.target.value)} />
-            <input
-                type="text"
-                placeholder="Enter date here"
+                placeholder="Update date here"
                 value={date}
                 onChange={e => setDate(e.target.value)} />
+            <label for='uSaleTotal'>Invoice Total: </label>
             <input
+                id='uSaleTotal'
                 type="text"
-                placeholder="Enter total here"
+                placeholder="Update total here"
                 value={total}
                 onChange={e => setTotal(e.target.value)} />
             <button

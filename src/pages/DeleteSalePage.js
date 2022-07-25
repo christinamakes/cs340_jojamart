@@ -8,8 +8,9 @@ function DeleteSalePage() {
     return (
         <div>
             <header>
+                <h1>Delete a Sale</h1>
+                <Navigation />
             </header>
-            <Navigation />
             <div>
                 <p>Item will be deleted</p>
                 <Link to="/sales"><button className='back'>go back</button></Link>

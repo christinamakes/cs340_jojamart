@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
+import EmployeesList from '../components/EmployeesList';
 
 export const UpdateEmployeePage = () => {
     const [name, setName] = useState('');
@@ -25,33 +26,47 @@ export const UpdateEmployeePage = () => {
         // history.push("/");
     };
 
+    const empList = [{'name':'Morris','email':'morris@joja.co', 'phone': '555-666-7777', 'wage':'9999','id':1}]
+
     return (
         <div>
 
         <header>
             <h1>update an employee</h1>
             <p>update an employee on this page.</p>
+            <Navigation />
         </header>
-        <Navigation />
         <div>
+            <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
+            <EmployeesList employees={empList}></EmployeesList>
+        </div>
+        <div>
+        <label for='uEmpName'>Name: </label>
             <input
+                id='uEmpName'
                 type="text"
-                placeholder="Enter name here"
+                placeholder="Update name here"
                 value={name}
                 onChange={e => setName(e.target.value)} />
+            <label for='uEmpEmail'>Email: </label>
             <input
+                id='uEmpEmail'
                 type="text"
-                placeholder="Enter email here"
+                placeholder="Update email here"
                 value={email}
                 onChange={e => setEmail(e.target.value)} />
+            <label for='uEmpPhone'>Phone Number: </label>
             <input
+                id='uEmpPhone'
                 type="text"
-                placeholder="Enter phone number here"
+                placeholder="Update phone number here"
                 value={phone}
                 onChange={e => setPhone(e.target.value)} />
+            <label for='uEmpWage'>Hourly Wage: </label>
             <input
+                id='uEmpWage'
                 type="text"
-                placeholder="Enter wage here"
+                placeholder="Update wage here"
                 value={wage}
                 onChange={e => setWage(e.target.value)} />
             <button

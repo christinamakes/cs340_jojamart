@@ -18,14 +18,10 @@ import UpdateMemberPage from './pages/UpdateMemberPage';
 import UpdateEmployeePage from './pages/UpdateEmployeePage';
 import UpdateProductPage from './pages/UpdateProductPage';
 import UpdateSalePage from './pages/UpdateSalePage';
-import UpdateSeasonPage from './pages/UpdateSeasonPage';
-import UpdateAchievementPage from './pages/UpdateAchievementPage';
 import DeleteMemberPage from './pages/DeleteMemberPage';
 import DeleteEmployeePage from './pages/DeleteEmployeePage';
 import DeleteProductPage from './pages/DeleteProductPage';
 import DeleteSalePage from './pages/DeleteSalePage';
-import DeleteSeasonPage from './pages/DeleteSeasonPage';
-import DeleteAchievementPage from './pages/DeleteAchievementPage';
 
 // import {useState} from 'react';
 
@@ -53,14 +49,10 @@ function App() {
             <Route path='/update-employee' element={<UpdateEmployeePage />}/>
             <Route path='/update-product' element={<UpdateProductPage />}/>
             <Route path='/update-sale' element={<UpdateSalePage />}/>
-            <Route path='/update-season' element={<UpdateSeasonPage />}/>
-            <Route path='/update-achievement' element={<UpdateAchievementPage />}/>
             <Route path="/delete-member" element={<DeleteMemberPage />}/>
             <Route path='/delete-employee' element={<DeleteEmployeePage />}/>
             <Route path='/delete-product' element={<DeleteProductPage />}/>
             <Route path='/delete-sale' element={<DeleteSalePage />}/>
-            <Route path='/delete-season' element={<DeleteSeasonPage />}/>
-            <Route path='/delete-achievement' element={<DeleteAchievementPage />}/>
         </Routes>
       </div>
     </Router>

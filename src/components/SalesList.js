@@ -7,11 +7,11 @@ function SalesList({ sales, onDelete, onEdit }) {
         <table id="sales">
             <thead>
                 <tr>
-                    <th>order_number</th>
-                    <th>member_id</th>
-                    <th>employee_id</th>
-                    <th>purchase_date</th>
-                    <th>invoice_total</th>
+                    <th>Order Number</th>
+                    <th>Member ID</th>
+                    <th>Employee ID</th>
+                    <th>Purchase Date</th>
+                    <th>Invoice Total</th>
                 </tr>
             </thead>
             <tbody>

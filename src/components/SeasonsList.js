@@ -7,8 +7,8 @@ function SeasonsList({ seasons, onDelete, onEdit }) {
         <table id="seasons">
             <thead>
                 <tr>
-                    <th>season_code</th>
-                    <th>description</th>
+                    <th>Season Code</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>

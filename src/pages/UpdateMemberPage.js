@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
+import MembersList from '../components/MembersList';
 
 export const UpdateMemberPage = () => {
     const [name, setName] = useState('');
@@ -25,33 +26,47 @@ export const UpdateMemberPage = () => {
         // history.push("/");
     };
 
+    const memList = [{'name':'Carl','address':'123 Rooster Drive', 'email': 'carl@stardew.com', 'phone':'999-999-9999','id':1}]
+
     return (
         <div>
 
         <header>
             <h1>update a member</h1>
             <p>update a member on this page.</p>
+            <Navigation />
         </header>
-        <Navigation />
         <div>
+            <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
+            <MembersList members={memList}></MembersList>
+        </div>
+        <div>
+        <label for='uMemName'>Name: </label>
             <input
+                id='uMemName'
                 type="text"
-                placeholder="Enter name here"
+                placeholder="Update name here"
                 value={name}
                 onChange={e => setName(e.target.value)} />
+            <label for='uMemAdd'>Address: </label>
             <input
+                id='uMemAdd'
                 type="text"
-                placeholder="Enter address here"
+                placeholder="Update address here"
                 value={address}
                 onChange={e => setAddress(e.target.value)} />
+            <label for='uMemEmail'>Email: </label>
             <input
+                id='uMemEmail'
                 type="text"
-                placeholder="Enter email here"
+                placeholder="Update email here"
                 value={email}
                 onChange={e => setEmail(e.target.value)} />
+            <label for='uMemPhone'>Phone Number: </label>
             <input
+                id='uMemPhone'
                 type="text"
-                placeholder="Enter phone number here"
+                placeholder="Update phone number here"
                 value={phone}
                 onChange={e => setPhone(e.target.value)} />
             <button

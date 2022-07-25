@@ -28,16 +28,20 @@ export const AddAchievementPage = () => {
 
         <header>
             <h1>Add an achievement</h1>
-            <p>Add an achievement on this page</p>
+            <Navigation />
         </header>
-        <Navigation />
         <div>
+            <p>Add an achievement on this page</p>
+            <label for='addTitle'>Title: </label>
             <input
+                id='addTitle'
                 type="text"
                 placeholder="Enter achievement title"
                 value={title}
                 onChange={e => setTitle(e.target.value)} />
+            <label for='addDesc'>Description: </label>
             <input
+                id='addDesc'
                 type="textarea"
                 placeholder="Enter criteria here"
                 value={criteria}

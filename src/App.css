@@ -1,38 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-family: 'Press Start 2P', cursive;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+table {
+  margin: auto;
+  margin-bottom: 1em;
+  border: 1px solid black;
+  top: .1em;
+}
+
+th {
+  margin: 1em;
+  padding: .5em;
+  border-bottom: 2px dotted black;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+th, td {
+  border-right: 2px dotted black;
+  padding: .4em;
+}
+
+tbody {
+  border: 5px solid black;
+}
+
+.click {
+  border: none;
+}
+
+.links {
+  margin: 1em;
+}
+
+header {
+  border-bottom: 3px dotted black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+}
+
+button {
+  padding: 1em;
+}
+
+label {
+  padding-left: .5em;
+}
+
+.all, .add, .update {
+  padding: .5em;
+  width: 95%;
+  margin: auto;
+}
+
+.home {
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: left;
+  width: fit-content;
+  top: .5em;
+  left: .5em;
+  padding: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.back {
+  padding: 1em
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input, select {
+  padding: 1em;
+  margin: .2em;
 }

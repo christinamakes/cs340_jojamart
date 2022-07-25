@@ -19,16 +19,6 @@ export const Navigation = () => {
                     <li><Link to="/seasons"><button className='all'>View all seasons</button></Link></li>
                 </ul>
             </div>
-            <div className='add'>
-                <ul>
-                <li><Link to="/add-member"><button className='add'>Add member</button></Link></li>
-                <li><Link to="/add-employee"><button className='add'>Add employee</button></Link></li>
-                <li><Link to="/add-product"><button className='add'>Add product</button></Link></li>
-                <li><Link to="/add-sale"><button className='add'>Add sale</button></Link></li>
-                <li><Link to="/add-achievement"><button className='add'>Add achievement</button></Link></li>
-                <li><Link to="/add-season"><button className='add'>Add season</button></Link></li>
-                </ul>
-            </div>
         </nav>
     );
 };

@@ -30,27 +30,34 @@ export const AddProductPage = () => {
 
         <header>
             <h1>Add a product</h1>
-            <p>Add a product on this page.</p>
+            <Navigation />
         </header>
-        <Navigation />
         <div>
+            <p>Add a product on this page.</p>
+            <label for='prodName'>Name: </label>
             <input
+                id='prodName'
                 type="text"
                 placeholder="Enter name here"
                 value={name}
                 onChange={e => setName(e.target.value)} />
+            <label for='prodPrice'>Price: </label>
             <input
+                id='prodPrice'
                 type="text"
                 placeholder="Enter price here"
                 value={price}
                 onChange={e => setPrice(e.target.value)} />
-            <select id='season' name='season' onChange={e => setSeason(e.target.value)}>
+            <label for='prodSea'>Season Code: </label>
+            <select id='prodSea' name='season' onChange={e => setSeason(e.target.value)}>
                 <option value='YEAR'>YEAR</option>
                 <option value='SPRING'>SPRING</option>
                 <option value='SUMMER'>SUMMER</option>
                 <option value='FALL'>FALL</option>
             </select>
+            <label for='prodStock'>Number in Stock: </label>
             <input
+                id='prodStock'
                 type="text"
                 placeholder="Enter number in stock"
                 value={stockNum}

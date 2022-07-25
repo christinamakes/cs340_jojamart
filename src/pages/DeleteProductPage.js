@@ -8,8 +8,9 @@ function DeleteProductPage() {
     return (
         <div>
             <header>
+                <h1>Delete a Product</h1>
+                <Navigation />
             </header>
-            <Navigation />
             <div>
                 <p>Item will be deleted</p>
                 <Link to="/products"><button className='back'>go back</button></Link>

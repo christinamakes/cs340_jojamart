@@ -30,16 +30,20 @@ export const AddSeasonPage = () => {
 
         <header>
             <h1>Add a season</h1>
-            <p>Add a season on this page.</p>
+            <Navigation />
         </header>
-        <Navigation />
         <div>
+            <p>Add a season on this page.</p>
+            <label for='seaCode'>Season Code: </label>
             <input
+                id='seaCode'
                 type="text"
-                placeholder="Enter season here"
+                placeholder="Enter Season Code here"
                 value={code}
                 onChange={e => setSeason(e.target.value)} />
+            <label for='seaDesc'>Description: </label>
             <input
+                id='seaDesc'
                 type="text"
                 placeholder="Enter description here"
                 value={description}

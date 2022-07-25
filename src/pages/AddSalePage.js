@@ -31,26 +31,32 @@ export const AddSalePage = () => {
 
         <header>
             <h1>Add a sale</h1>
-            <p>Add a sale on this page.</p>
+            <Navigation />
         </header>
-        <Navigation />
         <div>
+            <p>Add a sale on this page.</p>
+            <label for='saleMember'>Member ID: </label>
+            <select id='saleMember' name='member' onChange={e => setMember(e.target.value)}>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+            </select>
+            <label for='saleEmployee'>Employee ID: </label>
+            <select id='saleEmployee' name='employee' onChange={e => setEmployee(e.target.value)}>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+            </select>
+            <label for='saleDate'>Date: </label>
             <input
-                type="text"
-                placeholder="Enter member here"
-                value={member}
-                onChange={e => setMember(e.target.value)} />
-            <input
-                type="text"
-                placeholder="Enter employee here"
-                value={employee}
-                onChange={e => setEmployee(e.target.value)} />
-            <input
+                id='saleDate'
                 type="text"
                 placeholder="Enter date here"
                 value={date}
                 onChange={e => setDate(e.target.value)} />
+            <label for='saleTotal'>Invoice Total: </label>
             <input
+                id='saleTotal'
                 type="text"
                 placeholder="Enter total here"
                 value={total}
