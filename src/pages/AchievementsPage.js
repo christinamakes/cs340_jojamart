@@ -4,8 +4,8 @@ import React from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import AchievementsList from '../components/AchievementsList';
 import { Link } from 'react-router-dom';
+import Search from '../components/AchievementSearchbar';
 
 function AchievementsPage() {
     // Data hardcoded for now, dynamic later
@@ -20,7 +20,8 @@ function AchievementsPage() {
             <div>
                 <p>hello these are our achievements</p>
             </div>
-            <AchievementsList achievements={achList}/>
+            {/* <AchievementsList achievements={achList}/> */}
+            <Search details={achList} />
             <div className='add'>
                 <ul>
                     <li>
