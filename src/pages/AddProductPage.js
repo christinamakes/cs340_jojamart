@@ -6,7 +6,7 @@ import Navigation from '../components/NavBar';
 export const AddProductPage = () => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
-    const [setSeason] = useState('');
+    const [season, setSeason] = useState('');
     const [stockNum, setStockNum] = useState('');
 
     const addProduct = async () => {

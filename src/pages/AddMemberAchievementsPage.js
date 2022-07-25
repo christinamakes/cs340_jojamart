@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddMemberAchievementPage = () => {
-    const [title, setAchievement] = useState('');
-    const [criteria, setMember] = useState('');
+    const [achievementId, setAchievementId] = useState('');
+    const [memberId, setMemberId] = useState('');
 
     const addMemberAchievement = async () => {
         // const response = await fetch('/exercises', {
@@ -33,13 +33,13 @@ export const AddMemberAchievementPage = () => {
         <div>
             <p>Add a member achievement on this page</p>
             <label for='memAchA'>Achievement ID: </label>
-            <select id='memAchA' name='achievementId' onChange={e => setAchievement(e.target.value)}>
+            <select id='memAchA' name='achievementId' onChange={e => setAchievementId(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
             </select>
             <label for='memAchM'>Member ID: </label>
-            <select id='memAchM' name='memberId' onChange={e => setMember(e.target.value)}>
+            <select id='memAchM' name='memberId' onChange={e => setMemberId(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>

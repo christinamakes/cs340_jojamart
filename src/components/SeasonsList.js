@@ -2,7 +2,7 @@ import React from 'react';
 import Season from './Season';
 
 
-function SeasonsList({ seasons, onDelete, onEdit }) {
+function SeasonsList({ seasons }) {
     return (
         <table id="seasons">
             <thead>
@@ -13,8 +13,6 @@ function SeasonsList({ seasons, onDelete, onEdit }) {
             </thead>
             <tbody>
                 {seasons.map((season, i) => <Season season={season}
-                    onDelete={onDelete}
-                    onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>

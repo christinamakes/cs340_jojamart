@@ -2,7 +2,7 @@ import React from 'react';
 import Achievement from './Achievement';
 
 
-function AchievementList({ achievements, onDelete, onEdit }) {
+function AchievementList({ achievements}) {
     return (
         <table id="achievements">
             <thead>
@@ -14,8 +14,6 @@ function AchievementList({ achievements, onDelete, onEdit }) {
             </thead>
             <tbody>
                 {achievements.map((achievement, i) => <Achievement achievement={achievement}
-                    onDelete={onDelete}
-                    onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>

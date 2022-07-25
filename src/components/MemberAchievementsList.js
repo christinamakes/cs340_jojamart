@@ -4,7 +4,7 @@ import MemberAchievement from './MemberAchievement';
 
 function MemberAchievementsList({ memberAchievements, onDelete, onEdit }) {
     return (
-        <table id="achievements">
+        <table id="memAch">
             <thead>
                 <tr>
                     <th>Member-Achievement ID</th>

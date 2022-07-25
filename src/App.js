@@ -9,6 +9,7 @@ import SalesPage from './pages/SalesPage';
 import SeasonsPage from './pages/SeasonsPage';
 import AchievementsPage from './pages/AchievementsPage';
 import MemberAchievementsPage from './pages/MemberAchievementsPage';
+import SalesDetailsPage from './pages/SalesDetailsPage';
 import AddEmployeePage from './pages/AddEmployeePage';
 import AddMemberPage from './pages/AddMemberPage';
 import AddProductPage from './pages/AddProductPage';
@@ -60,7 +61,7 @@ function App() {
             <Route path='/delete-sale' element={<DeleteSalePage />}/>
             <Route path='/delete-member-achievement' element={<DeleteMemberAchievementPage />}/>
 
-            <Route path='/sales-details' element={<AchievementsPage />}/>
+            <Route path='/sales-details' element={<SalesDetailsPage />}/>
             <Route path='/add-sales-detail' element={<AddEmployeePage />}/>
         </Routes>
       </div>

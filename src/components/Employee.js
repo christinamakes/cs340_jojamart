@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { Link} from 'react-router-dom'
 
-function Employee({ employee, onDelete, onEdit }) {
+function Employee({ employee}) {
     return (
         <tr>
             <td>{employee.id}</td>

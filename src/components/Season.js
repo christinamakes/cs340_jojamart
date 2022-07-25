@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import {Link} from 'react-router-dom'
 
-function Season({ season, onDelete, onEdit }) {
+function Season({ season}) {
     return (
         <tr>
             <td>{season.code}</td>

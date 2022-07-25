@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Achievement({ achievement, onDelete, onEdit }) {
+function Achievement({ achievement}) {
     return (
         <tr>
             <td>{achievement.id}</td>
