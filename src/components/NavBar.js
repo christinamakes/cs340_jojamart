@@ -17,6 +17,9 @@ export const Navigation = () => {
                     <li><Link to="/sales"><button className='all'>View all sales</button></Link></li>
                     <li><Link to="/achievements"><button className='all'>View all achievements</button></Link></li>
                     <li><Link to="/seasons"><button className='all'>View all seasons</button></Link></li>
+
+                    <li><Link to="/member-achievements"><button className='all'>View all Member Achievements</button></Link></li>
+                    <li><Link to="/seasons"><button className='all'>View all seasons</button></Link></li>
                 </ul>
             </div>
         </nav>
