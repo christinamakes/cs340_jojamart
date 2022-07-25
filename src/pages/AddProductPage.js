@@ -52,7 +52,7 @@ export const AddProductPage = () => {
             </select>
             <input
                 type="text"
-                placeholder="Enter wage here"
+                placeholder="Enter number in stock"
                 value={stockNum}
                 onChange={e => setStockNum(e.target.value)} />
             <button
