@@ -95,3 +95,7 @@ input, select {
   padding: 1em;
   margin: .2em;
 }
+
+.searchbar {
+  margin-bottom: 1em;
+}

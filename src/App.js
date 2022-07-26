@@ -22,6 +22,7 @@ import UpdateMemberPage from './pages/UpdateMemberPage';
 import UpdateEmployeePage from './pages/UpdateEmployeePage';
 import UpdateProductPage from './pages/UpdateProductPage';
 import UpdateSalePage from './pages/UpdateSalePage';
+import UpdateSalesDetailsPage from './pages/UpdateSalesDetailsPage';
 import DeleteMemberPage from './pages/DeleteMemberPage';
 import DeleteEmployeePage from './pages/DeleteEmployeePage';
 import DeleteProductPage from './pages/DeleteProductPage';
@@ -58,6 +59,7 @@ function App() {
             <Route path='/update-employee' element={<UpdateEmployeePage />}/>
             <Route path='/update-product' element={<UpdateProductPage />}/>
             <Route path='/update-sale' element={<UpdateSalePage />}/>
+            <Route path='/update-sales-details' element={<UpdateSalesDetailsPage />}/>
             <Route path="/delete-member" element={<DeleteMemberPage />}/>
             <Route path='/delete-employee' element={<DeleteEmployeePage />}/>
             <Route path='/delete-product' element={<DeleteProductPage />}/>

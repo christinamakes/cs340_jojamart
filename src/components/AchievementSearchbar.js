@@ -33,10 +33,11 @@ function Search({ details }) {
   return (
     <section>
       <div>
-        <h2>Search by achievement title or criteria</h2>
       </div>
       <div className="searchbar">
+        <label for='achSearch'>Search by achievement title or criteria:</label>
         <input 
+          id='achSearch'
           className="search"
           type = "search" 
           placeholder = "Search" 

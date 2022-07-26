@@ -33,9 +33,9 @@ export const UpdateProductPage = () => {
 
         <header>
             <h1>update a product</h1>
-            <p>update a product on this page.</p>
             <Navigation />
         </header>
+        <p>update a product on this page.</p>
         <div>
             <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
             <ProductsList products={prodList}></ProductsList>

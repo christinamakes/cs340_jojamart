@@ -32,9 +32,9 @@ export const UpdateSalePage = () => {
         <div>
         <header>
             <h1>update a sale</h1>
-            <p>update a sale on this page.</p>
             <Navigation />
         </header>
+        <p>update a sale on this page.</p>
         <div>
             <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
             <SalesList sales={saleList}></SalesList>
