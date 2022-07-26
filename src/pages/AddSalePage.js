@@ -43,6 +43,7 @@ export const AddSalePage = () => {
             </select>
             <label for='saleEmployee'>Employee ID: </label>
             <select id='saleEmployee' name='employee' onChange={e => setEmployee(e.target.value)}>
+                <option value='None'>N/A</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
