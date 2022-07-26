@@ -2,7 +2,7 @@ import React from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import ProductsList from '../components/ProductsList';
+import ProductSearch from '../components/ProductSearch';
 import { Link } from 'react-router-dom';
 
 function ProductsPage() {
@@ -19,7 +19,7 @@ function ProductsPage() {
             <div>
                 <p>hello these are our products</p>
             </div>
-            <ProductsList products={prodList}/>
+            <ProductSearch details={prodList} />
             <div className='add'>
                 <ul>
                     <li>

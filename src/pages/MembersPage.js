@@ -2,7 +2,7 @@ import React from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import MembersList from '../components/MembersList';
+import MemberSearch from '../components/MemberSearch';
 import { Link } from 'react-router-dom';
 
 function MembersPage() {
@@ -19,7 +19,7 @@ function MembersPage() {
             <div>
                 <p>hello these are our members</p>
             </div>
-            <MembersList members={memList}/>
+            <MemberSearch details={memList} />
             <div className='add'>
                 <ul>
                     <li>

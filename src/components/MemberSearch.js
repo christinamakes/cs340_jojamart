@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import AchievementsList from './AchievementsList';
+import MembersList from './MembersList';
 
-function AchievementSearch({ details }) {
+function MemberSearch({ details }) {
 
   const [searchField, setSearchField] = useState("");
 
@@ -9,11 +9,19 @@ function AchievementSearch({ details }) {
     data => {
       return (
         data
-        .title
+        .name
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .criteria
+        .email
+        .toLowerCase()
+        .includes(searchField.toLowerCase()) ||
+        data
+        .phone
+        .toLowerCase()
+        .includes(searchField.toLowerCase()) ||
+        data
+        .address
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );
@@ -26,7 +34,7 @@ function AchievementSearch({ details }) {
 
   function searchList() {
     return (
-        <AchievementsList achievements={filtered}/>
+        <MembersList members={filtered}/>
     );
   }
 
@@ -35,9 +43,9 @@ function AchievementSearch({ details }) {
       <div>
       </div>
       <div className="searchbar">
-        <label for='achSearch'>Search by achievement title or criteria:</label>
+        <label for='memSearch'>Search by Member name, address, email, or phone number:</label>
         <input 
-          id='achSearch'
+          id='memSearch'
           className="search"
           type = "search" 
           placeholder = "Search" 
@@ -49,4 +57,4 @@ function AchievementSearch({ details }) {
   );
 }
 
-export default AchievementSearch;
+export default MemberSearch;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import EmployeesList from '../components/EmployeesList';
+import EmployeeSearch from '../components/EmployeeSearch';
 import { Link } from 'react-router-dom';
 
 function EmployeesPage() {
@@ -19,7 +19,7 @@ function EmployeesPage() {
             <div>
                 <p>hello these are our employees</p>
             </div>
-            <EmployeesList employees={empList}/>
+            <EmployeeSearch details={empList} />
             <div className='add'>
                 <ul>
                     <li>
