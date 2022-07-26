@@ -5,8 +5,8 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddSalePage = () => {
-    const [member, setMember] = useState('');
-    const [employee, setEmployee] = useState('');
+    const [setMember] = useState('');
+    const [setEmployee] = useState('');
     const [date, setDate] = useState('');
     const [total, setTotal] = useState('');
 

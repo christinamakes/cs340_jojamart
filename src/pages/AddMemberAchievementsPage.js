@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddMemberAchievementPage = () => {
-    const [achievementId, setAchievementId] = useState('');
-    const [memberId, setMemberId] = useState('');
+    const [setAchievementId] = useState('');
+    const [setMemberId] = useState('');
 
     const addMemberAchievement = async () => {
         // const response = await fetch('/exercises', {

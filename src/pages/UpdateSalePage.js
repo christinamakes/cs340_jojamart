@@ -5,8 +5,8 @@ import Navigation from '../components/NavBar';
 import SalesList from '../components/SalesList';
 
 export const UpdateSalePage = () => {
-    const [member, setMember] = useState('');
-    const [employee, setEmployee] = useState('');
+    const [setMember] = useState('');
+    const [setEmployee] = useState('');
     const [date, setDate] = useState('');
     const [total, setTotal] = useState('');
 

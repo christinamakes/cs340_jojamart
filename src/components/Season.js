@@ -1,6 +1,4 @@
 import React from 'react';
-import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
-import {Link} from 'react-router-dom'
 
 function Season({ season}) {
     return (
