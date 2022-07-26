@@ -17,6 +17,7 @@ import AddSalePage from './pages/AddSalePage';
 import AddSeasonPage from './pages/AddSeasonPage';
 import AddAchievementPage from './pages/AddAchievementPage';
 import AddMemberAchievementPage from './pages/AddMemberAchievementsPage';
+import { AddSalesDetailsPage } from './pages/AddSalesDetailsPage';
 import UpdateMemberPage from './pages/UpdateMemberPage';
 import UpdateEmployeePage from './pages/UpdateEmployeePage';
 import UpdateProductPage from './pages/UpdateProductPage';
@@ -62,7 +63,7 @@ function App() {
             <Route path='/delete-member-achievement' element={<DeleteMemberAchievementPage />}/>
 
             <Route path='/sales-details' element={<SalesDetailsPage />}/>
-            <Route path='/add-sales-detail' element={<AddEmployeePage />}/>
+            <Route path='/add-sales-detail' element={<AddSalesDetailsPage />}/>
         </Routes>
       </div>
     </Router>
