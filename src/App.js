@@ -45,6 +45,7 @@ function App() {
             <Route path='/seasons' element={<SeasonsPage />}/>
             <Route path='/achievements' element={<AchievementsPage />}/>
             <Route path='/member-achievements' element={<MemberAchievementsPage />}/>
+            <Route path='/sales-details' element={<SalesDetailsPage />}/>
             <Route path="/add-member" element={<AddMemberPage />}/>
             <Route path='/add-employee' element={<AddEmployeePage />}/>
             <Route path='/add-product' element={<AddProductPage />}/>
@@ -52,6 +53,7 @@ function App() {
             <Route path='/add-season' element={<AddSeasonPage />}/>
             <Route path='/add-achievement' element={<AddAchievementPage />}/>
             <Route path="/add-member-achievement" element={<AddMemberAchievementPage />}/>
+            <Route path='/add-sales-detail' element={<AddSalesDetailsPage />}/>
             <Route path="/update-member" element={<UpdateMemberPage />}/>
             <Route path='/update-employee' element={<UpdateEmployeePage />}/>
             <Route path='/update-product' element={<UpdateProductPage />}/>
@@ -61,9 +63,6 @@ function App() {
             <Route path='/delete-product' element={<DeleteProductPage />}/>
             <Route path='/delete-sale' element={<DeleteSalePage />}/>
             <Route path='/delete-member-achievement' element={<DeleteMemberAchievementPage />}/>
-
-            <Route path='/sales-details' element={<SalesDetailsPage />}/>
-            <Route path='/add-sales-detail' element={<AddSalesDetailsPage />}/>
         </Routes>
       </div>
     </Router>
