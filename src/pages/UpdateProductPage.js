@@ -7,7 +7,7 @@ import ProductsList from '../components/ProductsList';
 export const UpdateProductPage = () => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
-    const [season, setSeason] = useState('');
+    const [setSeason] = useState('');
     const [stockNum, setStockNum] = useState('');
 
     const updateProduct = async () => {
