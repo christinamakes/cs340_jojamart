@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import MemberSearch from '../components/MemberSearch';
@@ -10,12 +9,14 @@ function MembersPage() {
     // Data hardcoded for now, dynamic later
     const [members, setMembers] = useState([])
     
+    // get members from /members
     const loadMembers = async () => {
         const response = await fetch('https://joja-server.herokuapp.com/members');
         const members = await response.json();
         setMembers(members);
     }
 
+    // loadMembers from fetch
     useEffect(() => {
         loadMembers();
     }, []);

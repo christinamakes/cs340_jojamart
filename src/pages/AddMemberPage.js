@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from "react-router-dom";
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddMemberPage = () => {
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('')
 
     const addMember = async () => {
-        // const response = await fetch('/exercises', {
-        //     method: 'POST',
-        //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // });
-        // if (response.status === 200){
-        //     alert('Added exercise!');
-        // } else {
-        //     alert(`Oops, exercise creation failed!`);
-        // }
-        // history.push("/");
+        const response = await fetch('/add-member', {
+            method: 'POST',
+            body: JSON.stringify({name:name, address:address, phone:phone, email:email}),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (response.status !== 200){
+            alert(`Oops, something went wrong!`);
+        }
+        navigate("/members");
     };
 
     return (
