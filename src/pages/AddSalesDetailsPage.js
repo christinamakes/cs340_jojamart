@@ -4,10 +4,10 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddSalesDetailsPage = () => {
-    const [setProductId] = useState('');
-    const [setOrderNumber] = useState('');
+    const [product_id, setProductId] = useState('');
+    const [order_number, setOrderNumber] = useState('');
     const [quantity, setQuantity] = useState('');
-    const [setOrderType] = useState('');
+    const [order_type, setOrderType] = useState('');
 
     const addSalesDetail = async () => {
         // const response = await fetch('/exercises', {
@@ -35,13 +35,13 @@ export const AddSalesDetailsPage = () => {
         <div>
             <p>Add a Sales Details Instance on this page</p>
             <label for='saleDetProd'>Product ID: </label>
-            <select id='saleDetProd' name='productId' onChange={e => setProductId(e.target.value)}>
+            <select id='saleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
             </select>
             <label for='saleDetOrd'>Order Number: </label>
-            <select id='saleDetOrd' name='orderNumber' onChange={e => setOrderNumber(e.target.value)}>
+            <select id='saleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
@@ -54,7 +54,7 @@ export const AddSalesDetailsPage = () => {
                 value={quantity}
                 onChange={e => setQuantity(e.target.value)} />
             <label for='saleDetOrdType'>Order Number: </label>
-            <select id='saleDetOrdType' name='orderNumber' onChange={e => setOrderType(e.target.value)}>
+            <select id='saleDetOrdType' name='order_number' onChange={e => setOrderType(e.target.value)}>
                 <option value='1'>0</option>
                 <option value='2'>1</option>
             </select>

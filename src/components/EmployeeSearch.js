@@ -9,15 +9,15 @@ function EmployeeSearch({ details }) {
     data => {
       return (
         data
-        .name
+        .employee_name
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .email
+        .employee_email
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .phone
+        .employee_phone_number
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );

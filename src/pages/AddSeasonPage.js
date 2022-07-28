@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddSeasonPage = () => {
-    const [code, setSeason] = useState('');
+    const [season_code, setSeason] = useState('');
     const [description, setDescription] = useState('');
 
 
@@ -39,7 +39,7 @@ export const AddSeasonPage = () => {
                 id='seaCode'
                 type="text"
                 placeholder="Enter Season Code here"
-                value={code}
+                value={season_code}
                 onChange={e => setSeason(e.target.value)} />
             <label for='seaDesc'>Description: </label>
             <input

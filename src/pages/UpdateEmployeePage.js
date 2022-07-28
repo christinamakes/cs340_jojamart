@@ -5,10 +5,10 @@ import Navigation from '../components/NavBar';
 import EmployeesList from '../components/EmployeesList';
 
 export const UpdateEmployeePage = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [wage, setWage] = useState('');
+    const [employee_name, setName] = useState('');
+    const [employee_email, setEmail] = useState('');
+    const [employee_phone_number, setPhone] = useState('');
+    const [employee_hourly_wage, setWage] = useState('');
 
     const updateEmployee = async () => {
         // const response = await fetch('/exercises', {
@@ -46,28 +46,28 @@ export const UpdateEmployeePage = () => {
                 id='uEmpName'
                 type="text"
                 placeholder="Update name here"
-                value={name}
+                value={employee_name}
                 onChange={e => setName(e.target.value)} />
             <label for='uEmpEmail'>Email: </label>
             <input
                 id='uEmpEmail'
                 type="text"
                 placeholder="Update email here"
-                value={email}
+                value={employee_email}
                 onChange={e => setEmail(e.target.value)} />
             <label for='uEmpPhone'>Phone Number: </label>
             <input
                 id='uEmpPhone'
                 type="text"
                 placeholder="Update phone number here"
-                value={phone}
+                value={employee_phone_number}
                 onChange={e => setPhone(e.target.value)} />
             <label for='uEmpWage'>Hourly Wage: </label>
             <input
                 id='uEmpWage'
                 type="text"
                 placeholder="Update wage here"
-                value={wage}
+                value={employee_hourly_wage}
                 onChange={e => setWage(e.target.value)} />
             <button
                 onClick={updateEmployee}

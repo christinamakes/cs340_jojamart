@@ -9,19 +9,19 @@ function ProductSearch({ details }) {
     data => {
       return (
         data
-        .name
+        .product_name
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .price
+        .product_price
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .season
+        .season_code
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .stockNum
+        .number_in_stock
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );

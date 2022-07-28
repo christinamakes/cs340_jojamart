@@ -5,10 +5,10 @@ import Navigation from '../components/NavBar';
 import SalesList from '../components/SalesList';
 
 export const UpdateSalePage = () => {
-    const [setMember] = useState('');
-    const [setEmployee] = useState('');
-    const [date, setDate] = useState('');
-    const [total, setTotal] = useState('');
+    const [member_id, setMember] = useState('');
+    const [employee_id, setEmployee] = useState('');
+    const [purchase_date, setDate] = useState('');
+    const [invoice_total, setTotal] = useState('');
 
     const updateSale = async () => {
         // const response = await fetch('/exercises', {
@@ -41,13 +41,13 @@ export const UpdateSalePage = () => {
         </div>
         <div>
         <label for='uSaleMember'>Member ID: </label>
-            <select id='uSaleMember' name='member' onChange={e => setMember(e.target.value)}>
+            <select id='uSaleMember' name='member_id' onChange={e => setMember(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
             </select>
             <label for='uSaleEmployee'>Employee ID: </label>
-            <select id='uSaleEmployee' name='employee' onChange={e => setEmployee(e.target.value)}>
+            <select id='uSaleEmployee' name='employee_id' onChange={e => setEmployee(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
@@ -57,14 +57,14 @@ export const UpdateSalePage = () => {
                 id='uSaleDate'
                 type="text"
                 placeholder="Update date here"
-                value={date}
+                value={purchase_date}
                 onChange={e => setDate(e.target.value)} />
             <label for='uSaleTotal'>Invoice Total: </label>
             <input
                 id='uSaleTotal'
                 type="text"
                 placeholder="Update total here"
-                value={total}
+                value={invoice_total}
                 onChange={e => setTotal(e.target.value)} />
             <button
                 onClick={updateSale}

@@ -5,10 +5,10 @@ import Navigation from '../components/NavBar';
 import ProductsList from '../components/ProductsList';
 
 export const UpdateProductPage = () => {
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
-    const [setSeason] = useState('');
-    const [stockNum, setStockNum] = useState('');
+    const [product_name, setName] = useState('');
+    const [product_price, setPrice] = useState('');
+    const [season_code, setSeason] = useState('');
+    const [number_in_stock, setStockNum] = useState('');
 
     const updateProduct = async () => {
         // const response = await fetch('/exercises', {
@@ -46,17 +46,17 @@ export const UpdateProductPage = () => {
                 id='uProdName'
                 type="text"
                 placeholder="Update name here"
-                value={name}
+                value={product_name}
                 onChange={e => setName(e.target.value)} />
             <label for='uProdPrice'>Price: </label>
             <input
                 id='uProdPrice'
                 type="text"
                 placeholder="Update price here"
-                value={price}
+                value={product_price}
                 onChange={e => setPrice(e.target.value)} />
             <label for='uProdSea'>Season Code: </label>
-            <select id='uProdSea' name='season' onChange={e => setSeason(e.target.value)}>
+            <select id='uProdSea' name='season_code' onChange={e => setSeason(e.target.value)}>
                 <option value='YEAR'>YEAR</option>
                 <option value='SPRING'>SPRING</option>
                 <option value='SUMMER'>SUMMER</option>
@@ -67,7 +67,7 @@ export const UpdateProductPage = () => {
                 id='uProdStock'
                 type="text"
                 placeholder="Update number in stock"
-                value={stockNum}
+                value={number_in_stock}
                 onChange={e => setStockNum(e.target.value)} />
             <button
                 onClick={updateProduct}

@@ -4,10 +4,10 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddProductPage = () => {
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
-    const [setSeason] = useState('');
-    const [stockNum, setStockNum] = useState('');
+    const [product_name, setName] = useState('');
+    const [product_price, setPrice] = useState('');
+    const [season_code, setSeason] = useState('');
+    const [number_in_stock, setStockNum] = useState('');
 
     const addProduct = async () => {
         // const response = await fetch('/exercises', {
@@ -39,17 +39,17 @@ export const AddProductPage = () => {
                 id='prodName'
                 type="text"
                 placeholder="Enter name here"
-                value={name}
+                value={product_name}
                 onChange={e => setName(e.target.value)} />
             <label for='prodPrice'>Price: </label>
             <input
                 id='prodPrice'
                 type="text"
                 placeholder="Enter price here"
-                value={price}
+                value={product_price}
                 onChange={e => setPrice(e.target.value)} />
             <label for='prodSea'>Season Code: </label>
-            <select id='prodSea' name='season' onChange={e => setSeason(e.target.value)}>
+            <select id='prodSea' name='season_code' onChange={e => setSeason(e.target.value)}>
                 <option value='YEAR'>YEAR</option>
                 <option value='SPRING'>SPRING</option>
                 <option value='SUMMER'>SUMMER</option>
@@ -60,7 +60,7 @@ export const AddProductPage = () => {
                 id='prodStock'
                 type="text"
                 placeholder="Enter number in stock"
-                value={stockNum}
+                value={number_in_stock}
                 onChange={e => setStockNum(e.target.value)} />
             <button
                 onClick={addProduct}

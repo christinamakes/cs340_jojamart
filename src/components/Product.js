@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom'
 function Product({ product, onDelete, onEdit }) {
     return (
         <tr>
-            <td>{product.id}</td>
-            <td>{product.name}</td>
-            <td>{product.price}</td>
-            <td>{product.season}</td>
-            <td>{product.stockNum}</td>
+            <td>{product.product_id}</td>
+            <td>{product.product_name}</td>
+            <td>{product.product_price}</td>
+            <td>{product.season_code}</td>
+            <td>{product.number_in_stock}</td>
             <td className='click'><Link to="/update-product"><AiOutlineEdit onClick={null} /></Link></td>
             <td className='click'><Link to="/delete-product"><AiOutlineDelete onClick={null} /></Link></td>
         </tr>
