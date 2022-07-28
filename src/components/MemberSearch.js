@@ -9,19 +9,19 @@ function MemberSearch({ details }) {
     data => {
       return (
         data
-        .name
+        .member_name
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .email
+        .member_email
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .phone
+        .member_phone
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .address
+        .member_address
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );
