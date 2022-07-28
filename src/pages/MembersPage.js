@@ -9,12 +9,9 @@ import { useState, useEffect} from 'react';;
 function MembersPage() {
     // Data hardcoded for now, dynamic later
     const [members, setMembers] = useState([])
-    const memList = [{'name':'Carl','address':'123 Rooster Drive', 'email': 'carl@stardew.com', 'phone':'999-999-9999','id':1},
-    {'name':'Pam','address':'456 Bus Stop Lane', 'email': 'pamthebus@gmail.com', 'phone':'281-111-1111','id':2},
-    {'name':'Farmer','address':'876 Farm Valley', 'email': 'shane4ever@aol.com', 'phone':'888-888-8888','id':3}]
     
     const loadMembers = async () => {
-        const response = await fetch('https://joja-server.herokuapp.com/');
+        const response = await fetch('https://joja-server.herokuapp.com/members');
         const members = await response.json();
         setMembers(members);
     }
