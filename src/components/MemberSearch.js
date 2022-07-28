@@ -17,7 +17,7 @@ function MemberSearch({ details }) {
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .member_phone
+        .member_phone_number
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
