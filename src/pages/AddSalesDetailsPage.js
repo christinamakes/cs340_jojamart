@@ -4,10 +4,10 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddSalesDetailsPage = () => {
-    const [product_id, setProductId] = useState('');
-    const [order_number, setOrderNumber] = useState('');
+    const [setProductId] = useState('');
+    const [setOrderNumber] = useState('');
     const [quantity, setQuantity] = useState('');
-    const [order_type, setOrderType] = useState('');
+    const [setOrderType] = useState('');
 
     const addSalesDetail = async () => {
         // const response = await fetch('/exercises', {
