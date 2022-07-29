@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddMemberPage = () => {
+    const URL = 'https://joja-server.herokuapp.com'
     const navigate = useNavigate();
     const [member_name, setName] = useState('');
     const [member_address, setAddress] = useState('');
@@ -11,7 +12,7 @@ export const AddMemberPage = () => {
     const [member_phone_number, setPhone] = useState('')
 
     const addMember = async () => {
-        const response = await fetch('/add-member', {
+        const response = await fetch(`${URL}/add-member`, {
             method: 'POST',
             body: JSON.stringify({member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
             headers: {
