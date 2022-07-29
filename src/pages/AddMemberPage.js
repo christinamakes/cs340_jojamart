@@ -5,15 +5,15 @@ import Navigation from '../components/NavBar';
 
 export const AddMemberPage = () => {
     const navigate = useNavigate();
-    const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('')
+    const [member_name, setName] = useState('');
+    const [member_address, setAddress] = useState('');
+    const [member_email, setEmail] = useState('');
+    const [member_phone_number, setPhone] = useState('')
 
     const addMember = async () => {
         const response = await fetch('/add-member', {
             method: 'POST',
-            body: JSON.stringify({member_name:name, member_address:address, member_phone_number:phone, member_email:email}),
+            body: JSON.stringify({member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -38,28 +38,28 @@ export const AddMemberPage = () => {
                 id='memName'
                 type="text"
                 placeholder="Enter name here"
-                value={name}
+                value={member_name}
                 onChange={e => setName(e.target.value)} />
             <label for='memAdd'>Address: </label>
             <input
                 id='memAdd'
                 type="text"
                 placeholder="Enter address here"
-                value={address}
+                value={member_address}
                 onChange={e => setAddress(e.target.value)} />
             <label for='memEmail'>Email: </label>
             <input
                 id='memEmail'
                 type="text"
                 placeholder="Enter email here"
-                value={email}
+                value={member_email}
                 onChange={e => setEmail(e.target.value)} />
             <label for='memPhone'>Phone Number: </label>
             <input
                 id='memPhone'
                 type="text"
                 placeholder="Enter phone number here"
-                value={phone}
+                value={member_phone_number}
                 onChange={e => setPhone(e.target.value)} />
             <button
                 onClick={addMember}
