@@ -33,28 +33,28 @@ export const AddMemberPage = () => {
         </header>
         <div>
             <p>Add a member on this page.</p>
-            <label for='memName'>Name: </label>
+            <label htmlFor='memName'>Name: </label>
             <input
                 id='memName'
                 type="text"
                 placeholder="Enter name here"
                 value={member_name}
                 onChange={e => setName(e.target.value)} />
-            <label for='memAdd'>Address: </label>
+            <label htmlFor='memAdd'>Address: </label>
             <input
                 id='memAdd'
                 type="text"
                 placeholder="Enter address here"
                 value={member_address}
                 onChange={e => setAddress(e.target.value)} />
-            <label for='memEmail'>Email: </label>
+            <label htmlFor='memEmail'>Email: </label>
             <input
                 id='memEmail'
                 type="text"
                 placeholder="Enter email here"
                 value={member_email}
                 onChange={e => setEmail(e.target.value)} />
-            <label for='memPhone'>Phone Number: </label>
+            <label htmlFor='memPhone'>Phone Number: </label>
             <input
                 id='memPhone'
                 type="text"

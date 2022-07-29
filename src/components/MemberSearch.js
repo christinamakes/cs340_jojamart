@@ -43,7 +43,7 @@ function MemberSearch({ details, onDelete, onEdit }) {
       <div>
       </div>
       <div className="searchbar">
-        <label for='memSearch'>Search by Member name, address, email, or phone number:</label>
+        <label htmlFor='memSearch'>Search by Member name, address, email, or phone number:</label>
         <input 
           id='memSearch'
           className="search"

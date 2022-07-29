@@ -45,35 +45,35 @@ export const UpdateMemberPage = ({members}) => {
             <MembersList members={memList}></MembersList>
         </div>
         <div>
-        <label for='uMemID'>ID: </label>
+        <label htmlFor='uMemID'>ID: </label>
             <input
                 id='uMemID'
                 type="number"
                 placeholder="Enter ID"
                 value={member_id}
                 onChange={e => setId(e.target.value)} />
-        <label for='uMemName'>Name: </label>
+        <label htmlFor='uMemName'>Name: </label>
             <input
                 id='uMemName'
                 type="text"
                 placeholder="Update name here"
                 value={member_name}
                 onChange={e => setName(e.target.value)} />
-            <label for='uMemAdd'>Address: </label>
+            <label htmlFor='uMemAdd'>Address: </label>
             <input
                 id='uMemAdd'
                 type="text"
                 placeholder="Update address here"
                 value={member_address}
                 onChange={e => setAddress(e.target.value)} />
-            <label for='uMemEmail'>Email: </label>
+            <label htmlFor='uMemEmail'>Email: </label>
             <input
                 id='uMemEmail'
                 type="text"
                 placeholder="Update email here"
                 value={member_email}
                 onChange={e => setEmail(e.target.value)} />
-            <label for='uMemPhone'>Phone Number: </label>
+            <label htmlFor='uMemPhone'>Phone Number: </label>
             <input
                 id='uMemPhone'
                 type="text"
