@@ -1,6 +1,6 @@
 import React from 'react';
-import { AiOutlineEdit } from "react-icons/ai";
-import { Link } from 'react-router-dom'
+// import { AiOutlineEdit } from "react-icons/ai";
+// import { Link } from 'react-router-dom'
 
 function InvoiceView({ invoiceView}) {
     return (

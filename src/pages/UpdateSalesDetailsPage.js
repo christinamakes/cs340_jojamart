@@ -5,10 +5,10 @@ import Navigation from '../components/NavBar';
 import SalesDetailsList from '../components/SalesDetailsList';
 
 export const UpdateSalesDetailsPage = () => {
-    const [product_id, setProductId] = useState('');
-    const [order_number, setOrderNumber] = useState('');
+    const [setProductId] = useState('');
+    const [setOrderNumber] = useState('');
     const [quantity, setQuantity] = useState('');
-    const [order_type, setOrderType] = useState('');
+    const [setOrderType] = useState('');
 
     const updateSalesDetails = async () => {
         // const response = await fetch('/exercises', {
