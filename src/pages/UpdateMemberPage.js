@@ -41,7 +41,7 @@ export const UpdateMemberPage = ({members}) => {
         </header>
         <p>update a member on this page.</p>
         <div>
-            <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
+            <p>This is a sample preview of the member to edit, if these values don't match the row you clicked to update, it is because they are hard-coded. In the final version, this will dynamically show the member you are editing.</p>
             <MembersList members={memList}></MembersList>
         </div>
         <div>
