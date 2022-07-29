@@ -2,20 +2,36 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import MemberSearch from '../components/MemberSearch';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect} from 'react';;
 
-function MembersPage() {
+const URL = 'https://joja-server.herokuapp.com'
+
+function MembersPage({setMemberToEdit}) {
     // Data hardcoded for now, dynamic later
+    const navigate = useNavigate();
     const [members, setMembers] = useState([])
     
     // get members from /members
     const loadMembers = async () => {
-        const response = await fetch('https://joja-server.herokuapp.com/members');
+        const response = await fetch(`${URL}/members`);
         const members = await response.json();
         setMembers(members);
     }
 
+    const onDelete = async (member_id) => {
+        const response = await fetch(`${URL}/delete-member/${member_id}`, {method: 'DELETE'});
+        if (response.status === 200) {
+            setMembers(members.filter(m => m.member_id !== member_id));
+        } else {
+            alert(`Failed to delete member`)
+        }
+    }
+
+    const onEdit = member => {
+        setMemberToEdit(member)
+        navigate('/update-member')
+    }
     // loadMembers from fetch
     useEffect(() => {
         loadMembers();
@@ -30,7 +46,7 @@ function MembersPage() {
             <div>
                 <p>hello these are our members</p>
             </div>
-            <MemberSearch details={members} />
+            <MemberSearch details={members} onDelete={onDelete} onEdit={onEdit}/>
             <div className='add'>
                 <ul>
                     <li>

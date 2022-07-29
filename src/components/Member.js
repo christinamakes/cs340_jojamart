@@ -10,8 +10,8 @@ function Member({ member, onDelete, onEdit }) {
             <td>{member.member_address}</td>
             <td>{member.member_email}</td>
             <td>{member.member_phone_number}</td>
-            <td className='click'><Link to="/update-member"><AiOutlineEdit onClick={null} /></Link></td>
-            <td className='click'><Link to="/delete-member"><AiOutlineDelete onClick={null} /></Link></td>
+            <td className='click'><Link to="/update-member"><AiOutlineEdit onClick={() => onEdit(member)} /></Link></td>
+            <td className='click'><AiOutlineDelete onClick={() => onDelete(member.member_id)} /></td>
         </tr>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MembersList from './MembersList';
 
-function MemberSearch({ details }) {
+function MemberSearch({ details, onDelete }) {
 
   const [searchField, setSearchField] = useState("");
 
@@ -34,7 +34,7 @@ function MemberSearch({ details }) {
 
   function searchList() {
     return (
-        <MembersList members={filtered}/>
+        <MembersList members={filtered} onDelete={onDelete}/>
     );
   }
 

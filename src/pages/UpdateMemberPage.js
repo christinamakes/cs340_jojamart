@@ -4,26 +4,27 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import MembersList from '../components/MembersList';
 
-export const UpdateMemberPage = () => {
-    const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+const URL = 'https://joja-server.herokuapp.com'
+
+export const UpdateMemberPage = ({memberToEdit}) => {
+    const [name, setName] = useState(memberToEdit.member_name);
+    const [address, setAddress] = useState(memberToEdit.member_address);
+    const [email, setEmail] = useState(memberToEdit.member_email);
+    const [phone, setPhone] = useState(memberToEdit.member_phone_number);
 
     const updateMember = async () => {
-        // const response = await fetch('/exercises', {
-        //     method: 'POST',
-        //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // });
-        // if (response.status === 200){
-        //     alert('updateed exercise!');
-        // } else {
-        //     alert(`Oops, exercise creation failed!`);
-        // }
-        // history.push("/");
+        const response = await fetch(`${URL}/update-member`, {
+            method: 'POST',
+            body: JSON.stringify({member_name:name, member_address:address, member_phone_number:phone, member_email:email}),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (response.status === 200){
+            alert('updateed exercise!');
+        } else {
+            alert(`Oops, exercise creation failed!`);
+        }
     };
 
     const memList = [{'name':'Carl','address':'123 Rooster Drive', 'email': 'carl@stardew.com', 'phone':'999-999-9999','id':1}]
