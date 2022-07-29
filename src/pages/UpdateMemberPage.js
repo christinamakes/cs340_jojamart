@@ -6,7 +6,7 @@ import MembersList from '../components/MembersList';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-export const UpdateMemberPage = ({memberToEdit}) => {
+export const UpdateMemberPage = (memberToEdit) => {
     const [name, setName] = useState(memberToEdit.member_name);
     const [address, setAddress] = useState(memberToEdit.member_address);
     const [email, setEmail] = useState(memberToEdit.member_email);
@@ -14,7 +14,7 @@ export const UpdateMemberPage = ({memberToEdit}) => {
 
     const updateMember = async () => {
         const response = await fetch(`${URL}/update-member`, {
-            method: 'POST',
+            method: 'PUT',
             body: JSON.stringify({member_name:name, member_address:address, member_phone_number:phone, member_email:email}),
             headers: {
                 'Content-Type': 'application/json'

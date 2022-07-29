@@ -13,7 +13,7 @@ export const AddMemberPage = () => {
     const addMember = async () => {
         const response = await fetch('/add-member', {
             method: 'POST',
-            body: JSON.stringify({member_name:name, member_address:address, member_phone:phone, member_email:email}),
+            body: JSON.stringify({member_name:name, member_address:address, member_phone_number:phone, member_email:email}),
             headers: {
                 'Content-Type': 'application/json'
             },
