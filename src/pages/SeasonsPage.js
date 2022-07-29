@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 
 function SeasonsPage() {
     // Data hardcoded for now, dynamic later
-    const seaList = [{'code':'YEAR','description':'Product sold year-round'},
-    {'code':'SPRING','description':'Product sold Mar-May'},
-    {'code':'SUMMER','description':'Product sold Jun-Aug'},
-    {'code':'FALL','description':'Product sold Sep-Nov'},]
+    const seaList = [{'season_code':'YEAR','description':'Product sold year-round'},
+    {'season_code':'SPRING','description':'Product sold Mar-May'},
+    {'season_code':'SUMMER','description':'Product sold Jun-Aug'},
+    {'season_code':'FALL','description':'Product sold Sep-Nov'},]
     return (
         <div>
             <header>

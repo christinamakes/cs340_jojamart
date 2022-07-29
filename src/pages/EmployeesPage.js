@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 function EmployeesPage() {
     // Data hardcoded for now, dynamic later
-    const empList = [{'name':'Morris','email':'morris@joja.co', 'phone': '555-666-7777', 'wage':'9999','id':1},
-    {'name':'Shane','email':'shane@joja.co', 'phone': '555-888-9999', 'wage':'12','id':2},
-    {'name':'Unnamed Cashier','email':'unnamed@joja.co', 'phone': '555-000-1111', 'wage':'12','id':3}]
+    const empList = [{'employee_name':'Morris','employee_email':'morris@joja.co', 'employee_phone_number': '555-666-7777', 'employee_hourly_wage':'9999','employee_id':1},
+    {'employee_name':'Shane','employee_email':'shane@joja.co', 'employee_phone_number': '555-888-9999', 'employee_hourly_wage':'12','employee_id':2},
+    {'employee_name':'Unnamed Cashier','employee_email':'unnamed@joja.co', 'employee_phone_number': '555-000-1111', 'employee_hourly_wage':'12','employee_id':3}]
     return (
         <div>
             <header>

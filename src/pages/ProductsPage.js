@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 function ProductsPage() {
     // Data hardcoded for now, dynamic later
-    const prodList = [{'name':'Joja Cola','price':'75', 'season': 'YEAR', 'stockNum':'5000','id':1},
-    {'name':'Parsnip Seeds','price':'25', 'season': 'SPRING', 'stockNum':'8000','id':2},
-    {'name':'Cauliflower Seeds','price':'100', 'season': 'SPRING', 'stockNum':'8000','id':3}]
+    const prodList = [{'product_name':'Joja Cola','product_price':'75', 'season_code': 'YEAR', 'number_in_stock':'5000','product_id':1},
+    {'product_name':'Parsnip Seeds','product_price':'25', 'season_code': 'SPRING', 'number_in_stock':'8000','product_id':2},
+    {'product_name':'Cauliflower Seeds','product_price':'100', 'season_code': 'SPRING', 'number_in_stock':'8000','product_id':3}]
     return (
         <div>
             <header>
