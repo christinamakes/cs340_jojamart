@@ -7,15 +7,15 @@ import MembersList from '../components/MembersList';
 const URL = 'https://joja-server.herokuapp.com'
 
 export const UpdateMemberPage = ({memberToEdit}) => {
-    const [name, setName] = useState(memberToEdit.member_name);
-    const [address, setAddress] = useState(memberToEdit.member_address);
-    const [email, setEmail] = useState(memberToEdit.member_email);
-    const [phone, setPhone] = useState(memberToEdit.member_phone_number);
+    const [member_name, setName] = useState(memberToEdit.member_name);
+    const [member_address, setAddress] = useState(memberToEdit.member_address);
+    const [member_email, setEmail] = useState(memberToEdit.member_email);
+    const [member_phone_number, setPhone] = useState(memberToEdit.member_phone_number);
 
     const updateMember = async () => {
         const response = await fetch(`${URL}/update-member`, {
             method: 'POST',
-            body: JSON.stringify({member_name:name, member_address:address, member_phone_number:phone, member_email:email}),
+            body: JSON.stringify({member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -27,7 +27,7 @@ export const UpdateMemberPage = ({memberToEdit}) => {
         }
     };
 
-    const memList = [{'name':'Carl','address':'123 Rooster Drive', 'email': 'carl@stardew.com', 'phone':'999-999-9999','id':1}]
+    const memList = [{'member_name':'Carl','member_address':'123 Rooster Drive', 'member_email': 'carl@stardew.com', 'member_phone_number':'999-999-9999','member_id':1}]
 
     return (
         <div>
@@ -47,28 +47,28 @@ export const UpdateMemberPage = ({memberToEdit}) => {
                 id='uMemName'
                 type="text"
                 placeholder="Update name here"
-                value={name}
+                value={member_name}
                 onChange={e => setName(e.target.value)} />
             <label for='uMemAdd'>Address: </label>
             <input
                 id='uMemAdd'
                 type="text"
                 placeholder="Update address here"
-                value={address}
+                value={member_address}
                 onChange={e => setAddress(e.target.value)} />
             <label for='uMemEmail'>Email: </label>
             <input
                 id='uMemEmail'
                 type="text"
                 placeholder="Update email here"
-                value={email}
+                value={member_email}
                 onChange={e => setEmail(e.target.value)} />
             <label for='uMemPhone'>Phone Number: </label>
             <input
                 id='uMemPhone'
                 type="text"
                 placeholder="Update phone number here"
-                value={phone}
+                value={member_phone_number}
                 onChange={e => setPhone(e.target.value)} />
             <button
                 onClick={updateMember}
