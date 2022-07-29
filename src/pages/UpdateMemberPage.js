@@ -3,25 +3,28 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import MembersList from '../components/MembersList';
+import { useNavigate } from 'react-router-dom';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-export const UpdateMemberPage = ({memberToEdit}) => {
-    const [member_name, setName] = useState(memberToEdit.member_name);
-    const [member_address, setAddress] = useState(memberToEdit.member_address);
-    const [member_email, setEmail] = useState(memberToEdit.member_email);
-    const [member_phone_number, setPhone] = useState(memberToEdit.member_phone_number);
+export const UpdateMemberPage = ({members}) => {
+    const navigate = useNavigate();
+    const [member_name, setName] = useState('');
+    const [member_address, setAddress] = useState('');
+    const [member_email, setEmail] = useState('');
+    const [member_phone_number, setPhone] = useState('');
+    const [member_id, setId] = useState('')
 
     const updateMember = async () => {
         const response = await fetch(`${URL}/update-member`, {
-            method: 'POST',
-            body: JSON.stringify({member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
+            method: 'PUT',
+            body: JSON.stringify({member_id:member_id,member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
             headers: {
                 'Content-Type': 'application/json'
             },
         });
         if (response.status === 200){
-            alert('updateed exercise!');
+            navigate('/members');
         } else {
             alert(`Oops, exercise creation failed!`);
         }
@@ -42,6 +45,13 @@ export const UpdateMemberPage = ({memberToEdit}) => {
             <MembersList members={memList}></MembersList>
         </div>
         <div>
+        <label for='uMemID'>ID: </label>
+            <input
+                id='uMemID'
+                type="number"
+                placeholder="Enter ID"
+                value={member_id}
+                onChange={e => setId(e.target.value)} />
         <label for='uMemName'>Name: </label>
             <input
                 id='uMemName'
