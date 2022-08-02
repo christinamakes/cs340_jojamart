@@ -28,18 +28,18 @@ import DeleteEmployeePage from './pages/DeleteEmployeePage';
 import DeleteProductPage from './pages/DeleteProductPage';
 import DeleteSalePage from './pages/DeleteSalePage';
 import DeleteMemberAchievementPage from './pages/DeleteMemberAchievementsPage';
-// import {useState} from 'react';
+import {useState} from 'react';
 
 // import {useState} from 'react';
 
 function App() {
-
+  const [memberToEdit, setMemberToEdit] = useState()
   return (
     <Router>
       <div className='App'>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path='/members' element={<MembersPage />}/>
+            <Route path='/members' element={<MembersPage setMemberToEdit={setMemberToEdit}/>}/>
             <Route path='/employees' element={<EmployeesPage />}/>
             <Route path='/products' element={<ProductsPage />}/>
             <Route path='/sales' element={<SalesPage />}/>
@@ -55,7 +55,7 @@ function App() {
             <Route path='/add-achievement' element={<AddAchievementPage />}/>
             <Route path="/add-member-achievement" element={<AddMemberAchievementPage />}/>
             <Route path='/add-sales-detail' element={<AddSalesDetailsPage />}/>
-            <Route path="/update-member" element={<UpdateMemberPage />}/>
+            <Route path="/update-member" element={<UpdateMemberPage memberToEdit={memberToEdit} />}/>
             <Route path='/update-employee' element={<UpdateEmployeePage />}/>
             <Route path='/update-product' element={<UpdateProductPage />}/>
             <Route path='/update-sale' element={<UpdateSalePage />}/>

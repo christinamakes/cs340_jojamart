@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import MemberSearch from '../components/MemberSearch';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect} from 'react';;
+import { useState, useEffect} from 'react';
 
 const URL = 'https://joja-server.herokuapp.com'
 
@@ -28,7 +28,7 @@ function MembersPage({setMemberToEdit}) {
         }
     }
 
-    const onEdit = member => {
+    const onEdit = (member) => {
         setMemberToEdit(member)
         navigate('/update-member')
     }

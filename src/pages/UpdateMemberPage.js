@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
@@ -7,18 +7,25 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-export const UpdateMemberPage = ({members}) => {
+export const UpdateMemberPage = ({memberToEdit, onEdit, onDelete}) => {
     const navigate = useNavigate();
-    const [member_name, setName] = useState('');
-    const [member_address, setAddress] = useState('');
-    const [member_email, setEmail] = useState('');
-    const [member_phone_number, setPhone] = useState('');
-    const [member_id, setId] = useState('')
+    const [member_name, setName] = useState(memberToEdit.member_name);
+    const [member_address, setAddress] = useState(memberToEdit.member_address);
+    const [member_email, setEmail] = useState(memberToEdit.member_email);
+    const [member_phone_number, setPhone] = useState(memberToEdit.member_phone_number);
+    const [members, setMembers] = useState([])
+
+    // get members from /members
+    const loadMembers = async () => {
+        const response = await fetch(`${URL}/members`);
+        const members = await response.json();
+        setMembers(members);
+    }
 
     const updateMember = async () => {
         const response = await fetch(`${URL}/update-member`, {
             method: 'PUT',
-            body: JSON.stringify({member_id:member_id,member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
+            body: JSON.stringify({member_id:memberToEdit.member_id,member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -30,28 +37,19 @@ export const UpdateMemberPage = ({members}) => {
         }
     };
 
-    const memList = [{'member_name':'Carl','member_address':'123 Rooster Drive', 'member_email': 'carl@stardew.com', 'member_phone_number':'999-999-9999','member_id':1}]
+    useEffect(() => {
+        loadMembers();
+    }, []);
 
     return (
         <div>
 
         <header>
-            <h1>update a member</h1>
+            <h1>Update a member</h1>
             <Navigation />
         </header>
-        <p>update a member on this page.</p>
+        <p>Update the member below.</p>
         <div>
-            <p>This is a sample preview of the member to edit, if these values don't match the row you clicked to update, it is because they are hard-coded. In the final version, this will dynamically show the member you are editing.</p>
-            <MembersList members={memList}></MembersList>
-        </div>
-        <div>
-        <label htmlFor='uMemID'>ID: </label>
-            <input
-                id='uMemID'
-                type="number"
-                placeholder="Enter ID"
-                value={member_id}
-                onChange={e => setId(e.target.value)} />
         <label htmlFor='uMemName'>Name: </label>
             <input
                 id='uMemName'
