@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import MembersList from '../components/MembersList';
 import { useNavigate } from 'react-router-dom';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-export const UpdateMemberPage = ({memberToEdit, onEdit, onDelete}) => {
+export const UpdateMemberPage = ({memberToEdit}) => {
     const navigate = useNavigate();
     const [member_name, setName] = useState(memberToEdit.member_name);
     const [member_address, setAddress] = useState(memberToEdit.member_address);
     const [member_email, setEmail] = useState(memberToEdit.member_email);
     const [member_phone_number, setPhone] = useState(memberToEdit.member_phone_number);
-    const [members, setMembers] = useState([])
-
-    // get members from /members
-    const loadMembers = async () => {
-        const response = await fetch(`${URL}/members`);
-        const members = await response.json();
-        setMembers(members);
-    }
 
     const updateMember = async () => {
         const response = await fetch(`${URL}/update-member`, {
@@ -36,10 +27,6 @@ export const UpdateMemberPage = ({memberToEdit, onEdit, onDelete}) => {
             alert(`Oops, exercise creation failed!`);
         }
     };
-
-    useEffect(() => {
-        loadMembers();
-    }, []);
 
     return (
         <div>
