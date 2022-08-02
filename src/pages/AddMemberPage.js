@@ -12,7 +12,7 @@ export const AddMemberPage = () => {
     const [member_phone_number, setPhone] = useState('')
 
     const addMember = async () => {
-        const response = await fetch(`${URL}/add-member`, {
+        const response = await fetch(`${URL}/member/add`, {
             method: 'POST',
             body: JSON.stringify({member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
             headers: {

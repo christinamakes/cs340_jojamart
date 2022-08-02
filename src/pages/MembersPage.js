@@ -20,7 +20,7 @@ function MembersPage({setMemberToEdit}) {
     }
 
     const onDelete = async (member_id) => {
-        const response = await fetch(`${URL}/delete-member/${member_id}`, {method: 'DELETE'});
+        const response = await fetch(`${URL}/members/delete/${member_id}`, {method: 'DELETE'});
         if (response.status === 200) {
             setMembers(members.filter(m => m.member_id !== member_id));
         } else {
@@ -30,7 +30,7 @@ function MembersPage({setMemberToEdit}) {
 
     const onEdit = (member) => {
         setMemberToEdit(member)
-        navigate('/update-member')
+        navigate('/members/update')
     }
     // loadMembers from fetch
     useEffect(() => {

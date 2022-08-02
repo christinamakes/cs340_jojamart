@@ -14,7 +14,7 @@ export const UpdateMemberPage = ({memberToEdit}) => {
     const [member_phone_number, setPhone] = useState(memberToEdit.member_phone_number);
 
     const updateMember = async () => {
-        const response = await fetch(`${URL}/update-member`, {
+        const response = await fetch(`${URL}/members/update`, {
             method: 'PUT',
             body: JSON.stringify({member_id:memberToEdit.member_id,member_name:member_name, member_address:member_address, member_phone_number:member_phone_number, member_email:member_email}),
             headers: {
