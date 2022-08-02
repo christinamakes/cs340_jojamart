@@ -2,13 +2,12 @@ import React from 'react';
 import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 
-function MemberAchievement({ memberAchievement, onDelete, onEdit }) {
+function MemberAchievement({ memberAchievement, onDelete}) {
     return (
         <tr>
-            <td>{memberAchievement.id}</td>
-            <td>{memberAchievement.achievementId}</td>
-            <td>{memberAchievement.memberId}</td>
-            <td className='click'><Link to="/delete-member-achievement"><AiOutlineDelete onClick={null} /></Link></td>
+            <td>{memberAchievement.achievement_id}</td>
+            <td>{memberAchievement.member_id}</td>
+            <td className='click'><AiOutlineDelete onClick={() => onDelete(memberAchievement.member_id)} /></td>
         </tr>
     );
 }

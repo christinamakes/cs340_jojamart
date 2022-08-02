@@ -10,11 +10,13 @@ import { useState, useEffect} from 'react';
 
 function MemberAchievementsPage() {
     // Data hardcoded for now, dynamic later
-    const memAchList = [{'id': 22, 'achievementId': 2, 'memberId': 2},
+    const memAchList = [{'id': 221, 'achievementId': 2, 'memberId': 2},
                     {'id': 32, 'achievementId': 3, 'memberId': 2},
                     {'id': 31, 'achievementId': 3, 'memberId': 1}]
 
     const [memAchs, setMemAchs] = useState([])
+
+    const URL = 'https://joja-server.herokuapp.com'
 
     // get members from /members
     const loadMemAchs = async () => {
@@ -36,7 +38,7 @@ function MemberAchievementsPage() {
             <div>
                 <p>hello these are our Member Achievements</p>
             </div>
-            <MemberAchievementsList memberAchievements={memAchList}></MemberAchievementsList>
+            <MemberAchievementsList memberAchievements={memAchs}></MemberAchievementsList>
             <div className='add'>
                 <ul>
                     <li>

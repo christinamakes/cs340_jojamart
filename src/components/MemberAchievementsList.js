@@ -7,7 +7,6 @@ function MemberAchievementsList({ memberAchievements, onDelete, onEdit }) {
         <table id="memAch">
             <thead>
                 <tr>
-                    <th>Member-Achievement ID</th>
                     <th>Achievement ID</th>
                     <th>Member ID</th>
                 </tr>
@@ -15,7 +14,6 @@ function MemberAchievementsList({ memberAchievements, onDelete, onEdit }) {
             <tbody>
                 {memberAchievements.map((memberAchievement, i) => <MemberAchievement memberAchievement={memberAchievement}
                     onDelete={onDelete}
-                    onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>
