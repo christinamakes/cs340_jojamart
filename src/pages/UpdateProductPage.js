@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { useNavigate } from 'react-router-dom';
-import ProductsList from '../components/ProductsList';
+// import ProductsList from '../components/ProductsList';
 const URL = 'https://joja-server.herokuapp.com'
 
 export const UpdateProductPage = (productToEdit) => {
@@ -35,8 +35,8 @@ export const UpdateProductPage = (productToEdit) => {
         </header>
         <p>update a product on this page.</p>
         <div>
-            <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
-            <ProductsList products={products}></ProductsList>
+            {/* <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
+            <ProductsList products={products}></ProductsList> */}
         </div>
         <div>
         <label for='uProdName'>Name: </label>
