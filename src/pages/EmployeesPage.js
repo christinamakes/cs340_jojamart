@@ -3,13 +3,42 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import EmployeeSearch from '../components/EmployeeSearch';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect} from 'react';
 
-function EmployeesPage() {
+const URL = 'https://joja-server.herokuapp.com'
+
+function EmployeesPage(setEmployeToEdit) {
     // Data hardcoded for now, dynamic later
-    const empList = [{'employee_name':'Morris','employee_email':'morris@joja.co', 'employee_phone_number': '555-666-7777', 'employee_hourly_wage':'9999','employee_id':1},
-    {'employee_name':'Shane','employee_email':'shane@joja.co', 'employee_phone_number': '555-888-9999', 'employee_hourly_wage':'12','employee_id':2},
-    {'employee_name':'Unnamed Cashier','employee_email':'unnamed@joja.co', 'employee_phone_number': '555-000-1111', 'employee_hourly_wage':'12','employee_id':3}]
+    const navigate = useNavigate();
+    const [employees, setEmployees] = useState([])
+
+    // get employees from /employees
+    const loadEmployees = async () => {
+        const response = await fetch(`${URL}/employees`);
+        const employees = await response.json();
+        setEmployees(employees);
+    }
+
+    const onDelete = async (employee_id) => {
+        const response = await fetch(`${URL}/employees/delete/${employee_id}` , {method: 'DELETE'});
+        if (response.status === 200) {
+            setEmployees(employees.filter(emp => emp.employee_id !== employee_id));
+        } else {
+            alert(`Failed to delete employee`)
+        }
+    }
+
+    const onEdit = (employee) => {
+        setEmployeToEdit(employee)
+        navigate('/members/update')
+    }
+
+    // loadEmployees from fetch
+    useEffect(() => {
+        loadEmployees();
+    }, []);
+
     return (
         <div>
             <header>
@@ -19,7 +48,7 @@ function EmployeesPage() {
             <div>
                 <p>hello these are our employees</p>
             </div>
-            <EmployeeSearch details={empList} />
+            <EmployeeSearch details={employees} onDelete={onDelete} onEdit={onEdit} />
             <div className='add'>
                 <ul>
                     <li>

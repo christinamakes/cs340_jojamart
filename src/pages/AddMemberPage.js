@@ -20,7 +20,7 @@ export const AddMemberPage = () => {
             },
         });
         if (response.status !== 200){
-            alert(`Oops, something went wrong!`);
+            alert(`Oops! something went wrong.`);
         }
         navigate("/members");
     };
