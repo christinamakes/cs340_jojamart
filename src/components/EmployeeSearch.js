@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EmployeesList from './EmployeesList';
 
-function EmployeeSearch({ details }) {
+function EmployeeSearch({ details, onDelete, onEdit }) {
 
   const [searchField, setSearchField] = useState("");
 
@@ -30,7 +30,7 @@ function EmployeeSearch({ details }) {
 
   function searchList() {
     return (
-        <EmployeesList employees={filtered}/>
+        <EmployeesList employees={filtered} onDelete={onDelete} onEdit={onEdit}/>
     );
   }
 
