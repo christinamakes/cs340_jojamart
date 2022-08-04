@@ -7,10 +7,10 @@ const URL = 'https://joja-server.herokuapp.com'
 
 export const UpdateProductPage = ({productToEdit}) => {
     const navigate = useNavigate();
-    const [product_name, setName] = useState('');
-    const [product_price, setPrice] = useState('');
-    const [season_code, setSeason] = useState('');
-    const [number_in_stock, setStockNum] = useState('');
+    const [product_name, setName] = useState(productToEdit.product_name);
+    const [product_price, setPrice] = useState(productToEdit.product_price);
+    const [season_code, setSeason] = useState(productToEdit.season_code);
+    const [number_in_stock, setStockNum] = useState(productToEdit.number_in_stock);
 
     const updateProduct = async () => {
         const response = await fetch(`${URL}/products/update`, {
