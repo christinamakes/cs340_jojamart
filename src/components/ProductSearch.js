@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ProductsList from './ProductsList';
 
-function ProductSearch({ details }) {
+function ProductSearch({ details, onEdit }) {
 
   const [searchField, setSearchField] = useState("");
 
@@ -34,7 +34,7 @@ function ProductSearch({ details }) {
 
   function searchList() {
     return (
-        <ProductsList products={filtered}/>
+        <ProductsList products={filtered} onEdit={onEdit} />
     );
   }
 
