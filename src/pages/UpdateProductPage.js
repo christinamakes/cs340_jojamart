@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // import ProductsList from '../components/ProductsList';
 const URL = 'https://joja-server.herokuapp.com'
 
-export const UpdateProductPage = (productToEdit) => {
+export const UpdateProductPage = ({productToEdit}) => {
     const navigate = useNavigate();
     const [product_name, setName] = useState('');
     const [product_price, setPrice] = useState('');

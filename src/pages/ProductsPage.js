@@ -8,7 +8,7 @@ import { useState, useEffect} from 'react';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-function ProductsPage(setProductToEdit) {
+function ProductsPage({setProductToEdit}) {
     // Data hardcoded for now, dynamic later
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
