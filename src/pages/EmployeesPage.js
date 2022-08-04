@@ -31,7 +31,7 @@ function EmployeesPage({setEmployeToEdit}) {
 
     const onEdit = (employee) => {
         setEmployeToEdit(employee)
-        navigate('/members/update')
+        navigate('/employees/update')
     }
 
     // loadEmployees from fetch
