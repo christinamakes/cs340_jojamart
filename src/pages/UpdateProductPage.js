@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { useNavigate } from 'react-router-dom';
-import ProductsList from '../components/ProductsList';
+// import ProductsList from '../components/ProductsList';
 const URL = 'https://joja-server.herokuapp.com'
 
 export const UpdateProductPage = (productToEdit) => {
