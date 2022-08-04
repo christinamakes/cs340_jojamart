@@ -3,13 +3,32 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import ProductSearch from '../components/ProductSearch';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect} from 'react';
 
-function ProductsPage() {
+const URL = 'https://joja-server.herokuapp.com'
+
+function ProductsPage(setProductToEdit) {
     // Data hardcoded for now, dynamic later
-    const prodList = [{'product_name':'Joja Cola','product_price':'75', 'season_code': 'YEAR', 'number_in_stock':'5000','product_id':1},
-    {'product_name':'Parsnip Seeds','product_price':'25', 'season_code': 'SPRING', 'number_in_stock':'8000','product_id':2},
-    {'product_name':'Cauliflower Seeds','product_price':'100', 'season_code': 'SPRING', 'number_in_stock':'8000','product_id':3}]
+    const navigate = useNavigate();
+    const [products, setProducts] = useState([]);
+
+    // Get products from /products
+    const loadProducts = async () => {
+        const response = await fetch(`${URL}/products`);
+        const products = await response.json();
+        setProducts(products);
+    }
+
+    const onEdit = (product) => {
+        setProductToEdit(product)
+        navigate('/products/update')
+    }
+    // loadProducts from fetch
+    useEffect(() => {
+        loadProducts();
+    }, []);
+
     return (
         <div>
             <header>
@@ -19,7 +38,7 @@ function ProductsPage() {
             <div>
                 <p>hello these are our products</p>
             </div>
-            <ProductSearch details={prodList} />
+            <ProductSearch details={products} onEdit={onEdit} />
             <div className='add'>
                 <ul>
                     <li>

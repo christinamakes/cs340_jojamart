@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './Product';
 
 
-function ProductsList({ products, onDelete, onEdit }) {
+function ProductsList({ products, onEdit }) {
     return (
         <table id="products">
             <thead>
@@ -16,7 +16,6 @@ function ProductsList({ products, onDelete, onEdit }) {
             </thead>
             <tbody>
                 {products.map((product, i) => <Product product={product}
-                    onDelete={onDelete}
                     onEdit={onEdit}
                     key={i} />)}
             </tbody>

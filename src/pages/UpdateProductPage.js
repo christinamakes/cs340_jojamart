@@ -2,31 +2,30 @@ import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import ProductsList from '../components/ProductsList';
+import { useNavigate } from 'react-router-dom';
 
-export const UpdateProductPage = () => {
+const URL = 'https://joja-server.herokuapp.com'
+
+export const UpdateProductPage = (productToEdit) => {
+    const navigate = useNavigate();
     const [product_name, setName] = useState('');
     const [product_price, setPrice] = useState('');
-    const [setSeason] = useState('');
+    const [season_code, setSeason] = useState('');
     const [number_in_stock, setStockNum] = useState('');
 
     const updateProduct = async () => {
-        // const response = await fetch('/exercises', {
-        //     method: 'POST',
-        //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // });
-        // if (response.status === 200){
-        //     alert('updateed exercise!');
-        // } else {
-        //     alert(`Oops, exercise creation failed!`);
-        // }
-        // history.push("/");
+        const response = await fetch(`${URL}/products/update`, {
+            method: 'PUT',
+            body: JSON.stringify({product_id:productToEdit.product_id, product_name:product_name, product_price:product_price, season_code:season_code, number_in_stock:number_in_stock}),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (response.status !== 200){
+            alert(`Oops! Something went wrong.`);
+        }
+        navigate('/products');
     };
-
-    const prodList = [{'name':'Joja Cola','price':'75', 'season': 'YEAR', 'stockNum':'5000','id':1}]
 
     return (
         <div>
