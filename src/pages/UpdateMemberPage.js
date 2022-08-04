@@ -24,7 +24,7 @@ export const UpdateMemberPage = ({memberToEdit}) => {
         if (response.status === 200){
             navigate('/members');
         } else {
-            alert(`Oops, exercise creation failed!`);
+            alert(`Oops! Something went wrong.`);
         }
     };
 

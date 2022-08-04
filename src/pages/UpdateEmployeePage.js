@@ -3,27 +3,31 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import EmployeesList from '../components/EmployeesList';
+import { useNavigate } from 'react-router-dom';
 
-export const UpdateEmployeePage = () => {
-    const [employee_name, setName] = useState('');
-    const [employee_email, setEmail] = useState('');
-    const [employee_phone_number, setPhone] = useState('');
-    const [employee_hourly_wage, setWage] = useState('');
+const URL = 'https://joja-server.herokuapp.com'
+
+export const UpdateEmployeePage = ({employeeToEdit}) => {
+    const navigate = useNavigate();
+    const [employee_name, setName] = useState(employeeToEdit.employee_name);
+    const [employee_email, setEmail] = useState(employeeToEdit.employee_email);
+    const [employee_phone_number, setPhone] = useState(employeeToEdit.employee_phone_number);
+    const [employee_hourly_wage, setWage] = useState(employeeToEdit.employee_hourly_wage);
 
     const updateEmployee = async () => {
-        // const response = await fetch('/exercises', {
-        //     method: 'POST',
-        //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // });
-        // if (response.status === 200){
-        //     alert('updateed exercise!');
-        // } else {
-        //     alert(`Oops, exercise creation failed!`);
-        // }
-        // history.push("/");
+        const response = await fetch(`${URL}/employees/update`, {
+            method: 'PUT',
+            body: JSON.stringify({employee_id: employeeToEdit.employee_id, employee_name: employeeToEdit.employee_name, employee_phone_number:employeeToEdit.employee_phone_number, employee_hourly_wage:employeeToEdit.employee_hourly_wage, employee_email:employeeToEdit.employee_email}),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (response.status === 200){
+            navigate('/employees');
+        } else {
+            alert(`Oops! Something went wrong.`);
+        }
+        history.push("/");
     };
 
     const empList = [{'name':'Morris','email':'morris@joja.co', 'phone': '555-666-7777', 'wage':'9999','id':1}]
