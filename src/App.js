@@ -34,14 +34,17 @@ import {useState} from 'react';
 
 function App() {
   const [memberToEdit, setMemberToEdit] = useState()
+  const [employeeToEdit, setEmployeeToEdit] = useState()
+  const [productToEdit, setProductToEdit] = useState()
+
   return (
     <Router>
       <div className='App'>
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path='/members' element={<MembersPage setMemberToEdit={setMemberToEdit}/>}/>
-            <Route path='/employees' element={<EmployeesPage />}/>
-            <Route path='/products' element={<ProductsPage />}/>
+            <Route path='/employees' element={<EmployeesPage setEmployeeToEdit={setEmployeeToEdit}/>}/>
+            <Route path='/products' element={<ProductsPage setProductToEdit={setProductToEdit}/>}/>
             <Route path='/sales' element={<SalesPage />}/>
             <Route path='/seasons' element={<SeasonsPage />}/>
             <Route path='/achievements' element={<AchievementsPage />}/>
