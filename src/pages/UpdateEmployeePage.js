@@ -29,8 +29,6 @@ export const UpdateEmployeePage = ({employeeToEdit}) => {
         }
     };
 
-    const empList = [{'name':'Morris','email':'morris@joja.co', 'phone': '555-666-7777', 'wage':'9999','id':1}]
-
     return (
         <div>
 
@@ -41,7 +39,7 @@ export const UpdateEmployeePage = ({employeeToEdit}) => {
         <p>update an employee on this page.</p>
         <div>
             <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
-            <EmployeesList employees={empList}></EmployeesList>
+            <EmployeesList employees={employees}></EmployeesList>
         </div>
         <div>
         <label for='uEmpName'>Name: </label>
