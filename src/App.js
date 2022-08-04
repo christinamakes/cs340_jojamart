@@ -59,8 +59,8 @@ function App() {
             <Route path="/add-member-achievement" element={<AddMemberAchievementPage />}/>
             <Route path='/add-sales-detail' element={<AddSalesDetailsPage />}/>
             <Route path="/update-member" element={<UpdateMemberPage memberToEdit={memberToEdit} />}/>
-            <Route path='/update-employee' element={<UpdateEmployeePage />}/>
-            <Route path='/update-product' element={<UpdateProductPage />}/>
+            <Route path='/update-employee' element={<UpdateEmployeePage employeeToEdit={employeeToEdit}/>}/>
+            <Route path='/update-product' element={<UpdateProductPage productToEdit={productToEdit}/>}/>
             <Route path='/update-sale' element={<UpdateSalePage />}/>
             <Route path='/update-sales-details' element={<UpdateSalesDetailsPage />}/>
             <Route path="/delete-member" element={<DeleteMemberPage />}/>
