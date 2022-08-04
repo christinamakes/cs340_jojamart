@@ -2,7 +2,7 @@ import React from 'react';
 import Sale from './Sale';
 
 
-function SalesList({ sales, onDelete, onEdit }) {
+function SalesList({ sales }) {
     return (
         <table id="sales">
             <thead>
@@ -15,10 +15,7 @@ function SalesList({ sales, onDelete, onEdit }) {
                 </tr>
             </thead>
             <tbody>
-                {sales.map((sale, i) => <Sale sale={sale}
-                    onDelete={onDelete}
-                    onEdit={onEdit}
-                    key={i} />)}
+                {sales.map((sale, i) => <Sale sale={sale} key={i} />)}
             </tbody>
         </table>
     );

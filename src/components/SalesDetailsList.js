@@ -2,7 +2,7 @@ import React from 'react';
 import SalesDetail from './SalesDetail';
 
 
-function SalesDetailsList({ salesDetails }) {
+function SalesDetailsList({ salesDetails, onEdit }) {
     return (
         <table id="salesDetails">
             <thead>
@@ -16,6 +16,7 @@ function SalesDetailsList({ salesDetails }) {
             </thead>
             <tbody>
                 {salesDetails.map((salesDetail, i) => <SalesDetail salesDetail={salesDetail}
+                    onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>
