@@ -20,10 +20,12 @@ export const UpdateProductPage = ({productToEdit}) => {
                 'Content-Type': 'application/json'
             },
         });
-        if (response.status !== 200){
+        if (response.status === 200){
+            navigate('/products');
+        } else {
             alert(`Oops! Something went wrong.`);
         }
-        navigate('/products');
+        
     };
 
     return (
