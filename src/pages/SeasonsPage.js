@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SeasonsList from '../components/SeasonsList';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { Link } from 'react-router-dom';

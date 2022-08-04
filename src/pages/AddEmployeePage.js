@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from "react-router-dom";
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddEmployeePage = () => {
     const URL = 'https://joja-server.herokuapp.com'
+    const navigate = useNavigate();
     const [employee_name, setName] = useState('');
     const [employee_email, setEmail] = useState('');
     const [employee_phone_number, setPhone] = useState('');

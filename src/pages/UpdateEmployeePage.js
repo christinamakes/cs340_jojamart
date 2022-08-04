@@ -27,7 +27,6 @@ export const UpdateEmployeePage = ({employeeToEdit}) => {
         } else {
             alert(`Oops! Something went wrong.`);
         }
-        history.push("/");
     };
 
     const empList = [{'name':'Morris','email':'morris@joja.co', 'phone': '555-666-7777', 'wage':'9999','id':1}]
