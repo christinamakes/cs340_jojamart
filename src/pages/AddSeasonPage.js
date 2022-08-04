@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
-// import { Link} from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddSeasonPage = () => {
+    const URL = 'https://joja-server.herokuapp.com'
+    const navigate = useNavigate();
     const [season_code, setSeason] = useState('');
     const [description, setDescription] = useState('');
 
-
     const addSeason = async () => {
-        // const response = await fetch('/exercises', {
-        //     method: 'POST',
-        //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // });
-        // if (response.status === 200){
-        //     alert('Added exercise!');
-        // } else {
-        //     alert(`Oops, exercise creation failed!`);
-        // }
-        // history.push("/");
+        const response = await fetch(`${URL}/seasons/add`, {
+            method: 'POST',
+            body: JSON.stringify({season_code:season_code, description:description}),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (response.status !== 200) {
+            alert(`Oops! Something went wrong.`);
+        }
+        navigate('/seasons');
     };
 
     return (

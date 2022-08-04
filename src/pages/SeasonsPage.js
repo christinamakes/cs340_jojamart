@@ -2,15 +2,26 @@ import React from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import SeasonsList from '../components/SeasonsList';
 import { Link } from 'react-router-dom';
+import { useState, useEffect} from 'react';
+
+const URL = 'https://joja-server.herokuapp.com'
 
 function SeasonsPage() {
-    // Data hardcoded for now, dynamic later
-    const seaList = [{'season_code':'YEAR','description':'Product sold year-round'},
-    {'season_code':'SPRING','description':'Product sold Mar-May'},
-    {'season_code':'SUMMER','description':'Product sold Jun-Aug'},
-    {'season_code':'FALL','description':'Product sold Sep-Nov'},]
+    const [seasons, setSeasons] = useState([])
+
+    // get seasons from /seasons
+    const loadSeasons = async () => {
+        const response = await fetch(`${URL}/seasons`);
+        const seasons = await response.json();
+        setSeasons(seasons);
+    }
+
+    // loadSeasons from fetch
+    useEffect(() => {
+        loadSeasons();
+    }, []);
+
     return (
         <div>
             <header>
@@ -20,7 +31,7 @@ function SeasonsPage() {
             <div>
                 <p>hello these are our seasons</p>
             </div>
-            <SeasonsList seasons={seaList}/>
+            <SeasonsList seasons={seasons}/>
             <div className='add'>
                 <ul>
                     <li>
