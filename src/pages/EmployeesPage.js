@@ -29,7 +29,7 @@ function EmployeesPage({setEmployeToEdit}) {
     }
 
     const onEdit = (employee) => {
-        setEmployeToEdit(employee)
+        setEmployeeToEdit(employee)
         navigate('/employees/update')
     }
 
