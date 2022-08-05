@@ -21,6 +21,7 @@ function SalesDetailsPage({setSalesDetailToEdit}) {
 
     const onEdit = (salesDetail) => {
         setSalesDetailToEdit(salesDetail)
+        navigate('/sales-details/update')
     }
 
     useEffect(() => {
