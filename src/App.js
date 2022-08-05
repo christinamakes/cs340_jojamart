@@ -13,15 +13,13 @@ import SalesDetailsPage from './pages/SalesDetailsPage';
 import AddEmployeePage from './pages/AddEmployeePage';
 import AddMemberPage from './pages/AddMemberPage';
 import AddProductPage from './pages/AddProductPage';
-import AddSalePage from './pages/AddSalePage';
 import AddSeasonPage from './pages/AddSeasonPage';
 import AddAchievementPage from './pages/AddAchievementPage';
 import AddMemberAchievementPage from './pages/AddMemberAchievementsPage';
-import { AddSalesDetailsPage } from './pages/AddSalesDetailsPage';
+import AddLineItemPage from './pages/AddLineItemPage';
 import UpdateMemberPage from './pages/UpdateMemberPage';
 import UpdateEmployeePage from './pages/UpdateEmployeePage';
 import UpdateProductPage from './pages/UpdateProductPage';
-import UpdateSalePage from './pages/UpdateSalePage';
 import UpdateSalesDetailsPage from './pages/UpdateSalesDetailsPage';
 import {useState} from 'react';
 
@@ -48,15 +46,13 @@ function App() {
             <Route path="/add-member" element={<AddMemberPage />}/>
             <Route path='/add-employee' element={<AddEmployeePage />}/>
             <Route path='/add-product' element={<AddProductPage />}/>
-            <Route path='/add-sale' element={<AddSalePage />}/>
             <Route path='/add-season' element={<AddSeasonPage />}/>
             <Route path='/add-achievement' element={<AddAchievementPage />}/>
             <Route path="/add-member-achievement" element={<AddMemberAchievementPage />}/>
-            <Route path='/add-sales-detail' element={<AddSalesDetailsPage />}/>
+            <Route path='/add-line-item' element={<AddLineItemPage />}/>
             <Route path="/update-member" element={<UpdateMemberPage memberToEdit={memberToEdit} />}/>
             <Route path='/update-employee' element={<UpdateEmployeePage employeeToEdit={employeeToEdit}/>}/>
             <Route path='/update-product' element={<UpdateProductPage productToEdit={productToEdit}/>}/>
-            <Route path='/update-sale' element={<UpdateSalePage />}/>
             <Route path='/update-sales-details' element={<UpdateSalesDetailsPage />}/>
         </Routes>
       </div>

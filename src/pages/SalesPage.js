@@ -30,7 +30,7 @@ function SalesPage() {
             <div className='add'>
                 <ul>
                     <li>
-                        <Link to="/add-sale"><button className='add'>Add sale</button></Link>
+                        <Link to="/add-line-item"><button className='add'>Add sale</button></Link>
                     </li>
                 </ul>
             </div>

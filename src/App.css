@@ -99,3 +99,20 @@ input, select {
 .searchbar {
   margin-bottom: 1em;
 }
+
+.return {
+  padding: .5em;
+}
+
+#AddSD, #AddS {
+  border: 2px dotted black;
+  margin: auto;
+  margin-top: 3em;
+  padding: 1em;
+  width: max-content;
+}
+
+#AddSD {
+  padding-left: 3em;
+  padding-right: 3em;
+}

@@ -33,7 +33,7 @@ function SalesDetailsPage() {
             <div className='add'>
                 <ul>
                     <li>
-                        <Link to="/add-sales-detail"><button className='add'>Add sales detail</button></Link>
+                        <Link to="/add-line-item"><button className='add'>Add sales detail</button></Link>
                     </li>
                 </ul>
             </div>
