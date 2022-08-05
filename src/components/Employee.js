@@ -11,7 +11,7 @@ function Employee({ employee, onEdit, onDelete }) {
             <td>{employee.employee_phone_number}</td>
             <td>{employee.employee_hourly_wage}</td>
             <td className='click'><Link to="/update-employee"><AiOutlineEdit onClick={() => onEdit(employee)} /></Link></td>
-            <td className='click'><Link to="/delete-employee"><AiOutlineDelete onClick={() => onDelete(employee.employee_id)} /></Link></td>
+            <td className='click'><AiOutlineDelete onClick={() => onDelete(employee.employee_id)} /></td>
         </tr>
     );
 }
