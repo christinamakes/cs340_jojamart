@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import EmployeesList from '../components/EmployeesList';
 import { useNavigate } from 'react-router-dom';
 
 const URL = 'https://joja-server.herokuapp.com'
@@ -17,7 +16,7 @@ export const UpdateEmployeePage = ({employeeToEdit}) => {
     const updateEmployee = async () => {
         const response = await fetch(`${URL}/employees/update`, {
             method: 'PUT',
-            body: JSON.stringify({employee_id: employeeToEdit.employee_id, employee_name:employee_name, employee_phone_number:employee_phone_number, employee_hourly_wage:employee_hourly_wage, employee_email:employee_email}),
+            body: JSON.stringify({employee_id:employeeToEdit.employee_id, employee_name:employee_name, employee_phone_number:employee_phone_number, employee_hourly_wage:employee_hourly_wage, employee_email:employee_email}),
             headers: {
                 'Content-Type': 'application/json'
             },
