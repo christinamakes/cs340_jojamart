@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { Link } from 'react-router-dom';
 
-const URL = 'https://joja-server.herokuapp.com'
+//const URL = 'https://joja-server.herokuapp.com'
 
 function SalesDetailsPage() {
     // Data hardcoded for now, dynamic later
