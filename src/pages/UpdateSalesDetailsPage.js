@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-export const UpdateSalesDetailsPage = ({saleToEdit, salesDetailToEdit}) => {
+export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
     const navigate = useNavigate();
     const [product_id, setProductId] = useState('');
     const [order_number, setOrderNumber] = useState('');
@@ -17,6 +17,12 @@ export const UpdateSalesDetailsPage = ({saleToEdit, salesDetailToEdit}) => {
     const [employee_id, setEmployee] = useState('');
     const [purchase_date, setDate] = useState('');
     const [invoice_total, setTotal] = useState('');
+
+    // For Dropdowns
+    const [members, setMembers] = useState([]);
+    const [employees, setEmployees] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [sales, setSales] = useState([]);
 
     const updateSalesDetail = async () => {
         const response = await fetch(`${URL}/sales-details/update`, {
@@ -37,7 +43,7 @@ export const UpdateSalesDetailsPage = ({saleToEdit, salesDetailToEdit}) => {
     const updateSale = async () => {
         const response = await fetch(`${URL}/sales/update`, {
             method: 'PUT',
-            body: JSON.stringify({order_number:saleToEdit.order_number, member_id:member_id, employee_id:employee_id, purchase_date:purchase_date, invoice_total:invoice_total}),
+            body: JSON.stringify({order_number:salesDetailToEdit.order_number, member_id:member_id, employee_id:employee_id, purchase_date:purchase_date, invoice_total:invoice_total}),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -89,9 +95,6 @@ export const UpdateSalesDetailsPage = ({saleToEdit, salesDetailToEdit}) => {
                     placeholder="Enter invoice total here"
                     value={invoice_total}
                     onChange={e => setTotal(e.target.value)} />
-                <button
-                    onClick={addSale}
-                >Add</button>
                 <label htmlFor='uSaleDetProd'>Product ID: </label>
                 <select id='uSaleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
                     <option value='Select a Product'> -- Select a Product -- </option>

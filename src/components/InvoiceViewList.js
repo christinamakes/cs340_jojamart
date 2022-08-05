@@ -2,7 +2,7 @@ import React from 'react';
 import InvoiceView from './InvoiceView';
 
 
-function InvoiceViewsList({ invoiceViews }) {
+function InvoiceViewsList({ invoiceViews, onEdit }) {
     return (
         <table id="invoiceViews">
             <thead>
@@ -20,6 +20,7 @@ function InvoiceViewsList({ invoiceViews }) {
             </thead>
             <tbody>
                 {invoiceViews.map((invoiceView, i) => <InvoiceView invoiceView={invoiceView}
+                    onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>
