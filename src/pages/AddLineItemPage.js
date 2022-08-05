@@ -149,10 +149,10 @@ export const AddLineItemPage = () => {
                 placeholder="Enter quantity here"
                 value={quantity}
                 onChange={e => setQuantity(e.target.value)} />
-            <label htmlFor='saleDetOrdType'>Order Number: </label>
-            <select id='saleDetOrdType' name='order_number' onChange={e => setOrderType(e.target.value)}>
-                <option value='1'>0</option>
-                <option value='2'>1</option>
+            <label htmlFor='saleDetOrdType'>Order Type: </label>
+            <select id='saleDetOrdType' name='order_type' onChange={e => setOrderType(e.target.value)}>
+                <option value='0'>0 - In Person</option>
+                <option value='1'>1 - Online</option>
             </select>
             <button
                 onClick={addSalesDetail}
