@@ -104,13 +104,13 @@ export const AddLineItemPage = () => {
             <label htmlFor='saleMember'>Member ID: </label>
             <select id='saleMember' name='member_id' onChange={e => setMember(e.target.value)}>
                 <option value='Select a Member'> -- Select a Member -- </option>
-                {members.map((member) => <option value={member.member_id}>{member.member_id + ' - ' + member.member_name}</option>)}
+                {members.map((member) => <option value={member.member_id}>{member.member_id + ' -- ' + member.member_name}</option>)}
             </select>
             <label htmlFor='saleEmployee'>Employee ID: </label>
             <select id='saleEmployee' name='employee_id' onChange={e => setEmployee(e.target.value)}>
                 <option value='Select an Employee'> -- Select an Employee -- </option>
                 <option value={undefined}>None</option>
-                {employees.map((employee) => <option value={employee.employee_id}>{employee.employee_id}</option>)}
+                {employees.map((employee) => <option value={employee.employee_id}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
             </select>
             <label htmlFor='saleDate'>Date: </label>
             <input
@@ -135,7 +135,7 @@ export const AddLineItemPage = () => {
             <label htmlFor='saleDetProd'>Product ID: </label>
             <select id='saleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
                 <option value='Select a Product'> -- Select a Product -- </option>
-                {products.map((product) => <option value={product.product_id}>{product.product_id}</option>)}
+                {products.map((product) => <option value={product.product_id}>{product.product_id + ' -- ' + product.product_name}</option>)}
             </select>
             <label htmlFor='saleDetOrd'>Order Number: </label>
             <select id='saleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
