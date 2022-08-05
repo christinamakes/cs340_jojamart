@@ -24,6 +24,34 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
     const [products, setProducts] = useState([]);
     const [sales, setSales] = useState([]);
 
+        // get members from /members
+        const loadMembers = async () => {
+            const response = await fetch(`${URL}/members`);
+            const members = await response.json();
+            setMembers(members);
+        };
+    
+        // get employees from /employees
+        const loadEmployees = async () => {
+            const response = await fetch(`${URL}/employees`);
+            const employees = await response.json();
+            setEmployees(employees);
+        };
+    
+        // Get products from /products
+        const loadProducts = async () => {
+            const response = await fetch(`${URL}/products`);
+            const products = await response.json();
+            setProducts(products);
+        };
+    
+        // Get sales from /sales
+        const loadSales = async () => {
+            const response = await fetch(`${URL}/sales`);
+            const sales = await response.json();
+            setSales(sales);
+        };
+
     const updateSalesDetail = async () => {
         const response = await fetch(`${URL}/sales-details/update`, {
             method: 'PUT',
@@ -59,6 +87,13 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
         updateSale();
         updateSalesDetail();
     }
+
+    useEffect(() => {
+        loadMembers();
+        loadEmployees();
+        loadProducts();
+        loadSales();
+    }, []);
 
     return (
         <div>
