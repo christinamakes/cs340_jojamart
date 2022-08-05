@@ -1,12 +1,9 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
-// import { useHistory, Link } from 'react-router-dom';
-
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import SalesDetailsList from '../components/SalesDetailsList';
-import InvoiceViewsList from '../components/InvoiceViewList';
 import { Link } from 'react-router-dom';
+
+const URL = 'https://joja-server.herokuapp.com'
 
 function SalesDetailsPage() {
     // Data hardcoded for now, dynamic later

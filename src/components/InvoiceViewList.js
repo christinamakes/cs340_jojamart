@@ -8,8 +8,9 @@ function InvoiceViewsList({ invoiceViews }) {
             <thead>
                 <tr>
                     <th>Order Number</th>
-                    <th>Member Name</th>
-                    <th>Product Name</th>
+                    <th>Member</th>
+                    <th>Employee</th>
+                    <th>Product</th>
                     <th>Product Price</th>
                     <th>Quantity</th>
                     <th>Invoice Total</th>

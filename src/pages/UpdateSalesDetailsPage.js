@@ -2,74 +2,125 @@ import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
-import SalesDetailsList from '../components/SalesDetailsList';
+import { useNavigate } from 'react-router-dom';
 
-export const UpdateSalesDetailsPage = () => {
-    const [setProductId] = useState('');
-    const [setOrderNumber] = useState('');
+const URL = 'https://joja-server.herokuapp.com'
+
+export const UpdateSalesDetailsPage = ({saleToEdit, salesDetailToEdit}) => {
+    const navigate = useNavigate();
+    const [product_id, setProductId] = useState('');
+    const [order_number, setOrderNumber] = useState('');
     const [quantity, setQuantity] = useState('');
-    const [setOrderType] = useState('');
+    const [order_type, setOrderType] = useState('');
+    // For Sales
+    const [member_id, setMember] = useState('');
+    const [employee_id, setEmployee] = useState('');
+    const [purchase_date, setDate] = useState('');
+    const [invoice_total, setTotal] = useState('');
 
-    const updateSalesDetails = async () => {
-        // const response = await fetch('/exercises', {
-        //     method: 'POST',
-        //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // });
-        // if (response.status === 200){
-        //     alert('Added exercise!');
-        // } else {
-        //     alert(`Oops, exercise creation failed!`);
-        // }
-        // history.push("/");
+    const updateSalesDetail = async () => {
+        const response = await fetch(`${URL}/sales-details/update`, {
+            method: 'PUT',
+            body: JSON.stringify({sales_details_id:salesDetailToEdit.sales_details_id, product_id:product_id, order_number:order_number, quantity:quantity, order_type:order_type}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (response.status === 200){
+            alert(`Sales Details updated successfully.`);
+            navigate('/sales-details');
+        } else {
+            alert(`Oops! Something went wrong with updating Sales Details.`);
+        }
     };
 
-    const saleDetList = [{'id': 1, 'productId': 1, 'orderNumber': 1, 'quantity': 3, 'orderType': 0}]
+    const updateSale = async () => {
+        const response = await fetch(`${URL}/sales/update`, {
+            method: 'PUT',
+            body: JSON.stringify({order_number:saleToEdit.order_number, member_id:member_id, employee_id:employee_id, purchase_date:purchase_date, invoice_total:invoice_total}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (response.status === 200){
+            alert(`Sale updated successfully.`);
+        } else {
+            alert(`Oops! Something went wrong with updating Sale.`);
+        }
+    };
+
+    const updateLineItem = () => {
+        updateSale();
+        updateSalesDetail();
+    }
 
     return (
         <div>
 
-        <header>
-            <h1>Update a Sales Details Instance</h1>
-            <Navigation />
-        </header>
-        <p>Update a Sales Details Instance on this page</p>
-        <div>
-            <p>This is a sample page, if these values don't match the row you clicked to update, it is because they are hard-coded.</p>
-            <SalesDetailsList salesDetails={saleDetList}></SalesDetailsList>
-        </div>
-        <div>
-            <label for='uSaleDetProd'>Product ID: </label>
-            <select id='uSaleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-            </select>
-            <label for='uSaleDetOrd'>Order Number: </label>
-            <select id='uSaleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-            </select>
-            <label for='uSaleDetQuant'>Quantity: </label>
-            <input
-                id='uSaleDetQuant'
-                type="text"
-                placeholder="Enter quantity here"
-                value={quantity}
-                onChange={e => setQuantity(e.target.value)} />
-            <label for='uSaleDetOrdType'>Order Number: </label>
-            <select id='uSaleDetOrdType' name='order_type' onChange={e => setOrderType(e.target.value)}>
-                <option value='1'>0</option>
-                <option value='2'>1</option>
-            </select>
-            <button
-                onClick={updateSalesDetails}
-            >Update</button>
-        </div>
-        <Footer />
+            <header>
+                <h1>Update a Sales Details Instance</h1>
+                <Navigation />
+            </header>
+            <p>Update a Sales Details Instance on this page</p>
+            <div>
+                <p>Add a sale on this page.</p>
+                <label htmlFor='uSaleMember'>Member ID: </label>
+                <select id='uSaleMember' name='member_id' onChange={e => setMember(e.target.value)}>
+                    <option value='Select a Member'> -- Select a Member -- </option>
+                    {members.map((member) => <option value={member.member_id}>{member.member_id + ' -- ' + member.member_name}</option>)}
+                </select>
+                <label htmlFor='uSaleEmployee'>Employee ID: </label>
+                <select id='uSaleEmployee' name='employee_id' onChange={e => setEmployee(e.target.value)}>
+                    <option value='Select an Employee'> -- Select an Employee -- </option>
+                    <option value={undefined}>None</option>
+                    {employees.map((employee) => <option value={employee.employee_id}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
+                </select>
+                <label htmlFor='uSaleDate'>Date: </label>
+                <input
+                    id='uSaleDate'
+                    type="text"
+                    placeholder="Enter date here"
+                    value={purchase_date}
+                    onChange={e => setDate(e.target.value)} />
+                <label htmlFor='uSaleTotal'>Invoice Total: </label>
+                <input
+                    id='uSaleTotal'
+                    type="text"
+                    placeholder="Enter invoice total here"
+                    value={invoice_total}
+                    onChange={e => setTotal(e.target.value)} />
+                <button
+                    onClick={addSale}
+                >Add</button>
+                <label htmlFor='uSaleDetProd'>Product ID: </label>
+                <select id='uSaleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
+                    <option value='Select a Product'> -- Select a Product -- </option>
+                    {products.map((product) => <option value={product.product_id}>{product.product_id + ' -- ' + product.product_name}</option>)}
+                </select>
+                <label htmlFor='uSaleDetOrd'>Order Number: </label>
+                <select id='uSaleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
+                <option value='Select an Order Number'> -- Select an Order Number -- </option>
+                {sales.map((sale) => <option value={sale.order_number}>{sale.order_number}</option>)}
+                </select>
+                <label htmlFor='uSaleDetQuant'>Quantity: </label>
+                <input
+                    id='uSaleDetQuant'
+                    type="text"
+                    placeholder="Enter quantity here"
+                    value={quantity}
+                    onChange={e => setQuantity(e.target.value)} />
+                <label htmlFor='uSaleDetOrdType'>Order Type: </label>
+                <select id='uSaleDetOrdType' name='order_type' onChange={e => setOrderType(e.target.value)}>
+                    <option value='0'>0 - In Person</option>
+                    <option value='1'>1 - Online</option>
+                </select>
+                <button
+                    onClick={updateLineItem}
+                    >Add</button>
+            </div>
+            <div>
+                <Footer />
+            </div>
         </div>
     );
 }
