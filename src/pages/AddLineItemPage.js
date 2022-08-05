@@ -25,7 +25,7 @@ export const AddLineItemPage = () => {
     const [sales, setSales] = useState([]);
 
     const addSale = async () => {
-        const response = await fetch(`${URL}/sales/add`, {
+        const response = await fetch(`${URL}/sales/s/add`, {
             method: 'POST',
             body: JSON.stringify({member_id:member_id, employee_id:employee_id, purchase_date:purchase_date, invoice_total:invoice_total}),
             headers: {
@@ -70,7 +70,7 @@ export const AddLineItemPage = () => {
     };
 
     const addSalesDetail = async () => {
-        const response = await fetch(`${URL}/sales-details/add`, {
+        const response = await fetch(`${URL}sales-details/sd/add`, {
             method: 'POST',
             body: JSON.stringify({product_id:product_id, order_number:order_number, quantity:quantity, order_type:order_type}),
             headers: {
@@ -104,13 +104,13 @@ export const AddLineItemPage = () => {
             <label htmlFor='saleMember'>Member ID: </label>
             <select id='saleMember' name='member_id' onChange={e => setMember(e.target.value)}>
                 <option value='Select a Member'> -- Select a Member -- </option>
-                {members.map((member) => <option value={member.member_id}>{member.member_id + ' -- ' + member.member_name}</option>)}
+                {members.map((member, i) => <option value={member.member_id} key={i}>{member.member_id + ' -- ' + member.member_name}</option>)}
             </select>
             <label htmlFor='saleEmployee'>Employee ID: </label>
             <select id='saleEmployee' name='employee_id' onChange={e => setEmployee(e.target.value)}>
                 <option value='Select an Employee'> -- Select an Employee -- </option>
                 <option value={undefined}>None</option>
-                {employees.map((employee) => <option value={employee.employee_id}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
+                {employees.map((employee, i) => <option value={employee.employee_id} key={i}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
             </select>
             <label htmlFor='saleDate'>Date: </label>
             <input
@@ -135,12 +135,12 @@ export const AddLineItemPage = () => {
             <label htmlFor='saleDetProd'>Product ID: </label>
             <select id='saleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
                 <option value='Select a Product'> -- Select a Product -- </option>
-                {products.map((product) => <option value={product.product_id}>{product.product_id + ' -- ' + product.product_name}</option>)}
+                {products.map((product, i) => <option value={product.product_id} key={i}>{product.product_id + ' -- ' + product.product_name}</option>)}
             </select>
             <label htmlFor='saleDetOrd'>Order Number: </label>
             <select id='saleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
             <option value='Select an Order Number'> -- Select an Order Number -- </option>
-            {sales.map((sale) => <option value={sale.order_number}>{sale.order_number}</option>)}
+            {sales.map((sale, i) => <option value={sale.order_number} key={i}>{sale.order_number}</option>)}
             </select>
             <label htmlFor='saleDetQuant'>Quantity: </label>
             <input
