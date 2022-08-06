@@ -14,7 +14,7 @@ function SalesDetailsPage({setSalesDetailToEdit}) {
 
     // Get sales from /sales
     const loadSalesDetails = async () => {
-        const response = await fetch(`${URL}/sales-details`);
+        const response = await fetch(`${URL}/sales-details/sd`);
         const salesDetails = await response.json();
         setSalesDetails(salesDetails);
     };

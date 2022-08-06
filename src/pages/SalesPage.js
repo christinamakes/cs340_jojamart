@@ -13,7 +13,7 @@ function SalesPage() {
     const [sales, setSales] = useState([])
 
     const loadSales = async () => {
-        const response = await fetch(`${URL}/sales`);
+        const response = await fetch(`${URL}/sales/s`);
         const sales = await response.json();
         setSales(sales);
     }
