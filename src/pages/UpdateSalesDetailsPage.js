@@ -52,7 +52,7 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
         };
 
     const updateSalesDetail = async () => {
-        const response = await fetch(`${URL}/sales-details/update`, {
+        const response = await fetch(`${URL}/update-s`, {
             method: 'PUT',
             body: JSON.stringify({sales_details_id:salesDetailToEdit.sales_details_id, product_id:product_id, order_number:order_number, quantity:quantity, order_type:order_type}),
             headers: {
@@ -68,7 +68,7 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
     };
 
     const updateSale = async () => {
-        const response = await fetch(`${URL}/sales/update`, {
+        const response = await fetch(`${URL}/update-s`, {
             method: 'PUT',
             body: JSON.stringify({order_number:salesDetailToEdit.order_number, member_id:member_id, employee_id:employee_id, purchase_date:purchase_date, invoice_total:invoice_total}),
             headers: {

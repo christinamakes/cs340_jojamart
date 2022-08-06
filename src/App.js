@@ -29,6 +29,7 @@ function App() {
   const [memberToEdit, setMemberToEdit] = useState()
   const [employeeToEdit, setEmployeeToEdit] = useState()
   const [productToEdit, setProductToEdit] = useState()
+  const [salesDetailToEdit, setSalesDetailToEdit] = useState()
 
   return (
     <Router>
@@ -42,7 +43,7 @@ function App() {
             <Route path='/seasons' element={<SeasonsPage />}/>
             <Route path='/achievements' element={<AchievementsPage />}/>
             <Route path='/member-achievements' element={<MemberAchievementsPage />}/>
-            <Route path='/sales-details' element={<SalesDetailsPage />}/>
+            <Route path='/sales-details' element={<SalesDetailsPage setSalesDetailToEdit={setSalesDetailToEdit}/>}/>
             <Route path="/add-member" element={<AddMemberPage />}/>
             <Route path='/add-employee' element={<AddEmployeePage />}/>
             <Route path='/add-product' element={<AddProductPage />}/>
@@ -53,7 +54,7 @@ function App() {
             <Route path="/update-member" element={<UpdateMemberPage memberToEdit={memberToEdit} />}/>
             <Route path='/update-employee' element={<UpdateEmployeePage employeeToEdit={employeeToEdit}/>}/>
             <Route path='/update-product' element={<UpdateProductPage productToEdit={productToEdit}/>}/>
-            <Route path='/update-sales-details' element={<UpdateSalesDetailsPage />}/>
+            <Route path='/update-sales-details' element={<UpdateSalesDetailsPage salesDetailToEdit={salesDetailToEdit} />}/>
         </Routes>
       </div>
     </Router>
