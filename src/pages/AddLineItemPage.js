@@ -64,7 +64,7 @@ export const AddLineItemPage = () => {
 
     // Get sales from /sales
     const loadSales = async () => {
-        const response = await fetch(`${URL}/sales`);
+        const response = await fetch(`${URL}/sales/s`);
         const sales = await response.json();
         setSales(sales);
     };
