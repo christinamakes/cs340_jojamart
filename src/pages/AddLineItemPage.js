@@ -70,7 +70,7 @@ export const AddLineItemPage = () => {
     };
 
     const addSalesDetail = async () => {
-        const response = await fetch(`${URL}sales-details/add-sd`, {
+        const response = await fetch(`${URL}/sales-details/add-sd`, {
             method: 'POST',
             body: JSON.stringify({product_id:product_id, order_number:order_number, quantity:quantity, order_type:order_type}),
             headers: {
