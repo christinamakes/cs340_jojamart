@@ -44,7 +44,7 @@ function MembersPage({setMemberToEdit}) {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our members</p>
+                <p>These are our valued members. Add new members, edit information on existing members, or Remove members from the database.</p>
             </div>
             <MemberSearch details={members} onDelete={onDelete} onEdit={onEdit}/>
             <div className='add'>

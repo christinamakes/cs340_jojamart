@@ -29,7 +29,7 @@ function SalesPage() {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our sales</p>
+                <p>Here we have records of our highly profitable sales! Add additional transactions.</p>
             </div>
             <SalesList sales={sales}/>
             <div className='add'>

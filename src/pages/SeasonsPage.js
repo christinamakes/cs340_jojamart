@@ -29,7 +29,7 @@ function SeasonsPage() {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our seasons</p>
+                <p>These are our season codes for tracking the time of year certain products are on our shelves.</p>
             </div>
             <SeasonsList seasons={seasons}/>
             <div className='add'>

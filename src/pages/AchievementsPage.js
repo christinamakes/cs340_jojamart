@@ -18,7 +18,7 @@ function AchievementsPage() {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our achievements</p>
+                <p>These are achievements that our members are eligible to earn (primarily by spending money at Joja Mart!).</p>
             </div>
             <AchievementSearch details={achList} />
             <div className='add'>

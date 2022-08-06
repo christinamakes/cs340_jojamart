@@ -34,7 +34,7 @@ function MemberAchievementsPage() {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our Member Achievements</p>
+                <p>These are the achievements of our valued members. Members with more achievements are, of course, more valued by me. I mean the company.</p>
             </div>
             <MemberAchievementsList memberAchievements={memAchs}></MemberAchievementsList>
             <div className='add'>

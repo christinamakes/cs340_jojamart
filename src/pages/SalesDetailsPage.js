@@ -45,7 +45,7 @@ function SalesDetailsPage({setSalesDetailToEdit}) {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our Sales Details</p>
+                <p>Here we have details on our Sales transaction, for more information on exactly what was purchased, and how much. Add details.</p>
             </div>
             <InvoiceViewsList invoiceViews={salesDetails} onEdit={onEdit}/>
             <div className='add'>

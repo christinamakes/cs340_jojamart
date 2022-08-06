@@ -63,6 +63,11 @@ li {
   display: inline-block;
 }
 
+#intro-blurb {
+  text-align: left;
+  padding: 0 5em 0 5em;
+}
+
 button {
   padding: 1em;
 }

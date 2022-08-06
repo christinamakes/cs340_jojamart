@@ -36,7 +36,7 @@ function ProductsPage({setProductToEdit}) {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our products</p>
+                <p>hello these are our state of the art products at unbeatable prices! Add new products, or adjust information, including but not limited to price (we can always go lower!) and stock.</p>
             </div>
             <ProductSearch details={products} onEdit={onEdit} />
             <div className='add'>

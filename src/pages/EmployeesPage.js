@@ -45,7 +45,7 @@ function EmployeesPage({setEmployeeToEdit}) {
                 <Navigation />
             </header>
             <div>
-                <p>hello these are our employees</p>
+                <p>These are our hard-working employees. Onboard new hires, adjust personal information or wages (Ha!), or offboard terminated employees.</p>
             </div>
             <EmployeeSearch details={employees} onDelete={onDelete} onEdit={onEdit} />
             <div className='add'>
