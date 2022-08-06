@@ -43,7 +43,7 @@ function ProductSearch({ details, onEdit }) {
       <div>
       </div>
       <div className="searchbar">
-        <label for='prodSearch'>Search by Product name, price, season, or number in stock:</label>
+        <label htmlFor='prodSearch'>Search by Product name, price, season, or number in stock:</label>
         <input 
           id='prodSearch'
           className="search"

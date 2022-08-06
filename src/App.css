@@ -11,10 +11,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ECECEC;
 }
 
 h1 {
   font-family: 'Press Start 2P', cursive;
+  color:#1A23D8;
 }
 
 table {
@@ -30,6 +32,7 @@ th {
   border-bottom: 2px dotted black;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
+  color: #1A23D8;
 }
 
 th, td {
@@ -43,14 +46,20 @@ tbody {
 
 .click {
   border: none;
+  color:#1A23D8;
+}
+
+a {
+  color: #1A23D8;
 }
 
 .links {
   margin: 1em;
+  color: #1A23D8;
 }
 
 header {
-  border-bottom: 3px dotted black;
+  border-bottom: 3px dotted #1A23D8;
 }
 
 ul {
@@ -63,13 +72,17 @@ li {
   display: inline-block;
 }
 
-#intro-blurb {
+p {
   text-align: left;
   padding: 0 5em 0 5em;
 }
 
 button {
   padding: 1em;
+  background-color: #0071FF;
+  border: none;
+  border-radius: 5px;
+  color: #ECECEC;
 }
 
 label {
@@ -102,7 +115,12 @@ input, select {
 }
 
 .searchbar {
-  margin-bottom: 1em;
+  text-align: left;
+  padding-right: 5em;
+  border-left: 2px solid #1A23D8;
+  border-radius: 2em;
+  width: fit-content;
+  margin: 1em 5em 1em 5em;
 }
 
 .return {
@@ -117,4 +135,7 @@ input, select {
   width: max-content;
 }
 
-
+#copy {
+  margin-top: 5em;
+  text-align: center;
+}

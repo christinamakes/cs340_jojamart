@@ -39,7 +39,7 @@ function EmployeeSearch({ details, onDelete, onEdit }) {
       <div>
       </div>
       <div className="searchbar">
-        <label for='empSearch'>Search by Employee name, email, or phone number:</label>
+        <label htmlFor='empSearch'>Search by Employee name, email, or phone number:</label>
         <input 
           id='empSearch'
           className="search"

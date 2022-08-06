@@ -14,7 +14,7 @@ function InvoiceView({ invoiceView, onEdit}) {
             <td>{invoiceView.invoice_total}</td>
             <td>{invoiceView.order_type_name}</td>
             <td>{invoiceView.purchase_date}</td>
-            <td><AiOutlineEdit onClick={() => onEdit(invoiceView)} /></td>
+            <td className='click'><AiOutlineEdit onClick={() => onEdit(invoiceView)} /></td>
         </tr>
     );
 }

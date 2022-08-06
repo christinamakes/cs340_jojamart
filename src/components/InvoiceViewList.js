@@ -7,11 +7,11 @@ function InvoiceViewsList({ invoiceViews, onEdit }) {
         <table id="invoiceViews">
             <thead>
                 <tr>
-                    <th>Order Number</th>
+                    <th>Order #</th>
                     <th>Member</th>
                     <th>Employee</th>
                     <th>Product</th>
-                    <th>Product Price</th>
+                    <th>Price</th>
                     <th>Quantity</th>
                     <th>Invoice Total</th>
                     <th>Order Type</th>
