@@ -1,8 +1,12 @@
 import React from 'react';
 import Achievement from './Achievement';
+import PropTypes from 'prop-types';
 
 
-function AchievementList({ achievements}) {
+function AchievementList({ achievements }) {
+    AchievementList.propTypes = {
+        achievements: PropTypes.array,
+    }
     return (
         <table id="achievements">
             <thead>

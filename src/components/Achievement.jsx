@@ -1,6 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Achievement({ achievement}) {
+function Achievement({ achievement }) {
+    Achievement.propTypes = {
+        achievement: PropTypes.array,
+        achievement_id: PropTypes.string,
+        achievement_title: PropTypes.string,
+        achievement_criteria: PropTypes.string
+    }
     return (
         <tr>
             <td>{achievement.achievement_id}</td>
