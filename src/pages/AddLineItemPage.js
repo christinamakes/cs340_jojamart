@@ -25,7 +25,7 @@ export const AddLineItemPage = () => {
     const [sales, setSales] = useState([]);
 
     const addSale = async () => {
-        const response = await fetch(`${URL}/sales-details/add-s`, {
+        const response = await fetch(`${URL}/sales/add-s`, {
             method: 'POST',
             body: JSON.stringify({member_id:member_id, employee_id:employee_id, purchase_date:purchase_date, invoice_total:invoice_total}),
             headers: {
