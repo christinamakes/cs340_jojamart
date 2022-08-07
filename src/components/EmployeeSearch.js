@@ -1,36 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EmployeesList from './EmployeesList';
 
 function EmployeeSearch({ details, onDelete, onEdit }) {
 
   const [searchField, setSearchField] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [SQLData, setSQLData] = useState([])
 
-  const filtered = details.filter(
-    data => {
-      return (
-        data
-        .employee_name
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        data
-        .employee_email
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        data
-        .employee_phone_number
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
-      );
+  const URL = 'https://joja-server.herokuapp.com'
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${URL}/employees/search/?q=${searchField}`, {method: 'GET'});
+      const json = await response.json();
+      setSQLData(json)
+    } 
+  fetchData();
+  }, [searchField]);
+
+  const searchItems = (searchValue) => {
+    setSearchField(searchValue)
+    if (searchField !== '') {
+        const filteredData = SQLData
+        setFilteredResults(filteredData)
     }
-  );
-
-  const handleChange = e => {
-    setSearchField(e.target.value);
-  };
+    else{
+        setFilteredResults(details)
+    }
+  }
 
   function searchList() {
     return (
-        <EmployeesList employees={filtered} onDelete={onDelete} onEdit={onEdit}/>
+        <EmployeesList employees={filteredResults} onDelete={onDelete} onEdit={onEdit}/>
     );
   }
 
@@ -45,7 +46,7 @@ function EmployeeSearch({ details, onDelete, onEdit }) {
           className="search"
           type = "search" 
           placeholder = "Search" 
-          onChange = {handleChange}
+          onChange = {(e) => searchItems(e.target.value)}
         />
       </div>
       {searchList()}
