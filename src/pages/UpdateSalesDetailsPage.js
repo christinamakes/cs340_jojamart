@@ -124,16 +124,17 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
                         placeholder="Enter invoice total here"
                         value={invoice_total}
                         onChange={e => setTotal(e.target.value)} />
-                    <label htmlFor='uSaleDetProd'>Product ID: </label>
-                    <select id='uSaleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
-                        <option value='Select a Product'> -- Select a Product -- </option>
-                        {products.map((product, i) => <option value={product.product_id} key={i}>{product.product_id + ' -- ' + product.product_name}</option>)}
-                    </select>
                     <button
                         onClick={updateSale}
                         >Update</button>
                 </div>
                 <div>
+                    <label htmlFor='uSaleDetProd'>Product ID: </label>
+                    <select id='uSaleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
+                        <option value='Select a Product'> -- Select a Product -- </option>
+                        {products.map((product, i) => <option value={product.product_id} key={i}>{product.product_id + ' -- ' + product.product_name}</option>)}
+                    </select>
+                    
                     <label htmlFor='uSaleDetOrd'>Order Number: </label>
                     <select id='uSaleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
                     <option value='Select an Order Number'> -- Select an Order Number -- </option>
