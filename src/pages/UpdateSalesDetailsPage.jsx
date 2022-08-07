@@ -82,6 +82,8 @@ export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
     };
 
     useEffect(() => {
+        loadMembers();
+        loadEmployees();
         loadProducts();
         loadSales();
     }, []);
