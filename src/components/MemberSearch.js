@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MembersList from './MembersList';
 
-function MemberSearch({ details, onDelete, onEdit }) {
+function MemberSearch({ onDelete, onEdit }) {
 
   const [searchField, setSearchField] = useState("");
-  const [filteredResults, setFilteredResults] = useState([]);
+  const [setFilteredResults] = useState([]);
   const [SQLData, setSQLData] = useState([])
 
   const URL = 'https://joja-server.herokuapp.com'
@@ -26,13 +26,13 @@ function MemberSearch({ details, onDelete, onEdit }) {
         setFilteredResults(filteredData)
     }
     else{
-        setFilteredResults(details)
+        setFilteredResults(SQLData)
     }
 }
 
   function searchList() {
     return (
-        <MembersList members={filteredResults} onDelete={onDelete} onEdit={onEdit}/>
+        <MembersList members={SQLData} onDelete={onDelete} onEdit={onEdit}/>
     );
   }
 
