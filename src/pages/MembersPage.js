@@ -8,7 +8,6 @@ import { useState, useEffect} from 'react';
 const URL = 'https://joja-server.herokuapp.com'
 
 function MembersPage({setMemberToEdit}) {
-    // Data hardcoded for now, dynamic later
     const navigate = useNavigate();
     const [members, setMembers] = useState([])
     
@@ -17,15 +16,6 @@ function MembersPage({setMemberToEdit}) {
         const response = await fetch(`${URL}/members`);
         const members = await response.json();
         setMembers(members);
-    }
-
-    const onDelete = async (member_id) => {
-        const response = await fetch(`${URL}/members/delete/${member_id}`, {method: 'DELETE'});
-        if (response.status === 200) {
-            setMembers(members.filter(m => m.member_id !== member_id));
-        } else {
-            alert(`Failed to delete member`)
-        }
     }
 
     const onEdit = (member) => {
@@ -46,7 +36,7 @@ function MembersPage({setMemberToEdit}) {
             <div>
                 <p>These are our valued members. Add new members, edit information on existing members, or Remove members from the database.</p>
             </div>
-            <MemberSearch details={members} onDelete={onDelete} onEdit={onEdit}/>
+            <MemberSearch details={members} onEdit={onEdit}/>
             <div className='add'>
                 <ul>
                     <li>
