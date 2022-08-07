@@ -3,15 +3,10 @@
 // ADAPTED FROM
 // https://www.freecodecamp.org/news/build-a-search-filter-using-react-and-react-hooks/
 
-import React, {
-  useState,
-  useEffect
-} from 'react';
+import React, { useState, useEffect } from 'react';
 import MembersList from './MembersList';
 
-function MemberSearch({
-  onEdit
-}) {
+function MemberSearch({ onEdit }) {
 
   const [searchField, setSearchField] = useState("");
   const [setFilteredResults] = useState([]);
@@ -21,9 +16,7 @@ function MemberSearch({
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`${URL}/members/search/?q=${searchField}`, {
-        method: 'GET'
-      });
+      const response = await fetch(`${URL}/members/search/?q=${searchField}`, { method: 'GET' });
       const json = await response.json();
       setSQLData(json)
     }
@@ -31,14 +24,10 @@ function MemberSearch({
   }, [searchField]);
 
   const onDelete = async (member_id) => {
-    const response = await fetch(`${URL}/members/delete/${member_id}`, {
-      method: 'DELETE'
-    });
+    const response = await fetch(`${URL}/members/delete/${member_id}`, { method: 'DELETE' });
     if (response.status === 200) {
       const fetchData = async () => {
-        const response = await fetch(`${URL}/members/search/?q=${searchField}`, {
-          method: 'GET'
-        });
+        const response = await fetch(`${URL}/members/`, { method: 'GET' });
         const json = await response.json();
         setSQLData(json)
       }
@@ -53,47 +42,34 @@ function MemberSearch({
     if (searchField !== '') {
       const filteredData = SQLData
       setFilteredResults(filteredData)
-    } else {
+    }
+    else {
       setFilteredResults(SQLData)
     }
   }
 
   function searchList() {
-    return ( <
-      MembersList members = {
-        SQLData
-      }
-      onDelete = {
-        onDelete
-      }
-      onEdit = {
-        onEdit
-      }
-      />
+    return (
+      <MembersList members={SQLData} onDelete={onDelete} onEdit={onEdit} />
     );
   }
 
-  return ( <
-    section >
-    <
-    div >
-    <
-    /div> <
-    div className = "searchbar" >
-    <
-    label htmlFor = 'memSearch' > Search by Member name, address, email, or phone number: < /label> <
-    input id = 'memSearch'
-    className = "search"
-    type = "search"
-    placeholder = "Search"
-    onChange = {
-      (e) => searchItems(e.target.value)
-    }
-    /> <
-    /div> {
-      searchList()
-    } <
-    /section>
+  return (
+    <section>
+      <div>
+      </div>
+      <div className="searchbar">
+        <label htmlFor='memSearch'>Search by Member name, address, email, or phone number:</label>
+        <input
+          id='memSearch'
+          className="search"
+          type="search"
+          placeholder="Search"
+          onChange={(e) => searchItems(e.target.value)}
+        />
+      </div>
+      {searchList()}
+    </section>
   );
 }
 
