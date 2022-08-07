@@ -1,40 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MembersList from './MembersList';
 
 function MemberSearch({ details, onDelete, onEdit }) {
 
   const [searchField, setSearchField] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [SQLData, setSQLData] = useState([])
 
-  const filtered = details.filter(
-    data => {
-      return (
-        data
-        .member_name
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        data
-        .member_email
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        data
-        .member_phone_number
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        data
-        .member_address
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
-      );
+  const URL = 'https://joja-server.herokuapp.com'
+
+  useEffect(() => {
+      const fetchData = async () => {
+        const response = await fetch(`${URL}/members/search/?q=${searchField}`, {method: 'GET'});
+        const json = await response.json();
+        setSQLData(json)
+      } 
+    fetchData();
+    }, [searchField]);
+
+
+  const searchItems = (searchValue) => {
+    setSearchField(searchValue)
+    if (searchField !== '') {
+        const filteredData = SQLData
+        setFilteredResults(filteredData)
     }
-  );
-
-  const handleChange = e => {
-    setSearchField(e.target.value);
-  };
+    else{
+        setFilteredResults(details)
+    }
+}
 
   function searchList() {
     return (
-        <MembersList members={filtered} onDelete={onDelete} onEdit={onEdit}/>
+        <MembersList members={filteredResults} onDelete={onDelete} onEdit={onEdit}/>
     );
   }
 
@@ -49,7 +47,7 @@ function MemberSearch({ details, onDelete, onEdit }) {
           className="search"
           type = "search" 
           placeholder = "Search" 
-          onChange = {handleChange}
+          onChange={(e) => searchItems(e.target.value)}
         />
       </div>
       {searchList()}
