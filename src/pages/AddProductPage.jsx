@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
@@ -10,6 +10,14 @@ export const AddProductPage = () => {
     const [product_price, setPrice] = useState('');
     const [season_code, setSeason] = useState('');
     const [number_in_stock, setStockNum] = useState('');
+
+    const [seasons, setSeasons] = useState([])
+
+    const loadSeasons = async () => {
+        const response = await fetch(`${URL}/seasons`);
+        const seasons = await response.json();
+        setSeasons(seasons);
+    };
 
     const addProduct = async () => {
         const response = await fetch(`${URL}/products/add`, {
@@ -24,6 +32,10 @@ export const AddProductPage = () => {
         }
         navigate('/products')
     };
+
+    useEffect(() => {
+        loadSeasons();
+    }, []);
 
     return (
         <div>
@@ -50,10 +62,7 @@ export const AddProductPage = () => {
                 onChange={e => setPrice(e.target.value)} />
             <label for='prodSea'>Season Code: </label>
             <select id='prodSea' name='season_code' onChange={e => setSeason(e.target.value)}>
-                <option value='YEAR'>YEAR</option>
-                <option value='SPRING'>SPRING</option>
-                <option value='SUMMER'>SUMMER</option>
-                <option value='FALL'>FALL</option>
+                {seasons.map((season, i) => <option value={season.season_code} key={i}>{season.season_code}</option>)}
             </select>
             <label for='prodStock'>Number in Stock: </label>
             <input

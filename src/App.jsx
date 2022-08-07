@@ -21,6 +21,7 @@ import UpdateMemberPage from './pages/UpdateMemberPage';
 import UpdateEmployeePage from './pages/UpdateEmployeePage';
 import UpdateProductPage from './pages/UpdateProductPage';
 import UpdateSalesDetailsPage from './pages/UpdateSalesDetailsPage';
+import UpdateSalesPage from './pages/UpdateSalesPage';
 import {useState} from 'react';
 
 // import {useState} from 'react';
@@ -30,6 +31,7 @@ function App() {
   const [employeeToEdit, setEmployeeToEdit] = useState()
   const [productToEdit, setProductToEdit] = useState()
   const [salesDetailToEdit, setSalesDetailToEdit] = useState()
+  const [saleToEdit, setSaleToEdit] = useState()
 
   return (
     <Router>
@@ -39,7 +41,7 @@ function App() {
             <Route path='/members' element={<MembersPage setMemberToEdit={setMemberToEdit}/>}/>
             <Route path='/employees' element={<EmployeesPage setEmployeeToEdit={setEmployeeToEdit}/>}/>
             <Route path='/products' element={<ProductsPage setProductToEdit={setProductToEdit}/>}/>
-            <Route path='/sales' element={<SalesPage />}/>
+            <Route path='/sales' element={<SalesPage  setSaleToEdit={setSaleToEdit}/>}/>
             <Route path='/seasons' element={<SeasonsPage />}/>
             <Route path='/achievements' element={<AchievementsPage />}/>
             <Route path='/member-achievements' element={<MemberAchievementsPage />}/>
@@ -55,6 +57,8 @@ function App() {
             <Route path='/update-employee' element={<UpdateEmployeePage employeeToEdit={employeeToEdit}/>}/>
             <Route path='/update-product' element={<UpdateProductPage productToEdit={productToEdit}/>}/>
             <Route path='/update-sales-details' element={<UpdateSalesDetailsPage salesDetailToEdit={salesDetailToEdit} />}/>
+            <Route path='/update-sale' element={<UpdateSalesPage salesToEdit={saleToEdit} />}/>
+
         </Routes>
       </div>
     </Router>

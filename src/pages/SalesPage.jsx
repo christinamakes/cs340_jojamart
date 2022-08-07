@@ -3,19 +3,25 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import SalesList from '../components/SalesList';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-function SalesPage() {
+function SalesPage({setSalesToEdit}) {
     // Data hardcoded for now, dynamic later
+    const navigate = useNavigate();
     const [sales, setSales] = useState([])
 
     const loadSales = async () => {
         const response = await fetch(`${URL}/sales/s`);
         const sales = await response.json();
         setSales(sales);
+    }
+
+    const onEdit = (sale) => {
+        setSalesToEdit(sale)
+        navigate('/sales/update-s')
     }
 
     useEffect(() => {
@@ -31,7 +37,7 @@ function SalesPage() {
             <div>
                 <p>Here we have records of our highly profitable sales! Add additional transactions.</p>
             </div>
-            <SalesList sales={sales}/>
+            <SalesList sales={sales} onEdit={onEdit}/>
             <div className='add'>
                 <ul>
                     <li>
