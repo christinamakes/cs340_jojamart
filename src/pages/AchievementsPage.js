@@ -1,16 +1,27 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import { useHistory, Link } from 'react-router-dom';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { Link } from 'react-router-dom';
-import AchievementSearch from '../components/AchievementSearchbar';
+import AchievementsList from '../components/AchievementsList'
 
 function AchievementsPage() {
-    // Data hardcoded for now, dynamic later
-    const achList = [{'title':'loyal_customer','criteria':'Complete 10 purchases from JojaMart','id':1},
-    {'title':'first_dollar','criteria':'Complete first purchase from JojaMart','id':2}, {'title':'early_riser','criteria':'Wait outside JojaMart at opening time','id':3}]
+    const URL = 'https://joja-server.herokuapp.com'
+    const [achievements, setAchievements] = useState([])
+
+    const loadAchievements = async () => {
+        const response = await fetch(`${URL}/achievements`);
+        const achievements = await response.json();
+        setAchievements(achievements);
+    };
+
+    useEffect(() => {
+        loadAchievements()
+    },[]);
+
+
     return (
         <div>
             <header>
@@ -20,7 +31,7 @@ function AchievementsPage() {
             <div>
                 <p>These are achievements that our members are eligible to earn (primarily by spending money at Joja Mart!).</p>
             </div>
-            <AchievementSearch details={achList} />
+            <AchievementsList achievements={achievements}/>
             <div className='add'>
                 <ul>
                     <li>

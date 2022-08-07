@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddMemberAchievementPage = () => {
+    const URL = 'https://joja-server.herokuapp.com'
     const [setAchievementId] = useState('');
     const [setMemberId] = useState('');
+    const [members, setMembers] = useState([]);
+    const [achievements, setAchievements] = useState([])
 
     const addMemberAchievement = async () => {
         // const response = await fetch('/exercises', {
@@ -22,6 +25,26 @@ export const AddMemberAchievementPage = () => {
         // }
         // history.push("/");
     };
+
+    
+    // get members from /members
+    const loadMembers = async () => {
+        const response = await fetch(`${URL}/members`);
+        const members = await response.json();
+        setMembers(members);
+    };
+
+    // get achievements from /achievements
+    const loadAchievements = async () => {
+        const response = await fetch(`${URL}/achievements`);
+        const members = await response.json();
+        setAchievements(members);
+    };
+
+    useEffect(() => {
+        loadMembers();
+        loadAchievements();
+    }, []);
 
     return (
         <div>

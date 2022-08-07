@@ -3,9 +3,9 @@ import React from 'react';
 function Achievement({ achievement}) {
     return (
         <tr>
-            <td>{achievement.id}</td>
-            <td>{achievement.title}</td>
-            <td>{achievement.criteria}</td>
+            <td>{achievement.achievement_id}</td>
+            <td>{achievement.achievement_title}</td>
+            <td>{achievement.achievement_criteria}</td>
         </tr>
     );
 }
