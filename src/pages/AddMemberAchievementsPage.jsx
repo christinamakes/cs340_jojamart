@@ -16,7 +16,7 @@ export const AddMemberAchievementPage = () => {
     const addMemberAchievement = async () => {
         const response = await fetch(`${URL}/member-achievements/add`, {
             method: 'POST',
-            body: JSON.stringify({member_id:member_id, achievement_id:ach_id}),
+            body: JSON.stringify({ member_id: member_id, achievement_id: ach_id }),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -29,7 +29,7 @@ export const AddMemberAchievementPage = () => {
 
     };
 
-    
+
     // get members from /members
     const loadMembers = async () => {
         const response = await fetch(`${URL}/members`);
@@ -52,28 +52,28 @@ export const AddMemberAchievementPage = () => {
     return (
         <div>
 
-        <header>
-            <h1>Add a Member Achievement</h1>
-            <Navigation />
-        </header>
-        <div>
-            <p>Add a member achievement on this page</p>
-            <label for='AchAchA'>Achievement ID: </label>
-            <select id='mem-ach-achievement' name='ach_id' onChange={e => setAch(e.target.value)}>
-                <option value='Select an Achievement'> -- Select an Achievement -- </option>
-                {achievements.map((ach, i) => <option value={ach.achievement_id} key={i}>{ach.achievement_id + ' -- ' + ach.achievement_title}</option>)}
-            </select>
-            
-            <label htmlFor='saleMember'>Member ID: </label>
-            <select id='mem-ach-member' name='member_id' onChange={e => setMember(e.target.value)}>
-                <option value='Select a Member'> -- Select a Member -- </option>
-                {members.map((member, i) => <option value={member.member_id} key={i}>{member.member_id + ' -- ' + member.member_name}</option>)}
-            </select>
-            <button
-                onClick={addMemberAchievement}
-            >Add</button>
-        </div>
-        <Footer />
+            <header>
+                <h1>Add a Member Achievement</h1>
+                <Navigation />
+            </header>
+            <div>
+                <p>Add a member achievement on this page</p>
+                <label htmlFor='AchAchA'>Achievement ID: </label>
+                <select id='mem-ach-achievement' name='ach_id' onChange={e => setAch(e.target.value)}>
+                    <option value='Select an Achievement'> -- Select an Achievement -- </option>
+                    {achievements.map((ach, i) => <option value={ach.achievement_id} key={i}>{ach.achievement_id + ' -- ' + ach.achievement_title}</option>)}
+                </select>
+
+                <label htmlFor='saleMember'>Member ID: </label>
+                <select id='mem-ach-member' name='member_id' onChange={e => setMember(e.target.value)}>
+                    <option value='Select a Member'> -- Select a Member -- </option>
+                    {members.map((member, i) => <option value={member.member_id} key={i}>{member.member_id + ' -- ' + member.member_name}</option>)}
+                </select>
+                <button
+                    onClick={addMemberAchievement}
+                >Add</button>
+            </div>
+            <Footer />
         </div>
     );
 }

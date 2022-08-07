@@ -5,9 +5,12 @@
 
 import React, { useState, useEffect } from 'react';
 import MembersList from './MembersList';
+import PropTypes from 'prop-types';
 
 function MemberSearch({ onEdit }) {
-
+  MemberSearch.propTypes = {
+    onEdit: PropTypes.func
+  }
   const [searchField, setSearchField] = useState("");
   const [setFilteredResults] = useState([]);
   const [SQLData, setSQLData] = useState([])

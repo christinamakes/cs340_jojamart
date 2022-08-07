@@ -4,10 +4,14 @@ import Navigation from '../components/NavBar';
 import EmployeeSearch from '../components/EmployeeSearch';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const URL = 'https://joja-server.herokuapp.com'
 
 function EmployeesPage({ setEmployeeToEdit }) {
+    EmployeesPage.propTypes = {
+        setEmployeeToEdit: PropTypes.func
+    }
     // Data hardcoded for now, dynamic later
     const navigate = useNavigate();
     const [employees, setEmployees] = useState([])

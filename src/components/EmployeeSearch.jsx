@@ -5,8 +5,13 @@
 
 import React, { useState, useEffect } from 'react';
 import EmployeesList from './EmployeesList';
+import PropTypes from 'prop-types';
 
 function EmployeeSearch({ onDelete, onEdit }) {
+  EmployeeSearch.propTypes = {
+    onDelete: PropTypes.func,
+    onEdit: PropTypes.func
+  }
 
   const [searchField, setSearchField] = useState("");
   const [setFilteredResults] = useState([]);
