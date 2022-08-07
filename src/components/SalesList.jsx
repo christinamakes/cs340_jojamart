@@ -1,8 +1,13 @@
 import React from 'react';
 import Sale from './Sale';
+import PropTypes from 'prop-types';
 
 
 function SalesList({ sales }) {
+    SalesList.propTypes = {
+        sales: PropTypes.array,
+    }
+
     return (
         <table id="sales">
             <thead>

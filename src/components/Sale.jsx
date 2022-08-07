@@ -1,8 +1,15 @@
 import React from 'react';
-// import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
-// import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 function Sale({ sale }) {
+    Sale.propTypes = {
+        sale: PropTypes.array,
+        order_number: PropTypes.string,
+        member_id: PropTypes.string,
+        employee_id: PropTypes.string,
+        purchase_date: PropTypes.string,
+        invoice_total: PropTypes.string
+    }
     return (
         <tr>
             <td>{sale.order_number}</td>

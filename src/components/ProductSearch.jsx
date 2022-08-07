@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import ProductsList from './ProductsList';
+import PropTypes from 'prop-types';
 
 function ProductSearch({ details, onEdit }) {
+  ProductSearch.propTypes = {
+    details: PropTypes.array,
+    onEdit: PropTypes.func,
+  }
 
   const [searchField, setSearchField] = useState("");
 
@@ -9,21 +14,21 @@ function ProductSearch({ details, onEdit }) {
     data => {
       return (
         data
-        .product_name
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
+          .product_name
+          .toLowerCase()
+          .includes(searchField.toLowerCase()) ||
         data
-        .product_price
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
+          .product_price
+          .toLowerCase()
+          .includes(searchField.toLowerCase()) ||
         data
-        .season_code
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
+          .season_code
+          .toLowerCase()
+          .includes(searchField.toLowerCase()) ||
         data
-        .number_in_stock
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
+          .number_in_stock
+          .toLowerCase()
+          .includes(searchField.toLowerCase())
       );
     }
   );
@@ -34,7 +39,7 @@ function ProductSearch({ details, onEdit }) {
 
   function searchList() {
     return (
-        <ProductsList products={filtered} onEdit={onEdit} />
+      <ProductsList products={filtered} onEdit={onEdit} />
     );
   }
 
@@ -44,12 +49,12 @@ function ProductSearch({ details, onEdit }) {
       </div>
       <div className="searchbar">
         <label htmlFor='prodSearch'>Search by Product name, price, season, or number in stock:</label>
-        <input 
+        <input
           id='prodSearch'
           className="search"
-          type = "search" 
-          placeholder = "Search" 
-          onChange = {handleChange}
+          type="search"
+          placeholder="Search"
+          onChange={handleChange}
         />
       </div>
       {searchList()}

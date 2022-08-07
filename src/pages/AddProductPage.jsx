@@ -5,7 +5,7 @@ import Navigation from '../components/NavBar';
 
 export const AddProductPage = () => {
     const URL = 'https://joja-server.herokuapp.com'
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
     const [product_name, setName] = useState('');
     const [product_price, setPrice] = useState('');
     const [season_code, setSeason] = useState('');
@@ -14,12 +14,12 @@ export const AddProductPage = () => {
     const addProduct = async () => {
         const response = await fetch(`${URL}/products/add`, {
             method: 'POST',
-            body: JSON.stringify({product_name:product_name, product_price:product_price, season_code:season_code, number_in_stock:number_in_stock}),
+            body: JSON.stringify({ product_name: product_name, product_price: product_price, season_code: season_code, number_in_stock: number_in_stock }),
             headers: {
                 'Content-Type': 'application/json'
             },
         });
-        if (response.status !== 200){
+        if (response.status !== 200) {
             alert(`Oops! Something went wrong.`);
         }
         navigate('/products')
@@ -28,45 +28,45 @@ export const AddProductPage = () => {
     return (
         <div>
 
-        <header>
-            <h1>Add a product</h1>
-            <Navigation />
-        </header>
-        <div>
-            <p>Add a product on this page.</p>
-            <label for='prodName'>Name: </label>
-            <input
-                id='prodName'
-                type="text"
-                placeholder="Enter name here"
-                value={product_name}
-                onChange={e => setName(e.target.value)} />
-            <label for='prodPrice'>Price: </label>
-            <input
-                id='prodPrice'
-                type="text"
-                placeholder="Enter price here"
-                value={product_price}
-                onChange={e => setPrice(e.target.value)} />
-            <label for='prodSea'>Season Code: </label>
-            <select id='prodSea' name='season_code' onChange={e => setSeason(e.target.value)}>
-                <option value='YEAR'>YEAR</option>
-                <option value='SPRING'>SPRING</option>
-                <option value='SUMMER'>SUMMER</option>
-                <option value='FALL'>FALL</option>
-            </select>
-            <label for='prodStock'>Number in Stock: </label>
-            <input
-                id='prodStock'
-                type="text"
-                placeholder="Enter number in stock"
-                value={number_in_stock}
-                onChange={e => setStockNum(e.target.value)} />
-            <button
-                onClick={addProduct}
-            >Add</button>
-        </div>
-        <Footer />
+            <header>
+                <h1>Add a product</h1>
+                <Navigation />
+            </header>
+            <div>
+                <p>Add a product on this page.</p>
+                <label htmlFor='prodName'>Name: </label>
+                <input
+                    id='prodName'
+                    type="text"
+                    placeholder="Enter name here"
+                    value={product_name}
+                    onChange={e => setName(e.target.value)} />
+                <label htmlFor='prodPrice'>Price: </label>
+                <input
+                    id='prodPrice'
+                    type="text"
+                    placeholder="Enter price here"
+                    value={product_price}
+                    onChange={e => setPrice(e.target.value)} />
+                <label htmlFor='prodSea'>Season Code: </label>
+                <select id='prodSea' name='season_code' onChange={e => setSeason(e.target.value)}>
+                    <option value='YEAR'>YEAR</option>
+                    <option value='SPRING'>SPRING</option>
+                    <option value='SUMMER'>SUMMER</option>
+                    <option value='FALL'>FALL</option>
+                </select>
+                <label htmlFor='prodStock'>Number in Stock: </label>
+                <input
+                    id='prodStock'
+                    type="text"
+                    placeholder="Enter number in stock"
+                    value={number_in_stock}
+                    onChange={e => setStockNum(e.target.value)} />
+                <button
+                    onClick={addProduct}
+                >Add</button>
+            </div>
+            <Footer />
         </div>
     );
 }

@@ -2,10 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
+export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
+    UpdateSalesDetailsPage.propTypes = {
+        salesDetailToEdit: PropTypes.func,
+        sales_details_id: PropTypes.string,
+        order_number: PropTypes.string
+    }
     const navigate = useNavigate();
     const [product_id, setProductId] = useState(salesDetailToEdit);
     const [order_number, setOrderNumber] = useState(salesDetailToEdit);
@@ -23,43 +29,43 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
     const [products, setProducts] = useState([]);
     const [sales, setSales] = useState([]);
 
-        // get members from /members
-        const loadMembers = async () => {
-            const response = await fetch(`${URL}/members`);
-            const members = await response.json();
-            setMembers(members);
-        };
-    
-        // get employees from /employees
-        const loadEmployees = async () => {
-            const response = await fetch(`${URL}/employees`);
-            const employees = await response.json();
-            setEmployees(employees);
-        };
-    
-        // Get products from /products
-        const loadProducts = async () => {
-            const response = await fetch(`${URL}/products`);
-            const products = await response.json();
-            setProducts(products);
-        };
-    
-        // Get sales from /sales
-        const loadSales = async () => {
-            const response = await fetch(`${URL}/sales/s`);
-            const sales = await response.json();
-            setSales(sales);
-        };
+    // get members from /members
+    const loadMembers = async () => {
+        const response = await fetch(`${URL}/members`);
+        const members = await response.json();
+        setMembers(members);
+    };
+
+    // get employees from /employees
+    const loadEmployees = async () => {
+        const response = await fetch(`${URL}/employees`);
+        const employees = await response.json();
+        setEmployees(employees);
+    };
+
+    // Get products from /products
+    const loadProducts = async () => {
+        const response = await fetch(`${URL}/products`);
+        const products = await response.json();
+        setProducts(products);
+    };
+
+    // Get sales from /sales
+    const loadSales = async () => {
+        const response = await fetch(`${URL}/sales/s`);
+        const sales = await response.json();
+        setSales(sales);
+    };
 
     const updateSalesDetail = async () => {
         const response = await fetch(`${URL}/update-sd`, {
             method: 'PUT',
-            body: JSON.stringify({sales_details_id:salesDetailToEdit.sales_details_id, product_id:product_id, order_number:order_number, quantity:quantity, order_type:order_type}),
+            body: JSON.stringify({ sales_details_id: salesDetailToEdit.sales_details_id, product_id: product_id, order_number: order_number, quantity: quantity, order_type: order_type }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-        if (response.status === 200){
+        if (response.status === 200) {
             alert(`Sales Details updated successfully.`);
             navigate('/sales-details');
         } else {
@@ -70,12 +76,12 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
     const updateSale = async () => {
         const response = await fetch(`${URL}/update-s`, {
             method: 'PUT',
-            body: JSON.stringify({order_number:salesDetailToEdit.order_number, member_id:member_id, employee_id:employee_id, purchase_date:purchase_date, invoice_total:invoice_total}),
+            body: JSON.stringify({ order_number: salesDetailToEdit.order_number, member_id: member_id, employee_id: employee_id, purchase_date: purchase_date, invoice_total: invoice_total }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-        if (response.status === 200){
+        if (response.status === 200) {
             alert(`Sale updated successfully.`);
         } else {
             alert(`Oops! Something went wrong with updating Sale.`);
@@ -126,7 +132,7 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
                         onChange={e => setTotal(e.target.value)} />
                     <button
                         onClick={updateSale}
-                        >Update</button>
+                    >Update</button>
                 </div>
                 <div>
                     <label htmlFor='uSaleDetProd'>Product ID: </label>
@@ -134,11 +140,11 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
                         <option value='Select a Product'> -- Select a Product -- </option>
                         {products.map((product, i) => <option value={product.product_id} key={i}>{product.product_id + ' -- ' + product.product_name}</option>)}
                     </select>
-                    
+
                     <label htmlFor='uSaleDetOrd'>Order Number: </label>
                     <select id='uSaleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
-                    <option value='Select an Order Number'> -- Select an Order Number -- </option>
-                    {sales.map((sale, i) => <option value={sale.order_number} key={i}>{sale.order_number}</option>)}
+                        <option value='Select an Order Number'> -- Select an Order Number -- </option>
+                        {sales.map((sale, i) => <option value={sale.order_number} key={i}>{sale.order_number}</option>)}
                     </select>
                     <label htmlFor='uSaleDetQuant'>Quantity: </label>
                     <input
@@ -154,7 +160,7 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
                     </select>
                     <button
                         onClick={updateSalesDetail}
-                        >Update</button>
+                    >Update</button>
                 </div>
             </div>
             <div>

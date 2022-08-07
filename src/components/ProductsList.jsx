@@ -1,8 +1,13 @@
 import React from 'react';
 import Product from './Product';
+import PropTypes from 'prop-types';
 
 
 function ProductsList({ products, onEdit }) {
+    ProductsList.propTypes = {
+        products: PropTypes.array,
+        onEdit: PropTypes.func,
+    }
     return (
         <table id="products">
             <thead>
