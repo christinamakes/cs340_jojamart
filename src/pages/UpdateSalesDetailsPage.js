@@ -52,7 +52,7 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
         };
 
     const updateSalesDetail = async () => {
-        const response = await fetch(`${URL}/update-s`, {
+        const response = await fetch(`${URL}/update-sd`, {
             method: 'PUT',
             body: JSON.stringify({sales_details_id:salesDetailToEdit.sales_details_id, product_id:product_id, order_number:order_number, quantity:quantity, order_type:order_type}),
             headers: {
@@ -103,7 +103,6 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
             </header>
             <p>Update a Sales Details Instance on this page</p>
             <div>
-                <p>Add a sale on this page.</p>
                 <label htmlFor='uSaleMember'>Member ID: </label>
                 <select id='uSaleMember' name='member_id' onChange={e => setMember(e.target.value)}>
                     <option value='Select a Member'> -- Select a Member -- </option>
