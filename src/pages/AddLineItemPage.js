@@ -109,7 +109,7 @@ export const AddLineItemPage = () => {
             <label htmlFor='saleEmployee'>Employee ID: </label>
             <select id='saleEmployee' name='employee_id' onChange={e => setEmployee(e.target.value)}>
                 <option value='Select an Employee'> -- Select an Employee -- </option>
-                <option value={undefined}>None</option>
+                <option value='0'>None</option>
                 {employees.map((employee, i) => <option value={employee.employee_id} key={i}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
             </select>
             <label htmlFor='saleDate'>Date: </label>
