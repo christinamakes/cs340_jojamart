@@ -107,13 +107,13 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
                 <label htmlFor='uSaleMember'>Member ID: </label>
                 <select id='uSaleMember' name='member_id' onChange={e => setMember(e.target.value)}>
                     <option value='Select a Member'> -- Select a Member -- </option>
-                    {members.map((member) => <option value={member.member_id}>{member.member_id + ' -- ' + member.member_name}</option>)}
+                    {members.map((member, i) => <option value={member.member_id} key={i}>{member.member_id + ' -- ' + member.member_name}</option>)}
                 </select>
                 <label htmlFor='uSaleEmployee'>Employee ID: </label>
                 <select id='uSaleEmployee' name='employee_id' onChange={e => setEmployee(e.target.value)}>
                     <option value='Select an Employee'> -- Select an Employee -- </option>
                     <option value={undefined}>None</option>
-                    {employees.map((employee) => <option value={employee.employee_id}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
+                    {employees.map((employee, i) => <option value={employee.employee_id} key={i}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
                 </select>
                 <label htmlFor='uSaleDate'>Date: </label>
                 <input
@@ -132,12 +132,12 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
                 <label htmlFor='uSaleDetProd'>Product ID: </label>
                 <select id='uSaleDetProd' name='product_id' onChange={e => setProductId(e.target.value)}>
                     <option value='Select a Product'> -- Select a Product -- </option>
-                    {products.map((product) => <option value={product.product_id}>{product.product_id + ' -- ' + product.product_name}</option>)}
+                    {products.map((product, i) => <option value={product.product_id} key={i}>{product.product_id + ' -- ' + product.product_name}</option>)}
                 </select>
                 <label htmlFor='uSaleDetOrd'>Order Number: </label>
                 <select id='uSaleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
                 <option value='Select an Order Number'> -- Select an Order Number -- </option>
-                {sales.map((sale) => <option value={sale.order_number}>{sale.order_number}</option>)}
+                {sales.map((sale, i) => <option value={sale.order_number} key={i}>{sale.order_number}</option>)}
                 </select>
                 <label htmlFor='uSaleDetQuant'>Quantity: </label>
                 <input
@@ -153,7 +153,7 @@ export const UpdateSalesDetailsPage = ({salesDetailToEdit}) => {
                 </select>
                 <button
                     onClick={updateLineItem}
-                    >Add</button>
+                    >Update</button>
             </div>
             <div>
                 <Footer />
