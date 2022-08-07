@@ -9,11 +9,11 @@ function AchievementSearch({ details }) {
     data => {
       return (
         data
-        .title
+        .achievement_title
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         data
-        .criteria
+        .achievement_criteria
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );

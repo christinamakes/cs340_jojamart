@@ -1,3 +1,8 @@
+// CITATION
+// DATE: 08/2022
+// ADAPTED FROM
+// https://www.freecodecamp.org/news/build-a-search-filter-using-react-and-react-hooks/
+
 import React, { useState, useEffect } from 'react';
 import MembersList from './MembersList';
 

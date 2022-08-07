@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from "react-router-dom";
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddAchievementPage = () => {
+    const URL = 'https://joja-server.herokuapp.com'
+    const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [criteria, setCriteria] = useState('');
 
     const addAchievement = async () => {
-        // const response = await fetch('/exercises', {
-        //     method: 'POST',
-        //     body: JSON.stringify({name:name, reps:reps, weight:weight, unit:unit, date:date}),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // });
-        // if (response.status === 200){
-        //     alert('Added exercise!');
-        // } else {
-        //     alert(`Oops, exercise creation failed!`);
-        // }
-        // history.push("/");
+        const response = await fetch(`${URL}/achievements/add`, {
+            method: 'POST',
+            body: JSON.stringify({achievement_title:title, achievement_criteria:criteria}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (response.status !== 200){
+            alert(`Oops! Something went wrong.`)
+        }
+        navigate('/achievements');
     };
 
     return (
