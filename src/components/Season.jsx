@@ -1,6 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Season({ season}) {
+function Season({ season }) {
+    Season.propTypes = {
+        season: PropTypes.array,
+        season_code: PropTypes.string,
+        description: PropTypes.string
+    }
     return (
         <tr>
             <td>{season.season_code}</td>

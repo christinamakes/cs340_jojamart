@@ -1,14 +1,19 @@
 import React from 'react';
 import MemberAchievement from './MemberAchievement';
+import PropTypes from 'prop-types';
 
 
-function MemberAchievementsList({ memberAchievements, onDelete, onEdit }) {
+function MemberAchievementsList({ memberAchievements, onDelete }) {
+    MemberAchievementsList.propTypes = {
+        memberAchievements: PropTypes.array,
+        onDelete: PropTypes.func,
+    }
     return (
         <table id="memAch">
             <thead>
                 <tr>
-                    <th>Achievement ID</th>
-                    <th>Member ID</th>
+                    <th>Achievement</th>
+                    <th>Member</th>
                 </tr>
             </thead>
             <tbody>

@@ -1,8 +1,22 @@
 import React from 'react';
 import { AiOutlineEdit } from "react-icons/ai";
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
-function InvoiceView({ invoiceView, onEdit}) {
+function InvoiceView({ invoiceView, onEdit }) {
+    InvoiceView.propTypes = {
+        invoiceView: PropTypes.array,
+        order_number: PropTypes.string,
+        member_id_name: PropTypes.string,
+        employee_id_name: PropTypes.string,
+        product_id_name: PropTypes.string,
+        product_price: PropTypes.string,
+        quantity: PropTypes.string,
+        invoice_total: PropTypes.string,
+        order_type_name: PropTypes.string,
+        purchase_date: PropTypes.string,
+        onEdit: PropTypes.func,
+    }
     return (
         <tr>
             <td>{invoiceView.order_number}</td>

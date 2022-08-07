@@ -5,7 +5,7 @@ import Navigation from '../components/NavBar';
 
 export const AddProductPage = () => {
     const URL = 'https://joja-server.herokuapp.com'
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
     const [product_name, setName] = useState('');
     const [product_price, setPrice] = useState('');
     const [season_code, setSeason] = useState('');
@@ -22,12 +22,12 @@ export const AddProductPage = () => {
     const addProduct = async () => {
         const response = await fetch(`${URL}/products/add`, {
             method: 'POST',
-            body: JSON.stringify({product_name:product_name, product_price:product_price, season_code:season_code, number_in_stock:number_in_stock}),
+            body: JSON.stringify({ product_name: product_name, product_price: product_price, season_code: season_code, number_in_stock: number_in_stock }),
             headers: {
                 'Content-Type': 'application/json'
             },
         });
-        if (response.status !== 200){
+        if (response.status !== 200) {
             alert(`Oops! Something went wrong.`);
         }
         navigate('/products')

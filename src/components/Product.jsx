@@ -1,8 +1,13 @@
 import React from 'react';
 import { AiOutlineEdit } from "react-icons/ai";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 function Product({ product, onEdit }) {
+    Product.propTypes = {
+        product: PropTypes.array,
+        onEdit: PropTypes.func,
+    }
     return (
         <tr>
             <td>{product.product_id}</td>

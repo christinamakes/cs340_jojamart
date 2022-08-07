@@ -12,7 +12,7 @@ export const AddSeasonPage = () => {
     const addSeason = async () => {
         const response = await fetch(`${URL}/seasons/add`, {
             method: 'POST',
-            body: JSON.stringify({season_code:season_code, description:description}),
+            body: JSON.stringify({ season_code: season_code, description: description }),
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -26,31 +26,31 @@ export const AddSeasonPage = () => {
     return (
         <div>
 
-        <header>
-            <h1>Add a season</h1>
-            <Navigation />
-        </header>
-        <div>
-            <p>Add a season on this page.</p>
-            <label for='seaCode'>Season Code: </label>
-            <input
-                id='seaCode'
-                type="text"
-                placeholder="Enter Season Code here"
-                value={season_code}
-                onChange={e => setSeason(e.target.value)} />
-            <label for='seaDesc'>Description: </label>
-            <input
-                id='seaDesc'
-                type="text"
-                placeholder="Enter description here"
-                value={description}
-                onChange={e => setDescription(e.target.value)} />
-            <button
-                onClick={addSeason}
-            >Add</button>
-        </div>
-        <Footer />
+            <header>
+                <h1>Add a season</h1>
+                <Navigation />
+            </header>
+            <div>
+                <p>Add a season on this page.</p>
+                <label htmlFor='seaCode'>Season Code: </label>
+                <input
+                    id='seaCode'
+                    type="text"
+                    placeholder="Enter Season Code here"
+                    value={season_code}
+                    onChange={e => setSeason(e.target.value)} />
+                <label htmlFor='seaDesc'>Description: </label>
+                <input
+                    id='seaDesc'
+                    type="text"
+                    placeholder="Enter description here"
+                    value={description}
+                    onChange={e => setDescription(e.target.value)} />
+                <button
+                    onClick={addSeason}
+                >Add</button>
+            </div>
+            <Footer />
         </div>
     );
 }

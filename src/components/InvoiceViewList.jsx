@@ -1,8 +1,13 @@
 import React from 'react';
 import InvoiceView from './InvoiceView';
+import PropTypes from 'prop-types';
 
 
 function InvoiceViewsList({ invoiceViews, onEdit }) {
+    InvoiceViewsList.propTypes = {
+        invoiceViews: PropTypes.array,
+        onEdit: PropTypes.func,
+    }
     return (
         <table id="invoiceViews">
             <thead>

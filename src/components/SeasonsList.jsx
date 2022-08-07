@@ -1,8 +1,12 @@
 import React from 'react';
 import Season from './Season';
+import PropTypes from 'prop-types';
 
 
 function SeasonsList({ seasons }) {
+    SeasonsList.propTypes = {
+        seasons: PropTypes.array,
+    }
     return (
         <table id="seasons">
             <thead>

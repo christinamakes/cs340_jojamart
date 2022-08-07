@@ -4,11 +4,15 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import ProductSearch from '../components/ProductSearch';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-function ProductsPage({setProductToEdit}) {
+function ProductsPage({ setProductToEdit }) {
+    ProductsPage.propTypes = {
+        setProductToEdit: PropTypes.func
+    }
     // Data hardcoded for now, dynamic later
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
