@@ -29,6 +29,10 @@ export const AddMemberAchievementPage = () => {
 
     };
 
+    /* CITATION for Dynamic Dropdown Menu logic
+            DATE: 8/1/2022
+            Code adapted from: 
+            source: https://dev.to/antdp425/populate-dropdown-options-in-react-1nk0 */
 
     // get members from /members
     const loadMembers = async () => {
