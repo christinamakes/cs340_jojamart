@@ -1,9 +1,8 @@
 import React from 'react';
-import { AiOutlineEdit } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
-function InvoiceView({ invoiceView, onEdit }) {
+function InvoiceView({ invoiceView }) {
     InvoiceView.propTypes = {
         invoiceView: PropTypes.object,
         order_number: PropTypes.string,
@@ -28,7 +27,6 @@ function InvoiceView({ invoiceView, onEdit }) {
             <td>{invoiceView.invoice_total}</td>
             <td>{invoiceView.order_type_name}</td>
             <td>{invoiceView.purchase_date}</td>
-            <td className='click'><Link to={'/update-sales-details'}><AiOutlineEdit onClick={() => onEdit(invoiceView)} /></Link></td>
         </tr>
     );
 }
