@@ -84,6 +84,13 @@ button {
   border: none;
   border-radius: 5px;
   color: #ECECEC;
+  margin: 1em;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #1A23D8;
+  transition-duration: .3s;
 }
 
 label {
@@ -139,4 +146,16 @@ input, select {
 #copy {
   margin-top: 5em;
   text-align: center;
+}
+
+.hideable {
+  display: none;
+}
+
+.show:focus ~ #detailedView {
+  display: block;
+}
+
+.hide:focus ~ #simpleView {
+  display: block;
 }

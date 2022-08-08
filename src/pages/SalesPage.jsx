@@ -6,6 +6,7 @@ import Navigation from '../components/NavBar';
 import SalesList from '../components/SalesList';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect} from 'react';
+import InvoiceViewsList from '../components/InvoiceViewList';
 
 const URL = 'https://joja-server.herokuapp.com'
 
@@ -17,11 +18,18 @@ function SalesPage({setSaleToEdit}) {
 
     const navigate = useNavigate();
     const [sales, setSales] = useState([])
+    const [invoices, setInvoices] = useState([])
 
     const loadSales = async () => {
         const response = await fetch(`${URL}/sales/s`);
         const sales = await response.json();
         setSales(sales);
+    }
+
+    const loadInvoices = async () => {
+        const response = await fetch(`${URL}/invoices`);
+        const invoices = await response.json();
+        setInvoices(invoices);
     }
 
     const onEdit = (sale) => {
@@ -31,6 +39,7 @@ function SalesPage({setSaleToEdit}) {
 
     useEffect(() => {
         loadSales();
+        loadInvoices();
     }, []);
 
     return (
@@ -42,7 +51,14 @@ function SalesPage({setSaleToEdit}) {
             <div>
                 <p>Here we have records of our highly profitable sales! Add additional transactions.</p>
             </div>
-            <SalesList sales={sales} onEdit={onEdit}/>
+                <button className='hide' id='hideButton'>Simple View</button>
+                <button className='show' id='showButton'>Detailed View</button>
+            <div className='hideable' id='detailedView'>
+                <InvoiceViewsList invoiceViews={invoices}/>
+            </div>
+            <div className='hideable' id='simpleView'>
+                <SalesList sales={sales} onEdit={onEdit}/>
+            </div>
             <div className='add'>
                 <ul>
                     <li>

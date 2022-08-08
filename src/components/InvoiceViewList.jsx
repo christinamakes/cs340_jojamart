@@ -3,10 +3,10 @@ import InvoiceView from './InvoiceView';
 import PropTypes from 'prop-types';
 
 
-function InvoiceViewsList({ invoiceViews, onEdit }) {
+function InvoiceViewsList({ invoiceViews }) {
     InvoiceViewsList.propTypes = {
         invoiceViews: PropTypes.array,
-        onEdit: PropTypes.func,
+        //onEdit: PropTypes.func,
     }
     return (
         <table id="invoiceViews">
@@ -25,7 +25,6 @@ function InvoiceViewsList({ invoiceViews, onEdit }) {
             </thead>
             <tbody>
                 {invoiceViews.map((invoiceView, i) => <InvoiceView invoiceView={invoiceView}
-                    onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>

@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import SalesDetailsList from '../components/SalesDetailsList';
 import PropTypes from 'prop-types';
+import InvoiceViewsList from '../components/InvoiceViewList';
 
 const URL = 'https://joja-server.herokuapp.com'
 
@@ -15,13 +16,19 @@ function SalesDetailsPage({ setSalesDetailToEdit }) {
     // Data hardcoded for now, dynamic later
     const navigate = useNavigate();
     const [salesDetails, setSalesDetails] = useState([])
+    const [invoices, setInvoices] = useState([])
 
-    // Get sales from /sales
     const loadSalesDetails = async () => {
         const response = await fetch(`${URL}/sales-details/sd`);
         const salesDetails = await response.json();
         setSalesDetails(salesDetails);
     };
+    
+    const loadInvoices = async () => {
+        const response = await fetch(`${URL}/invoices`);
+        const invoices = await response.json();
+        setInvoices(invoices);
+    }
 
     const onEdit = (salesDetail) => {
         setSalesDetailToEdit(salesDetail)
@@ -30,6 +37,7 @@ function SalesDetailsPage({ setSalesDetailToEdit }) {
 
     useEffect(() => {
         loadSalesDetails();
+        loadInvoices();
     }, []);
 
     // const saleDetList = [{'sales_details_id': 1, 'product_id': 1, 'order_number': 1, 'quantity': 3, 'order_type': 0},
@@ -51,7 +59,14 @@ function SalesDetailsPage({ setSalesDetailToEdit }) {
             <div>
                 <p>Here we have details on our Sales transaction, for more information on exactly what was purchased, and how much. Add details.</p>
             </div>
-            <SalesDetailsList salesDetails={salesDetails} onEdit={onEdit} />
+            <button className='hide' id='hideButton'>Simple View</button>
+                <button className='show' id='showButton'>Detailed View</button>
+            <div className='hideable' id='detailedView'>
+                <InvoiceViewsList invoiceViews={invoices}/>
+            </div>
+            <div className='hideable' id='simpleView'>
+                <SalesDetailsList salesDetails={salesDetails} onEdit={onEdit} />
+            </div>
             <div className='add'>
                 <ul>
                     <li>
