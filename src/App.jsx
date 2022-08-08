@@ -57,7 +57,7 @@ function App() {
             <Route path='/update-employee' element={<UpdateEmployeePage employeeToEdit={employeeToEdit}/>}/>
             <Route path='/update-product' element={<UpdateProductPage productToEdit={productToEdit}/>}/>
             <Route path='/update-sales-details' element={<UpdateSalesDetailsPage salesDetailToEdit={salesDetailToEdit} />}/>
-            <Route path='/update-sale' element={<UpdateSalesPage salesToEdit={saleToEdit} />}/>
+            <Route path='/update-sale' element={<UpdateSalesPage saleToEdit={saleToEdit} />}/>
 
         </Routes>
       </div>

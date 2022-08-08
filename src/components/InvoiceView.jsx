@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function InvoiceView({ invoiceView, onEdit }) {
     InvoiceView.propTypes = {
-        invoiceView: PropTypes.array,
+        invoiceView: PropTypes.object,
         order_number: PropTypes.string,
         member_id_name: PropTypes.string,
         employee_id_name: PropTypes.string,
