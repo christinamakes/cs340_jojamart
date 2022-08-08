@@ -77,7 +77,7 @@ export const UpdateSalesPage = ({saleToEdit}) => {
                         {members.map((member, i) => <option value={member.member_id} key={i}>{member.member_id + ' -- ' + member.member_name}</option>)}
                     </select>
                     <label htmlFor='uSaleEmployee'>Employee ID: </label>
-                    <select id='uSaleEmployee' name='employee_id' value={employee_id} onChange={e => setEmployee(e.target.value)}>
+                    <select id='uSaleEmployee' name='employee_id' value={(employee_id === null ? '0' : employee_id)} onChange={e => setEmployee(e.target.value)}>
                         <option value='Select an Employee'> -- Select an Employee -- </option>
                         <option value='0'>None</option>
                         {employees.map((employee, i) => <option value={employee.employee_id} key={i}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
