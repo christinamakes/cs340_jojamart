@@ -1,45 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductsList from './ProductsList';
 import PropTypes from 'prop-types';
 
-function ProductSearch({ details, onEdit }) {
+function ProductSearch({ onEdit }) {
   ProductSearch.propTypes = {
-    details: PropTypes.array,
     onEdit: PropTypes.func,
   }
 
   const [searchField, setSearchField] = useState("");
+  const [setFilteredResults] = useState([]);
+  const [SQLData, setSQLData] = useState([])
 
-  const filtered = details.filter(
-    data => {
-      return (
-        data
-          .product_name
-          .toLowerCase()
-          .includes(searchField.toLowerCase()) ||
-        data
-          .product_price
-          .toLowerCase()
-          .includes(searchField.toLowerCase()) ||
-        data
-          .season_code
-          .toLowerCase()
-          .includes(searchField.toLowerCase()) ||
-        data
-          .number_in_stock
-          .toLowerCase()
-          .includes(searchField.toLowerCase())
-      );
+  const URL = 'https://joja-server.herokuapp.com'
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${URL}/products/search/?q=${searchField}`, { method: 'GET' });
+      const json = await response.json();
+      setSQLData(json)
     }
-  );
+    fetchData();
+  }, [searchField]);
 
-  const handleChange = e => {
-    setSearchField(e.target.value);
-  };
+  const searchItems = (searchValue) => {
+    setSearchField(searchValue)
+    if (searchField !== '') {
+      const filteredData = SQLData
+      setFilteredResults(filteredData)
+    }
+    else {
+      setFilteredResults(SQLData)
+    }
+  }
 
   function searchList() {
     return (
-      <ProductsList products={filtered} onEdit={onEdit} />
+      <ProductsList products={SQLData} onEdit={onEdit} />
     );
   }
 
@@ -54,7 +50,7 @@ function ProductSearch({ details, onEdit }) {
           className="search"
           type="search"
           placeholder="Search"
-          onChange={handleChange}
+          onChange={(e) => searchItems(e.target.value)}
         />
       </div>
       {searchList()}

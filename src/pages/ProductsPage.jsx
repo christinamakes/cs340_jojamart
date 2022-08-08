@@ -1,13 +1,10 @@
 import React from 'react';
-
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import ProductSearch from '../components/ProductSearch';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const URL = 'https://joja-server.herokuapp.com'
 
 function ProductsPage({ setProductToEdit }) {
     ProductsPage.propTypes = {
@@ -15,23 +12,11 @@ function ProductsPage({ setProductToEdit }) {
     }
     // Data hardcoded for now, dynamic later
     const navigate = useNavigate();
-    const [products, setProducts] = useState([]);
-
-    // Get products from /products
-    const loadProducts = async () => {
-        const response = await fetch(`${URL}/products`);
-        const products = await response.json();
-        setProducts(products);
-    }
 
     const onEdit = (product) => {
         setProductToEdit(product)
         navigate('/products/update')
     }
-    // loadProducts from fetch
-    useEffect(() => {
-        loadProducts();
-    }, []);
 
     return (
         <div>
@@ -42,7 +27,7 @@ function ProductsPage({ setProductToEdit }) {
             <div>
                 <p>hello these are our state of the art products at unbeatable prices! Add new products, or adjust information, including but not limited to price (we can always go lower!) and stock.</p>
             </div>
-            <ProductSearch details={products} onEdit={onEdit} />
+            <ProductSearch onEdit={onEdit} />
             <div className='add'>
                 <ul>
                     <li>
