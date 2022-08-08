@@ -46,25 +46,25 @@ export const AddProductPage = () => {
         </header>
         <div>
             <p>Add a product on this page.</p>
-            <label for='prodName'>Name: </label>
+            <label htmlFor='prodName'>Name: </label>
             <input
                 id='prodName'
                 type="text"
                 placeholder="Enter name here"
                 value={product_name}
                 onChange={e => setName(e.target.value)} />
-            <label for='prodPrice'>Price: </label>
+            <label htmlFor='prodPrice'>Price: </label>
             <input
                 id='prodPrice'
                 type="text"
                 placeholder="Enter price here"
                 value={product_price}
                 onChange={e => setPrice(e.target.value)} />
-            <label for='prodSea'>Season Code: </label>
+            <label htmlFor='prodSea'>Season Code: </label>
             <select id='prodSea' name='season_code' onChange={e => setSeason(e.target.value)}>
                 {seasons.map((season, i) => <option value={season.season_code} key={i}>{season.season_code}</option>)}
             </select>
-            <label for='prodStock'>Number in Stock: </label>
+            <label htmlFor='prodStock'>Number in Stock: </label>
             <input
                 id='prodStock'
                 type="text"

@@ -18,7 +18,14 @@ export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
     const [quantity, setQuantity] = useState(salesDetailToEdit.quantity);
     const [order_type, setOrderType] = useState(salesDetailToEdit.order_type);
 
+    const [member_id, setMember] = useState('');
+    const [employee_id, setEmployee] = useState('');
+    const [purchase_date, setDate] = useState('');
+    const [invoice_total, setTotal] = useState('');
+
     // For Dropdowns
+    const [members, setMembers] = useState([]);
+    const [employees, setEmployees] = useState([]);
     const [products, setProducts] = useState([]);
     const [sales, setSales] = useState([]);
 

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import SalesList from '../components/SalesList';
@@ -8,8 +9,12 @@ import { useState, useEffect} from 'react';
 
 const URL = 'https://joja-server.herokuapp.com'
 
-function SalesPage({setSalesToEdit}) {
+function SalesPage({setSaleToEdit}) {
+    SalesPage.propTypes = {
+        setSaleToEdit: PropTypes.func
+    }
     // Data hardcoded for now, dynamic later
+
     const navigate = useNavigate();
     const [sales, setSales] = useState([])
 
@@ -20,7 +25,7 @@ function SalesPage({setSalesToEdit}) {
     }
 
     const onEdit = (sale) => {
-        setSalesToEdit(sale)
+        setSaleToEdit(sale)
         navigate('/sales/update-s')
     }
 

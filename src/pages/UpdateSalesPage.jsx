@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const URL = 'https://joja-server.herokuapp.com'
 
 export const UpdateSalesPage = ({saleToEdit}) => {
+    UpdateSalesPage.propTypes = {
+        saleToEdit: PropTypes.func,
+        member_id: PropTypes.string,
+        employee_id: PropTypes.string,
+        purchase_date: PropTypes.string,
+        invoice_total: PropTypes.string
+    }
     const navigate = useNavigate();
     // For Sales
     const [member_id, setMember] = useState(saleToEdit.member_id);

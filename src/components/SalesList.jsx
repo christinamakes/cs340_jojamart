@@ -3,9 +3,10 @@ import Sale from './Sale';
 import PropTypes from 'prop-types';
 
 
-function SalesList({ sales }) {
+function SalesList({ sales, onEdit }) {
     SalesList.propTypes = {
         sales: PropTypes.array,
+        onEdit: PropTypes.func
     }
 
     return (
