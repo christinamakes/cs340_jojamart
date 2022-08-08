@@ -8,7 +8,7 @@ const URL = 'https://joja-server.herokuapp.com'
 
 export const UpdateSalesPage = ({saleToEdit}) => {
     UpdateSalesPage.propTypes = {
-        saleToEdit: PropTypes.func,
+        saleToEdit: PropTypes.object,
         member_id: PropTypes.string,
         employee_id: PropTypes.string,
         purchase_date: PropTypes.string,

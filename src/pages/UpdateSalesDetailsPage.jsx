@@ -8,7 +8,7 @@ const URL = 'https://joja-server.herokuapp.com'
 
 export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
     UpdateSalesDetailsPage.propTypes = {
-        salesDetailToEdit: PropTypes.func,
+        salesDetailToEdit: PropTypes.object,
         sales_details_id: PropTypes.string,
         order_number: PropTypes.string
     }
@@ -18,30 +18,8 @@ export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
     const [quantity, setQuantity] = useState(salesDetailToEdit.quantity);
     const [order_type, setOrderType] = useState(salesDetailToEdit.order_type);
 
-    const [member_id, setMember] = useState('');
-    const [employee_id, setEmployee] = useState('');
-    const [purchase_date, setDate] = useState('');
-    const [invoice_total, setTotal] = useState('');
-
-    // For Dropdowns
-    const [members, setMembers] = useState([]);
-    const [employees, setEmployees] = useState([]);
     const [products, setProducts] = useState([]);
     const [sales, setSales] = useState([]);
-
-    // get members from /members
-    const loadMembers = async () => {
-        const response = await fetch(`${URL}/members`);
-        const members = await response.json();
-        setMembers(members);
-    };
-
-    // get employees from /employees
-    const loadEmployees = async () => {
-        const response = await fetch(`${URL}/employees`);
-        const employees = await response.json();
-        setEmployees(employees);
-    };
 
     // Get products from /products
     const loadProducts = async () => {
@@ -73,24 +51,7 @@ export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
         }
     };
 
-    const updateSale = async () => {
-        const response = await fetch(`${URL}/update-s`, {
-            method: 'PUT',
-            body: JSON.stringify({ order_number: salesDetailToEdit.order_number, member_id: member_id, employee_id: employee_id, purchase_date: purchase_date, invoice_total: invoice_total }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        if (response.status === 200) {
-            alert(`Sale updated successfully.`);
-        } else {
-            alert(`Oops! Something went wrong with updating Sale.`);
-        }
-    };
-
     useEffect(() => {
-        loadMembers();
-        loadEmployees();
         loadProducts();
         loadSales();
     }, []);
@@ -105,36 +66,6 @@ export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
             <p>Update a Sales Details Instance on this page</p>
             <div>
                 <div>
-                    <label htmlFor='uSaleMember'>Member ID: </label>
-                    <select id='uSaleMember' name='member_id' onChange={e => setMember(e.target.value)}>
-                        <option value='Select a Member'> -- Select a Member -- </option>
-                        {members.map((member, i) => <option value={member.member_id} key={i}>{member.member_id + ' -- ' + member.member_name}</option>)}
-                    </select>
-                    <label htmlFor='uSaleEmployee'>Employee ID: </label>
-                    <select id='uSaleEmployee' name='employee_id' onChange={e => setEmployee(e.target.value)}>
-                        <option value='Select an Employee'> -- Select an Employee -- </option>
-                        <option value='0'>None</option>
-                        {employees.map((employee, i) => <option value={employee.employee_id} key={i}>{employee.employee_id + ' -- ' + employee.employee_name}</option>)}
-                    </select>
-                    <label htmlFor='uSaleDate'>Date: </label>
-                    <input
-                        id='uSaleDate'
-                        type="text"
-                        placeholder="Enter date here"
-                        value={purchase_date}
-                        onChange={e => setDate(e.target.value)} />
-                    <label htmlFor='uSaleTotal'>Invoice Total: </label>
-                    <input
-                        id='uSaleTotal'
-                        type="text"
-                        placeholder="Enter invoice total here"
-                        value={invoice_total}
-                        onChange={e => setTotal(e.target.value)} />
-                    <button
-                        onClick={updateSale}
-                    >Update</button>
-                </div>
-                <div>
                     <label htmlFor='uSaleDetProd'>Product ID: </label>
                     <select id='uSaleDetProd' name='product_id' value={product_id} onChange={e => setProductId(e.target.value)}>
                         <option value='Select a Product'> -- Select a Product -- </option>
@@ -142,7 +73,7 @@ export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
                     </select>
 
                     <label htmlFor='uSaleDetOrd'>Order Number: </label>
-                    <select id='uSaleDetOrd' name='order_number' onChange={e => setOrderNumber(e.target.value)}>
+                    <select id='uSaleDetOrd' name='order_number' value={order_number} onChange={e => setOrderNumber(e.target.value)}>
                         <option value='Select an Order Number'> -- Select an Order Number -- </option>
                         {sales.map((sale, i) => <option value={sale.order_number} key={i}>{sale.order_number}</option>)}
                     </select>

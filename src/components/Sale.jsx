@@ -5,7 +5,7 @@ import { AiOutlineEdit } from "react-icons/ai";
 
 function Sale({ sale, onEdit}) {
     Sale.propTypes = {
-        sale: PropTypes.array,
+        sale: PropTypes.object,
         order_number: PropTypes.string,
         member_id: PropTypes.string,
         employee_id: PropTypes.string,
