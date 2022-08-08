@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import InvoiceViewsList from '../components/InvoiceViewList';
+import SalesDetailsList from '../components/SalesDetailsList';
 import PropTypes from 'prop-types';
 
 const URL = 'https://joja-server.herokuapp.com'
@@ -51,7 +51,7 @@ function SalesDetailsPage({ setSalesDetailToEdit }) {
             <div>
                 <p>Here we have details on our Sales transaction, for more information on exactly what was purchased, and how much. Add details.</p>
             </div>
-            <InvoiceViewsList invoiceViews={salesDetails} onEdit={onEdit} />
+            <SalesDetailsList salesDetails={salesDetails} onEdit={onEdit} />
             <div className='add'>
                 <ul>
                     <li>
