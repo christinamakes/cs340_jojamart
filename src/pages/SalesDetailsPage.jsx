@@ -59,18 +59,28 @@ function SalesDetailsPage({ setSalesDetailToEdit }) {
             <div>
                 <p>Here we have details on our Sales transaction, for more information on exactly what was purchased, and how much. Add details.</p>
             </div>
-            <button className='hide' id='hideButton'>Simple View</button>
-                <button className='show' id='showButton'>Detailed View</button>
-            <div className='hideable' id='detailedView'>
-                <InvoiceViewsList invoiceViews={invoices}/>
-            </div>
-            <div className='hideable' id='simpleView'>
-                <SalesDetailsList salesDetails={salesDetails} onEdit={onEdit} />
-            </div>
+            {/* CITATION:
+                DATE: 8/8/2022
+                Adapted from:
+                Source: https://css-tricks.com/the-checkbox-hack/  */}
+            <div className='hideable'>
+                    <input type={'checkbox'} id='simple'/>
+                    <button><label htmlFor='simple' className='hideable'>Simple View</label></button>
+                    <div className='show' id='simpleView'>
+                        <SalesDetailsList salesDetails={salesDetails} onEdit={onEdit} />
+                    </div>
+                </div>
+                <div className='hideable'>
+                    <input type={'checkbox'} id='detailed'/>
+                    <button><label htmlFor='detailed' className='hideable'>detailed View</label></button>
+                    <div className='show' id='detailedView'>
+                        <InvoiceViewsList invoiceViews={invoices}/>
+                    </div>
+                </div>
             <div className='add'>
                 <ul>
                     <li>
-                        <Link to="/add-line-item"><button className='add'>Add sales detail</button></Link>
+                        <Link to="/add-line-item"><button className='add'>Add Sales and/or Sales Details</button></Link>
                     </li>
                 </ul>
             </div>

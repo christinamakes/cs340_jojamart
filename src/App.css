@@ -148,14 +148,26 @@ input, select {
   text-align: center;
 }
 
-.hideable {
+/* CITATION:
+DATE: 8/8/2022
+Adapted from:
+Source: https://css-tricks.com/the-checkbox-hack/ */
+
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+}
+
+label.hideable {
+  cursor: pointer;
+  padding-left: .1em;
+  position: relative;
+}
+
+.show {
   display: none;
 }
 
-.show:focus ~ #detailedView {
-  display: block;
-}
-
-.hide:focus ~ #simpleView {
+input[type='checkbox']:checked ~ .show {
   display: block;
 }
