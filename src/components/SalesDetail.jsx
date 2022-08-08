@@ -1,8 +1,13 @@
 import React from 'react';
 import { AiOutlineEdit } from "react-icons/ai";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function SalesDetail({ salesDetail, onEdit }) {
+    SalesDetail.propTypes = {
+        salesDetail: PropTypes.object,
+        onEdit: PropTypes.func,
+    }
     return (
         <tr>
             <td>{salesDetail.sales_details_id}</td>
