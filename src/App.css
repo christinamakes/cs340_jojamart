@@ -22,6 +22,7 @@ h1 {
 table {
   margin: auto;
   margin-bottom: 1em;
+  margin-top: 1em;
   border: 1px solid black;
   top: .1em;
 }
@@ -162,6 +163,18 @@ label.hideable {
   cursor: pointer;
   padding-left: .1em;
   position: relative;
+  padding: .72em;
+  background-color: #0071FF;
+  border: none;
+  border-radius: 5px;
+  color: #ECECEC;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  width: fit-content;
+  font-size: .904em;
 }
 
 .show {

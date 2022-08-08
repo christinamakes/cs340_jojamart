@@ -67,14 +67,14 @@ function SalesDetailsPage({ setSalesDetailToEdit }) {
                 Source: https://css-tricks.com/the-checkbox-hack/  */}
             <div className='hideable'>
                     <input type={'checkbox'} id='simple'/>
-                    <button><label htmlFor='simple' className='hideable'>Toggle Simple View</label></button>
+                    <label htmlFor='simple' className='hideable'>Toggle Simple View</label>
                     <div className='show' id='simpleView'>
                         <SalesDetailsList salesDetails={salesDetails} onEdit={onEdit} />
                     </div>
                 </div>
                 <div className='hideable'>
                     <input type={'checkbox'} id='detailed'/>
-                    <button><label htmlFor='detailed' className='hideable'>Toggle Detailed View</label></button>
+                    <label htmlFor='detailed' className='hideable'>Toggle Detailed View</label>
                     <div className='show' id='detailedView'>
                         <InvoiceViewsList invoiceViews={invoices}/>
                     </div>
