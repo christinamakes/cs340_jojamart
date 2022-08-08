@@ -62,6 +62,10 @@ export const AddProductPage = () => {
                 onChange={e => setPrice(e.target.value)} />
             <label htmlFor='prodSea'>Season Code: </label>
             <select id='prodSea' name='season_code' onChange={e => setSeason(e.target.value)}>
+            {/* CITATION for Dynamic Dropdown Menu logic
+            DATE: 8/1/2022
+            Code adapted from: 
+            source: https://dev.to/antdp425/populate-dropdown-options-in-react-1nk0 */}
                 {seasons.map((season, i) => <option value={season.season_code} key={i}>{season.season_code}</option>)}
             </select>
             <label htmlFor='prodStock'>Number in Stock: </label>

@@ -20,6 +20,11 @@ export const UpdateSalesPage = ({saleToEdit}) => {
     const [employee_id, setEmployee] = useState(saleToEdit.employee_id);
     const [purchase_date, setDate] = useState(saleToEdit.purchase_date);
     const [invoice_total, setTotal] = useState(saleToEdit.invoice_total);
+    
+    /* CITATION for Dynamic Dropdown Menu logic
+            DATE: 8/1/2022
+            Code adapted from: 
+            source: https://dev.to/antdp425/populate-dropdown-options-in-react-1nk0 */
 
     // For Dropdowns
     const [members, setMembers] = useState([]);

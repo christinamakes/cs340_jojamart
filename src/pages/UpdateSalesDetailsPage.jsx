@@ -21,6 +21,11 @@ export const UpdateSalesDetailsPage = ({ salesDetailToEdit }) => {
     const [products, setProducts] = useState([]);
     const [sales, setSales] = useState([]);
 
+    /* CITATION for Dynamic Dropdown Menu logic
+            DATE: 8/1/2022
+            Code adapted from: 
+            source: https://dev.to/antdp425/populate-dropdown-options-in-react-1nk0 */
+
     // Get products from /products
     const loadProducts = async () => {
         const response = await fetch(`${URL}/products`);

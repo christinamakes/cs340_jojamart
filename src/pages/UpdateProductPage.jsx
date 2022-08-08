@@ -21,6 +21,11 @@ export const UpdateProductPage = ({ productToEdit }) => {
     const [season_code, setSeason] = useState(productToEdit.season_code);
     const [number_in_stock, setStockNum] = useState(productToEdit.number_in_stock);
 
+    /* CITATION for Dynamic Dropdown Menu logic
+            DATE: 8/1/2022
+            Code adapted from: 
+            source: https://dev.to/antdp425/populate-dropdown-options-in-react-1nk0 */
+
     const [seasons, setSeasons] = useState([])
 
     const loadSeasons = async () => {
