@@ -7,9 +7,8 @@ import React, { useState, useEffect } from 'react';
 import EmployeesList from './EmployeesList';
 import PropTypes from 'prop-types';
 
-function EmployeeSearch({ onDelete, onEdit }) {
+function EmployeeSearch({ onEdit }) {
   EmployeeSearch.propTypes = {
-    onDelete: PropTypes.func,
     onEdit: PropTypes.func
   }
 
@@ -27,6 +26,20 @@ function EmployeeSearch({ onDelete, onEdit }) {
     }
     fetchData();
   }, [searchField]);
+
+  const onDelete = async (employee_id) => {
+    const response = await fetch(`${URL}/employees/delete/${employee_id}`, { method: 'DELETE' });
+    if (response.status === 200) {
+      const fetchData = async () => {
+        const response = await fetch(`${URL}/employees/`, { method: 'GET' });
+        const json = await response.json();
+        setSQLData(json)
+      }
+      fetchData();
+    } else {
+        alert(`Failed to delete employee`)
+    }
+}
 
 
   const searchItems = (searchValue) => {

@@ -3,10 +3,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 import EmployeeSearch from '../components/EmployeeSearch';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
-
-const URL = 'https://joja-server.herokuapp.com'
 
 function EmployeesPage({ setEmployeeToEdit }) {
     EmployeesPage.propTypes = {
@@ -14,16 +11,6 @@ function EmployeesPage({ setEmployeeToEdit }) {
     }
     // Data hardcoded for now, dynamic later
     const navigate = useNavigate();
-    const [employees, setEmployees] = useState([])
-
-    const onDelete = async (employee_id) => {
-        const response = await fetch(`${URL}/employees/delete/${employee_id}`, { method: 'DELETE' });
-        if (response.status === 200) {
-            setEmployees(employees.filter(emp => emp.employee_id !== employee_id));
-        } else {
-            alert(`Failed to delete employee`)
-        }
-    }
 
     const onEdit = (employee) => {
         setEmployeeToEdit(employee)
@@ -39,7 +26,7 @@ function EmployeesPage({ setEmployeeToEdit }) {
             <div>
                 <p>These are our hard-working employees. Onboard new hires, adjust personal information or wages (Ha!), or offboard terminated employees.</p>
             </div>
-            <EmployeeSearch details={employees} onDelete={onDelete} onEdit={onEdit} />
+            <EmployeeSearch onEdit={onEdit} />
             <div className='add'>
                 <ul>
                     <li>
