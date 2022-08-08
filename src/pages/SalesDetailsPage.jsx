@@ -58,6 +58,8 @@ function SalesDetailsPage({ setSalesDetailToEdit }) {
             </header>
             <div>
                 <p>Here we have details on our Sales transaction, for more information on exactly what was purchased, and how much. Add details.</p>
+                <p>The simple view is simply of the Sales Details table. The detailed view also contains data from Sales.</p>
+                <p>Sales Details can be updated from the <strong>simple view</strong>.</p>
             </div>
             {/* CITATION:
                 DATE: 8/8/2022
