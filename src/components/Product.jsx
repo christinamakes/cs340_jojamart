@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function Product({ product, onEdit }) {
     Product.propTypes = {
-        product: PropTypes.array,
+        product: PropTypes.object,
         onEdit: PropTypes.func,
     }
     return (

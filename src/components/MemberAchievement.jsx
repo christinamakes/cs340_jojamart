@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function MemberAchievement({ memberAchievement, onDelete }) {
     MemberAchievement.propTypes = {
-        memberAchievement: PropTypes.array,
+        memberAchievement: PropTypes.object,
         onDelete: PropTypes.func,
     }
     return (

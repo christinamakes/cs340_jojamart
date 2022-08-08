@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Season({ season }) {
     Season.propTypes = {
-        season: PropTypes.array,
+        season: PropTypes.object,
         season_code: PropTypes.string,
         description: PropTypes.string
     }

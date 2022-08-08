@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Achievement({ achievement }) {
     Achievement.propTypes = {
-        achievement: PropTypes.array,
+        achievement: PropTypes.object,
         achievement_id: PropTypes.string,
         achievement_title: PropTypes.string,
         achievement_criteria: PropTypes.string

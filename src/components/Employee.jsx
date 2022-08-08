@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function Employee({ employee, onEdit, onDelete }) {
     Employee.propTypes = {
-        employee: PropTypes.array,
+        employee: PropTypes.object,
         onEdit: PropTypes.func,
         onDelete: PropTypes.func
     }
