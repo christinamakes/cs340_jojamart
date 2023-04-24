@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // import ProductsList from '../components/ProductsList';
-const URL = 'https://joja-server.herokuapp.com'
+const URL = 'https://cs340jojaserver-production.up.railway.app'
 
 export const UpdateProductPage = ({ productToEdit }) => {
     UpdateProductPage.propTypes = {

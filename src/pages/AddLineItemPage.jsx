@@ -5,7 +5,7 @@ import Navigation from '../components/NavBar';
 import { Link } from 'react-router-dom';
 
 export const AddLineItemPage = () => {
-    const URL = 'https://joja-server.herokuapp.com'
+    const URL = 'https://cs340jojaserver-production.up.railway.app'
     const navigate = useNavigate();
     // For Sales
     const [member_id, setMember] = useState('');

@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 function MemberAchievementsPage() {
     const [memAchs, setMemAchs] = useState([])
-    const URL = 'https://joja-server.herokuapp.com'
+    const URL = 'https://cs340jojaserver-production.up.railway.app'
 
     // get members from /members
     const loadMemAchs = async () => {

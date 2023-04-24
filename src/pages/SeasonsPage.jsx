@@ -5,7 +5,7 @@ import Navigation from '../components/NavBar';
 import { Link } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 
-const URL = 'https://joja-server.herokuapp.com'
+const URL = 'https://cs340jojaserver-production.up.railway.app'
 
 function SeasonsPage() {
     const [seasons, setSeasons] = useState([])

@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import InvoiceViewsList from '../components/InvoiceViewList';
 
-const URL = 'https://joja-server.herokuapp.com'
+const URL = 'https://cs340jojaserver-production.up.railway.app'
 
 function SalesPage({setSaleToEdit}) {
     SalesPage.propTypes = {

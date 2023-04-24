@@ -5,7 +5,7 @@ import Navigation from '../components/NavBar';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const URL = 'https://joja-server.herokuapp.com'
+const URL = 'https://cs340jojaserver-production.up.railway.app'
 
 export const UpdateMemberPage = ({ memberToEdit }) => {
     UpdateMemberPage.propTypes = {

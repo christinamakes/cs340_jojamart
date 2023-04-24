@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddMemberAchievementPage = () => {
-    const URL = 'https://joja-server.herokuapp.com'
+    const URL = 'https://cs340jojaserver-production.up.railway.app'
     const navigate = useNavigate();
     // for request
     const [member_id, setMember] = useState('');

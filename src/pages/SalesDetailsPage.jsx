@@ -7,7 +7,7 @@ import SalesDetailsList from '../components/SalesDetailsList';
 import PropTypes from 'prop-types';
 import InvoiceViewsList from '../components/InvoiceViewList';
 
-const URL = 'https://joja-server.herokuapp.com'
+const URL = 'https://cs340jojaserver-production.up.railway.app'
 
 function SalesDetailsPage({ setSalesDetailToEdit }) {
     SalesDetailsPage.propTypes = {

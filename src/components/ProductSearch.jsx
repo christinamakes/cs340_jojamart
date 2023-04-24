@@ -11,7 +11,7 @@ function ProductSearch({ onEdit }) {
   const [setFilteredResults] = useState([]);
   const [SQLData, setSQLData] = useState([])
 
-  const URL = 'https://joja-server.herokuapp.com'
+  const URL = 'https://cs340jojaserver-production.up.railway.app'
 
   useEffect(() => {
     const fetchData = async () => {

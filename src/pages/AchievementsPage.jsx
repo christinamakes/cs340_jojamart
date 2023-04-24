@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import AchievementsList from '../components/AchievementsList'
 
 function AchievementsPage() {
-    const URL = 'https://joja-server.herokuapp.com'
+    const URL = 'https://cs340jojaserver-production.up.railway.app'
     const [achievements, setAchievements] = useState([])
 
     const loadAchievements = async () => {

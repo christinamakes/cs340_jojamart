@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/NavBar';
 
 export const AddSeasonPage = () => {
-    const URL = 'https://joja-server.herokuapp.com'
+    const URL = 'https://cs340jojaserver-production.up.railway.app'
     const navigate = useNavigate();
     const [season_code, setSeason] = useState('');
     const [description, setDescription] = useState('');
